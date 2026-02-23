@@ -32,7 +32,7 @@ Prendi una schermata asincrona (es. una fetch da Lesson 16 o una qualsiasi opera
 - gestisce `error` con messaggio
 
 1. Aggiungi un pulsante Retry che richiama `load()`.
-2. Edge case obbligatorio: evita update di stato quando la schermata non è più montata (niente warning/bug da “stale update”).
+2. Edge case obbligatorio: evita update di stato quando la schermata non è più montata (niente warning/bug da "outdated update").
 3. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
 
 ## Output atteso
@@ -40,7 +40,7 @@ Prendi una schermata asincrona (es. una fetch da Lesson 16 o una qualsiasi opera
 - App eseguibile su emulatore o device
 - Stati async espliciti (loading/error/empty/success)
 - Retry funzionante
-- Edge case dimostrabile: niente update “stale” dopo navigazione/unmount
+- Edge case dimostrabile: niente update "outdated" dopo navigazione/unmount
 
 ## Checkpoint
 

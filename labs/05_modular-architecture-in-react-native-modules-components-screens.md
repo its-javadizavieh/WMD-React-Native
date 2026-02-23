@@ -20,7 +20,7 @@
 
 Prendi una mini-app funzionante (anche quella dei lab precedenti) e **refactorala** per rispettare una struttura modulare chiara.
 
-Obiettivo: a fine lab, il progetto deve avere separazione minima tra **screens**, **components** e **services** e una direzione di dipendenze sensata.
+Obiettivo: a fine lab, il progetto deve avere una separazione chiara tra **screens**, **components** e **services**.
 
 ## Step (numerati)
 
@@ -28,14 +28,13 @@ Obiettivo: a fine lab, il progetto deve avere separazione minima tra **screens**
 2. Crea le cartelle: `screens/`, `components/`, `services/`.
 3. Estrai **almeno 1 componente** riusabile in `components/` (nessun cambio di comportamento).
 4. Sposta **almeno 1 side effect** in `services/` (es. accesso dati, wrapper di API, helper con stato).
-5. Crea/usa **una screen** in `screens/` che orchestri stato + chiamate a `services/` e passi props ai componenti.
-6. Verifica la direzione dipendenze (regola semplice): `screens → components/services`, `services` non importa UI.
-    - Regola facile (bonus): components importano solo components/utils; services importano solo services/utils.
+5. Crea/usa **una screen** in `screens/` che gestisca lo stato e chiami `services/`, passando i dati ai componenti.
+6. Verifica la direzione degli import: `screens → components/services`. I services non importano UI.
 7. Gestisci **almeno un edge case** con messaggio chiaro (es. input vuoto, lista vuota, errore).
 8. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
 9. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
 
-## Bonus (se il progetto cresce): “public API” del modulo
+## Bonus (facoltativo, per progetti più grandi): esportare da un solo file
 
 Per evitare import profondi, puoi esportare da un solo punto:
 

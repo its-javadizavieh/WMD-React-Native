@@ -6,3 +6,7 @@
 !README.md
 !labs/
 !labs/**
+
+# Never publish exams (questions/solutions)
+verifiche/
+**/verifiche/

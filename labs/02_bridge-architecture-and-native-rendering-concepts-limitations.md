@@ -18,24 +18,23 @@
 
 ## Scenario
 
-Costruisci una schermata con contatore e un componente figlio ‘pesante’ per osservare i re-render. Poi applica una piccola ottimizzazione (split + memo/useCallback) e verifica la differenza nei log.
+Costruisci una schermata con contatore e un componente figlio per osservare i re-render con `console.count`. Poi usa `FlatList` per mostrare una lista.
 
 ## Step (numerati)
 
 1. Crea (o riusa) un progetto Expo e avvialo.
 2. Implementa un contatore con `useState` e aggiungi `console.count` nei componenti.
 3. Aggiungi un componente figlio che riceve una callback e osserva quando si ri-renderizza.
-4. Applica `React.memo` al figlio e `useCallback` alla callback; confronta i log prima/dopo.
-    - Regola: prima **stabilizza** le props/callback, poi valuta la memoizzazione.
+4. Implementa una lista usando `FlatList` con un `keyExtractor` stabile.
 5. Scrivi 5 righe nel README del lab: cosa hai visto e perché succede.
 6. Cleanup obbligatorio.
 
-## Ordine “safe” di ottimizzazione (da seguire)
+## Come tenere l'app veloce (regole semplici)
 
-1) Fix: evita lavoro pesante dentro `render`
-2) Split: separa componenti per localizzare gli update
-3) Stabilizza: callbacks/oggetti (solo se serve)
-4) Memoizza: `React.memo` / `useCallback` come ultimo passo
+1) Evita lavoro pesante dentro il render (sort/filter di array grandi)
+2) Dividi i componenti grandi in componenti più piccoli
+3) Usa `FlatList` per liste lunghe
+4) Tieni gli aggiornamenti di stato semplici
 
 ## Output atteso
 
@@ -65,7 +64,7 @@ Costruisci una schermata con contatore e un componente figlio ‘pesante’ per 
 
 ## Parole chiave Google (screenshot/guide)
 
-- react memo usecallback rerender
+- react native rerender console.count
 - react native performance rerender
 - expo logs console.count
-- flatlist performance react native
+- flatlist keyextractor react native

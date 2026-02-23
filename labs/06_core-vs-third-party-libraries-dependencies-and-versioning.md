@@ -59,17 +59,7 @@ Nota Expo:
 1. Esegui una demo rapida (30–60 secondi).
 2. Cleanup obbligatorio e verifica che il progetto riparta pulito.
 
-## Reproducibility (bonus consigliato)
-
-Se ti trovi con installazioni diverse tra macchine, prova:
-
-```bash
-npm ci
-```
-
-Regola: evitare “upgrade random” durante lo sviluppo della feature. Aggiorna una cosa per volta e verifica subito.
-
-## Output atteso
+## Consiglio\n\nEvitare \"upgrade random\" durante lo sviluppo della feature. Aggiorna una cosa per volta e verifica subito.\n\n## Output atteso
 
 - App eseguibile su emulatore o device
 - UI chiara e leggibile

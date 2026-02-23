@@ -1,4 +1,4 @@
-# Lab 12 — Esercitazione — Midterm exam + guided review (covers Lessons 01–11)
+# Lab 12 — Esercitazione — Guided review (covers Lessons 01–11)
 
 ## Obiettivo
 
@@ -18,7 +18,9 @@
 
 ## Scenario
 
-Realizza una piccola feature coerente con i micro-argomenti della lezione. L’obiettivo è consegnare qualcosa di pulito e verificabile (non una demo improvvisata).
+Realizza una piccola feature coerente con i micro-argomenti della lezione.
+
+Obiettivo: consegnare qualcosa di pulito e verificabile (non una demo improvvisata).
 
 ## Step (numerati)
 

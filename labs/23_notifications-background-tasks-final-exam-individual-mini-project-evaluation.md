@@ -1,4 +1,4 @@
-# Lab 23 — Esercitazione — Notifications + background tasks; final exam (individual mini-project) evaluation
+# Lab 23 — Esercitazione — Notifications + background tasks; mini-project readiness
 
 ## Obiettivo
 
@@ -20,7 +20,7 @@
 
 Implementa una feature minima di **notifiche locali** (Expo Notifications) con permission-first UX.
 
-In più, prepara il progetto per la **valutazione finale** (mini-progetto individuale): deve essere riproducibile, demo-able e con cleanup chiaro.
+In più, prepara il progetto per la consegna del **mini-progetto individuale**: deve essere riproducibile, demo-able e con cleanup chiaro.
 
 ## Step (numerati)
 
@@ -43,9 +43,9 @@ In più, prepara il progetto per la **valutazione finale** (mini-progetto indivi
 1. Programma una notifica locale (es. tra 3–10 secondi) e mostra feedback in UI.
 1. Edge case obbligatorio: permesso negato (e, su Android, assicurati che il canale esista).
 1. Background constraints (nota scritta, 3 righe): perché la delivery non è garantita e come lo comunichi in UX.
-1. Checklist “valutazione finale” (verifica almeno questi punti):
+1. Checklist “pronto per consegna” (verifica almeno questi punti):
 
-    - `npm ci` / install pulita
+    - `npm install` / install pulita
     - `npx expo start -c` funziona
     - `git status` pulito (o modifiche spiegate)
     - demo 30–60 secondi con edge case
