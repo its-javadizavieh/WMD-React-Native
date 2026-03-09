@@ -30,7 +30,7 @@ In entrambi i casi devi documentare *perché* hai scelto quella strada.
 ## Step (numerati)
 
 1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Crea un piccolo servizio `services/api.js` con una funzione `fetchTodos(limit)` che legga da:
+2. Crea un piccolo servizio `services/api.ts` con una funzione `fetchTodos(limit)` che legga da:
 
 - `https://jsonplaceholder.typicode.com/todos?_limit=10`
 

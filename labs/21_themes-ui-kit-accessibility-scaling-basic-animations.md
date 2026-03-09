@@ -30,7 +30,7 @@ Obiettivo: una schermata che mostra coerenza visiva, leggibilità e feedback (no
 ## Step (numerati)
 
 1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-1. Crea un file di theme tokens (es. `src/ui/theme.js`) con:
+1. Crea un file di theme tokens (es. `src/ui/theme.ts`) con:
 
     - `spacing` (pochi valori)
     - `typography` (2–3 size)

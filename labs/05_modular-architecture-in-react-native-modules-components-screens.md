@@ -38,8 +38,8 @@ Obiettivo: a fine lab, il progetto deve avere una separazione chiara tra **scree
 
 Per evitare import profondi, puoi esportare da un solo punto:
 
-```js
-// features/notes/index.js
+```ts
+// features/notes/index.tsx
 export { NotesScreen } from './screens/NotesScreen';
 export { addNote, listNotes } from './services/notes';
 ```
