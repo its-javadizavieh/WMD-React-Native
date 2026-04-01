@@ -1,4 +1,4 @@
-# Lab 20 — Esercitazione — UI styling: StyleSheet + Flexbox + responsive mindset
+# Lab 20 - Esercitazione - UI styling: StyleSheet + Flexbox + responsive mindset
 
 ## Obiettivo
 

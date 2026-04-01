@@ -8,7 +8,7 @@ size: 16:9
 <!-- _class: cover -->
 | DOCENTE | Seyedhossein Javadizavieh |
 | UNITA' FORMATIVA | React Native |
-| ARGOMENTO | React Native Programming — Cheat Sheet |
+| ARGOMENTO | React Native Programming - Cheat Sheet |
 
 ---
 
@@ -27,7 +27,7 @@ npx expo start --android
 npx expo start --ios
 ```
 
-- **Fast Refresh** — save a file and changes appear instantly
+- **Fast Refresh** - save a file and changes appear instantly
 - Press `r` in terminal to **reload**, `m` to open **dev menu**
 - Use `npx expo install <pkg>` to install **compatible** versions
 
@@ -55,7 +55,7 @@ import {
 
 ---
 
-## 3 · View — the universal container
+## 3 · View - the universal container
 
 ```tsx
 // View is a flexbox container (column by default)
@@ -68,11 +68,11 @@ import {
 - Every layout starts with **View**
 - Defaults to `flexDirection: 'column'`
 - Use `gap` for spacing between children (RN 0.71+)
-- **Cannot** display raw text — always wrap in `<Text>`
+- **Cannot** display raw text - always wrap in `<Text>`
 
 ---
 
-## 4 · Text — rendering text content
+## 4 · Text - rendering text content
 
 ```tsx
 // Basic text with inline styles
@@ -93,7 +93,7 @@ import {
 
 ---
 
-## 5 · Image — local and remote
+## 5 · Image - local and remote
 
 ```tsx
 // Remote image (must set width + height)
@@ -114,7 +114,7 @@ import {
 
 ---
 
-## 6 · Pressable — handling taps
+## 6 · Pressable - handling taps
 
 ```tsx
 // Pressable with visual feedback
@@ -147,13 +147,13 @@ interface Item {
   title: string;
 }
 
-// ScrollView — renders ALL children at once
+// ScrollView - renders ALL children at once
 <ScrollView contentContainerStyle={{ padding: 16 }}>
   <Text>Item 1</Text>
   <Text>Item 2</Text>
 </ScrollView>
 
-// FlatList — virtualised, only renders visible rows
+// FlatList - virtualised, only renders visible rows
 <FlatList<Item>
   data={items}
   keyExtractor={(item: Item) => item.id}
@@ -170,7 +170,7 @@ interface Item {
 
 ---
 
-## 8 · TextInput — controlled input
+## 8 · TextInput - controlled input
 
 ```tsx
 const [email, setEmail] = React.useState('');
@@ -197,7 +197,7 @@ Common **keyboardType** values: `default` | `email-address` | `numeric` | `phone
 
 ---
 
-## 9 · useState — reactive state
+## 9 · useState - reactive state
 
 ```tsx
 import React from 'react';
@@ -217,12 +217,12 @@ setItems((prev) => [...prev, newItem]);
 setItems((prev) => prev.filter((i) => i.id !== id));
 ```
 
-- State is **immutable** — always create a new reference
+- State is **immutable** - always create a new reference
 - Use **callback form** when new value depends on previous
 
 ---
 
-## 10 · useEffect — side effects and cleanup
+## 10 · useEffect - side effects and cleanup
 
 ```tsx
 // Run once on mount
@@ -288,8 +288,8 @@ const styles = StyleSheet.create({
 | | `space-between`, `space-around`, `space-evenly` |
 | **alignItems** | `stretch` (default), `flex-start`, `center`, `flex-end` |
 | **flexWrap** | `nowrap` (default), `wrap` |
-| **gap** | number (e.g. `12`) — spacing between children |
-| **flex** | `1` — fill available space |
+| **gap** | number (e.g. `12`) - spacing between children |
+| **flex** | `1` - fill available space |
 | **alignSelf** | override parent `alignItems` for one child |
 | **position** | `relative` (default), `absolute` |
 
@@ -322,7 +322,7 @@ return <DataView data={data} />;
 
 ---
 
-## 13 · Forms — validation pattern
+## 13 · Forms - validation pattern
 
 ```tsx
 const [email, setEmail] = React.useState('');
@@ -355,7 +355,7 @@ const showError = touched && !emailOk;
 
 ---
 
-## 14 · fetch — REST API calls
+## 14 · fetch - REST API calls
 
 ```tsx
 // GET request
@@ -412,7 +412,7 @@ return <FlatList<Item> data={data} /* ... */ />;
 
 ---
 
-## 16 · React Navigation — setup
+## 16 · React Navigation - setup
 
 ```tsx
 // Install
@@ -447,7 +447,7 @@ export default function App() {
 
 ---
 
-## 17 · Navigation — navigate, params, goBack
+## 17 · Navigation - navigate, params, goBack
 
 ```tsx
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -511,7 +511,7 @@ const Drawer = createDrawerNavigator();
 
 ---
 
-## 19 · AsyncStorage — local persistence
+## 19 · AsyncStorage - local persistence
 
 ```tsx
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -538,7 +538,7 @@ await AsyncStorage.clear();
 
 ---
 
-## 20 · Context — sharing state globally
+## 20 · Context - sharing state globally
 
 ```tsx
 // 1. Create context
@@ -575,7 +575,7 @@ function ProfileScreen() {
 
 ---
 
-## 21 · Zustand — lightweight global store
+## 21 · Zustand - lightweight global store
 
 ```tsx
 import { create } from 'zustand';
@@ -611,10 +611,10 @@ function CartBadge() {
 
 ---
 
-## 22 · Custom hooks — reusable logic
+## 22 · Custom hooks - reusable logic
 
 ```tsx
-// useFetch — generic data fetcher
+// useFetch - generic data fetcher
 function useFetch<T = unknown>(url: string) {
   const [data, setData] = React.useState<T | null>(null);
   const [loading, setLoading] = React.useState(true);
@@ -753,7 +753,7 @@ const linking = {
 
 ---
 
-## 27 · Animated — basic animations
+## 27 · Animated - basic animations
 
 ```tsx
 import { Animated } from 'react-native';
@@ -843,6 +843,6 @@ my-app/
 | **Stale cache** | Delete `node_modules`, run `npm install` |
 | **Android emulator not found** | Start emulator first, then `npx expo start` |
 | **Network request failed** | Check URL, use `10.0.2.2` for Android emulator |
-| **CORS error** | Does not exist in RN — check API URL |
+| **CORS error** | Does not exist in RN - check API URL |
 | **Slow list** | Switch from `ScrollView` to `FlatList` |
 | **State not updating** | Return a **new** object/array, not mutated one |

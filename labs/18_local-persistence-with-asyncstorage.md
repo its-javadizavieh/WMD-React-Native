@@ -1,4 +1,4 @@
-# Lab 18 — Esercitazione — Local persistence with AsyncStorage
+# Lab 18 - Esercitazione - Local persistence with AsyncStorage
 
 ## Obiettivo
 

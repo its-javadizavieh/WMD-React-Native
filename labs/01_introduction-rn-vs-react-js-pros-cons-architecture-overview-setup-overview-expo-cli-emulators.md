@@ -1,4 +1,4 @@
-# Lab 01 — Esercitazione — Introduction, RN vs React JS, pros/cons, architecture overview, setup overview (Expo/CLI/emulators)
+# Lab 01 - Esercitazione - Introduction, RN vs React JS, pros/cons, architecture overview, setup overview (Expo/CLI/emulators)
 
 ## Obiettivo
 

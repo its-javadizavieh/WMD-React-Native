@@ -1,4 +1,4 @@
-# Lab 10 — Esercitazione — useEffect; async side-effects and cleanup
+# Lab 10 - Esercitazione - useEffect; async side-effects and cleanup
 
 ## Obiettivo
 

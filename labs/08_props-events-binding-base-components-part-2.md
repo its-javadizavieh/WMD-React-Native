@@ -1,4 +1,4 @@
-# Lab 08 — Esercitazione — Props, events, binding; base components (Part 2)
+# Lab 08 - Esercitazione - Props, events, binding; base components (Part 2)
 
 ## Obiettivo
 

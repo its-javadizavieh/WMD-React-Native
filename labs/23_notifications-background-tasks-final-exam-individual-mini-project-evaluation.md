@@ -1,4 +1,4 @@
-# Lab 23 — Esercitazione — Notifications + background tasks; mini-project readiness
+# Lab 23 - Esercitazione - Notifications + background tasks; mini-project readiness
 
 ## Obiettivo
 

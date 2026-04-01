@@ -1,4 +1,4 @@
-# Lab 21 — Esercitazione — Themes/UI kit; accessibility + scaling; basic animations
+# Lab 21 - Esercitazione - Themes/UI kit; accessibility + scaling; basic animations
 
 ## Obiettivo
 

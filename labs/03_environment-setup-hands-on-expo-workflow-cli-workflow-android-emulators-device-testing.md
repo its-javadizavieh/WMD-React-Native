@@ -1,4 +1,4 @@
-# Lab 03 — Esercitazione — Environment setup hands-on: Expo workflow, CLI workflow, Android emulators, device testing
+# Lab 03 - Esercitazione - Environment setup hands-on: Expo workflow, CLI workflow, Android emulators, device testing
 
 ## Obiettivo
 

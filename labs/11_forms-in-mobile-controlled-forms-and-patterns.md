@@ -1,4 +1,4 @@
-# Lab 11 — Esercitazione — Forms in mobile: controlled forms and patterns
+# Lab 11 - Esercitazione - Forms in mobile: controlled forms and patterns
 
 ## Obiettivo
 

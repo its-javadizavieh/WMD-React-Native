@@ -1,4 +1,4 @@
-# Lab 12 — Esercitazione — Guided review (covers Lessons 01–11)
+# Lab 12 - Esercitazione - Guided review (covers Lessons 01–11)
 
 ## Obiettivo
 

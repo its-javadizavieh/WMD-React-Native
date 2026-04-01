@@ -1,4 +1,4 @@
-# Lab 19 — Esercitazione — Global state: Context / Redux / Zustand (tradeoffs and patterns)
+# Lab 19 - Esercitazione - Global state: Context / Redux / Zustand (tradeoffs and patterns)
 
 ## Obiettivo
 

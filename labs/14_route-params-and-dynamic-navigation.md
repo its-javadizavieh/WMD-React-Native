@@ -1,4 +1,4 @@
-# Lab 14 — Esercitazione — Route params and dynamic navigation
+# Lab 14 - Esercitazione - Route params and dynamic navigation
 
 ## Obiettivo
 

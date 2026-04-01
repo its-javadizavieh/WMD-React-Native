@@ -1,4 +1,4 @@
-# Lab 05 — Esercitazione — Modular architecture in React Native (modules, components, screens)
+# Lab 05 - Esercitazione - Modular architecture in React Native (modules, components, screens)
 
 ## Obiettivo
 

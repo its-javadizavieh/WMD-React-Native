@@ -1,4 +1,4 @@
-# Lab 15 — Esercitazione — Advanced navigation and deep linking
+# Lab 15 - Esercitazione - Advanced navigation and deep linking
 
 ## Obiettivo
 

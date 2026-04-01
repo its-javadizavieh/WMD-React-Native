@@ -1,4 +1,4 @@
-# Lab 22 — Esercitazione — Native features: camera/location/sensors; permissions and security
+# Lab 22 - Esercitazione - Native features: camera/location/sensors; permissions and security
 
 ## Obiettivo
 

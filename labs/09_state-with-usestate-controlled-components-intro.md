@@ -1,4 +1,4 @@
-# Lab 09 — Esercitazione — State with useState; controlled components (intro)
+# Lab 09 - Esercitazione - State with useState; controlled components (intro)
 
 ## Obiettivo
 

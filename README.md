@@ -1,6 +1,6 @@
-# WMD — React Native
+# WMD - React Native
 
-**WMD React Native** — Complete course materials for learning React Native / Expo through a practical, lab-driven approach.
+**WMD React Native** - Complete course materials for learning React Native / Expo through a practical, lab-driven approach.
 
 ## 📚 About This Repository
 
@@ -31,7 +31,7 @@ Hands-on laboratory exercises (Italian) covering:
 | [09](labs/09_state-with-usestate-controlled-components-intro.md) | State with `useState`, controlled components |
 | [10](labs/10_useeffect-async-side-effects-and-cleanup.md) | `useEffect`, async side effects, cleanup |
 | [11](labs/11_forms-in-mobile-controlled-forms-and-patterns.md) | Forms in mobile: controlled forms & patterns |
-| [12](labs/12_midterm-exam-guided-review-covers-lessons-01-11.md) | Midterm exam — guided review (lessons 01–11) |
+| [12](labs/12_midterm-exam-guided-review-covers-lessons-01-11.md) | Midterm exam - guided review (lessons 01–11) |
 | [13](labs/13_react-navigation-setup-and-core-concepts.md) | React Navigation: setup and core concepts |
 | [14](labs/14_route-params-and-dynamic-navigation.md) | Route params & dynamic navigation |
 | [15](labs/15_advanced-navigation-and-deep-linking.md) | Advanced navigation & deep linking |
@@ -55,7 +55,7 @@ Hands-on laboratory exercises (Italian) covering:
 ## 🎓 Course Information
 
 - **Institution**: ITS ICT Piemonte
-- **Course**: WMD — React Native
+- **Course**: WMD - React Native
 - **Language**: Labs in Italian
 
 ## 📄 License

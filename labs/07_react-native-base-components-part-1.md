@@ -1,4 +1,4 @@
-# Lab 07 — Esercitazione — React Native base components (Part 1)
+# Lab 07 - Esercitazione - React Native base components (Part 1)
 
 ## Obiettivo
 

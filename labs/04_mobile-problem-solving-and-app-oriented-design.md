@@ -1,4 +1,4 @@
-# Lab 04 — Esercitazione — Mobile problem solving and app-oriented design
+# Lab 04 - Esercitazione - Mobile problem solving and app-oriented design
 
 ## Obiettivo
 

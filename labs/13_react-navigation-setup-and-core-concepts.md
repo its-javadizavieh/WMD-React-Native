@@ -1,4 +1,4 @@
-# Lab 13 — Esercitazione — React Navigation: setup and core concepts
+# Lab 13 - Esercitazione - React Navigation: setup and core concepts
 
 ## Obiettivo
 

@@ -1,4 +1,4 @@
-# Lab 17 — Esercitazione — Asynchronous workflows in mobile (loading/error states)
+# Lab 17 - Esercitazione - Asynchronous workflows in mobile (loading/error states)
 
 ## Obiettivo
 

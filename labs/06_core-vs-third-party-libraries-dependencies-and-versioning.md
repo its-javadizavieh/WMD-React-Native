@@ -1,4 +1,4 @@
-# Lab 06 — Esercitazione — Core vs third-party libraries; dependencies and versioning
+# Lab 06 - Esercitazione - Core vs third-party libraries; dependencies and versioning
 
 ## Obiettivo
 

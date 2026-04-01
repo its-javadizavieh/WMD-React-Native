@@ -1,4 +1,4 @@
-# Lab 02 — Esercitazione — Bridge architecture and native rendering (concepts, limitations)
+# Lab 02 - Esercitazione - Bridge architecture and native rendering (concepts, limitations)
 
 ## Obiettivo
 

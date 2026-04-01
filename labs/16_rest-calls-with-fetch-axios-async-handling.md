@@ -1,4 +1,4 @@
-# Lab 16 — Esercitazione — REST calls with fetch / Axios; async handling
+# Lab 16 - Esercitazione - REST calls with fetch / Axios; async handling
 
 ## Obiettivo
 
