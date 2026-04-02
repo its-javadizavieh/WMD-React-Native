@@ -16,7 +16,7 @@ size: 16:9
 
 ```tsx
 // Create a new project
-npx create-expo-app MyApp
+npx create-expo-app MyApp --template blank-typescript
 cd MyApp
 
 // Start the dev server
