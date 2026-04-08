@@ -47,6 +47,11 @@ size: 16:9
 | 28 | [Platform-specific code](#28--platform-specific-code) |
 | 29 | [Common project structure](#29--common-project-structure) |
 | 30 | [Debugging checklist](#30--debugging-checklist) |
+| 31 | [ADB guide (Ubuntu / macOS / Windows)](#31--adb-guide-ubuntu--macos--windows) |
+| 32 | [Connect Android device (Expo Go + USB + emulator)](#32--connect-android-device-expo-go--usb--emulator) |
+| 33 | [Connect iPhone (Expo Go + simulator)](#33--connect-iphone-expo-go--simulator) |
+| 34 | [Developer menu and debug tools](#34--developer-menu-and-debug-tools) |
+| 35 | [Device connection troubleshooting](#35--device-connection-troubleshooting) |
 
 ---
 
@@ -884,3 +889,310 @@ my-app/
 | **CORS error** | Does not exist in RN - check API URL |
 | **Slow list** | Switch from `ScrollView` to `FlatList` |
 | **State not updating** | Return a **new** object/array, not mutated one |
+
+---
+
+## 31 · ADB guide (Ubuntu / macOS / Windows)
+
+ADB (Android Debug Bridge) lets you communicate with an Android device or emulator from your computer.
+
+---
+
+### Install ADB
+
+**Ubuntu / Debian**
+
+```bash
+sudo apt update
+sudo apt install android-tools-adb
+
+# Verify
+adb --version
+```
+
+**macOS (Homebrew)**
+
+```bash
+brew install android-platform-tools
+
+# Verify
+adb --version
+```
+
+**Windows**
+
+1. Install **Android Studio** → SDK Manager → check **Android SDK Platform-Tools**
+2. Add Platform-Tools to PATH:
+   - Default location: `C:\Users\<YOU>\AppData\Local\Android\Sdk\platform-tools`
+   - Open **System Properties → Environment Variables → Path → Edit → New** → paste the path
+3. Open a new terminal:
+
+```powershell
+adb --version
+```
+
+> **Tip (all OS):** If you installed Android Studio, `adb` is already inside `<SDK>/platform-tools/`. Just add that folder to your PATH.
+
+---
+
+### Enable USB debugging on the phone
+
+1. Go to **Settings → About phone**
+2. Tap **Build number** 7 times → "You are now a developer"
+3. Go to **Settings → Developer options**
+4. Enable **USB debugging**
+
+---
+
+### Connect and verify
+
+```bash
+# Plug the phone via USB, then:
+adb devices
+```
+
+| Output | Meaning |
+|---|---|
+| `<serial>  device` | Connected and authorized |
+| `<serial>  unauthorized` | Accept the prompt on the phone |
+| *(empty list)* | Cable/driver issue - see troubleshooting below |
+
+---
+
+### Common ADB commands
+
+```bash
+# List connected devices
+adb devices
+
+# Restart ADB when it hangs
+adb kill-server && adb start-server
+
+# Install an APK
+adb install app-release.apk
+
+# Forward a port (useful for Metro)
+adb reverse tcp:8081 tcp:8081
+
+# Open a shell on the device
+adb shell
+
+# Pull a file from the device
+adb pull /sdcard/screenshot.png ./
+
+# View live device logs (filter by tag)
+adb logcat *:E          # errors only
+adb logcat ReactNative:V *:S   # React Native logs
+```
+
+---
+
+### Wireless debugging (no cable)
+
+```bash
+# 1. Connect phone via USB first
+adb devices
+
+# 2. Enable TCP/IP mode on port 5555
+adb tcpip 5555
+
+# 3. Find the phone's IP (Settings → Wi-Fi → tap network → IP address)
+# 4. Connect wirelessly
+adb connect <PHONE_IP>:5555
+
+# 5. Unplug the USB cable - ADB stays connected over Wi-Fi
+adb devices   # should show <PHONE_IP>:5555
+
+# To switch back to USB mode:
+adb usb
+```
+
+> **Android 11+**: you can also use **Wireless debugging** in Developer options (pair with code, no USB needed).
+
+---
+
+### Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| `unauthorized` | Unlock phone → accept USB debugging prompt → retry |
+| `offline` | Unplug → `adb kill-server` → replug |
+| **Not detected (Linux)** | Add udev rule: `sudo apt install android-tools-adb` and replug |
+| **Not detected (Windows)** | Install OEM USB driver from phone manufacturer website |
+| **Not detected (macOS)** | Try a different USB cable (some cables are charge-only) |
+| `adb: command not found` | Add `platform-tools` to PATH (see install section) |
+
+---
+
+## 32 · Connect Android device (Expo Go + USB + emulator)
+
+### Prerequisites
+
+- Node.js installed
+- Expo project created (`npx create-expo-app my-app --template blank-typescript`)
+- Phone and computer on the **same Wi-Fi network**
+
+### Install Expo Go
+
+| Platform | Store | Search for |
+|---|---|---|
+| **Android** | Google Play Store | "Expo Go" |
+| **iPhone** | Apple App Store | "Expo Go" |
+
+### Option A: QR code (Wi-Fi, no cable)
+
+```bash
+cd my-app
+npx expo start
+```
+
+1. Open **Expo Go** on your Android phone
+2. Tap **"Scan QR Code"**
+3. Point at the QR code in the terminal
+4. The app loads automatically
+
+If the QR code doesn't connect (school/corporate Wi-Fi blocks device-to-device traffic):
+
+```bash
+# Tunnel mode (slower but works on any network)
+npx expo start --tunnel
+```
+
+If prompted, install ngrok:
+
+```bash
+npx expo install @expo/ngrok@^4.1.0
+```
+
+### Option B: USB cable
+
+1. **Enable Developer Options**: Settings → About phone → tap **Build number** 7 times
+2. **Enable USB debugging**: Settings → Developer options → toggle **USB debugging**
+3. **Plug the USB cable** and accept "Allow USB debugging?" on the phone
+4. **Verify**:
+
+```bash
+adb devices
+# Should show your device as "device" (not "unauthorized")
+```
+
+5. **Run**:
+
+```bash
+npx expo start
+# Press 'a' in the terminal to open on Android
+```
+
+> See **§31** above for full ADB install + troubleshooting.
+
+### Option C: Android emulator (no physical phone)
+
+1. Install **Android Studio** → open **Virtual Device Manager**
+2. Create a device (e.g. Pixel 7, API 34)
+3. Start the emulator
+4. In the Expo terminal, press **`a`** to open the app in the emulator
+
+---
+
+## 33 · Connect iPhone (Expo Go + simulator)
+
+### QR code (Wi-Fi, no cable)
+
+1. Open the **Camera** app on iPhone (Expo Go not needed to scan)
+2. Point at the QR code in the terminal
+3. Tap the notification **"Open in Expo Go"**
+4. The app loads automatically
+
+If QR doesn't work:
+
+```bash
+npx expo start --tunnel
+```
+
+### iPhone limitations
+
+| Aspect | Detail |
+|---|---|
+| **Expo Go** | Works for development, but some native libraries (e.g. real push notifications) need a development build |
+| **iOS Simulator** | Available **only on macOS** (requires Xcode) |
+| **USB cable** | Not needed for Expo Go — Wi-Fi is enough |
+
+### iOS Simulator (macOS only)
+
+1. Install **Xcode** from the App Store
+2. Open Xcode at least once and accept the licenses
+3. In the Expo terminal, press **`i`** to open the app in the iOS Simulator
+
+---
+
+## 34 · Developer menu and debug tools
+
+### Open the Developer Menu
+
+| Target | How to open |
+|---|---|
+| **Android phone** | Shake the phone |
+| **iPhone** | Shake the phone |
+| **Android emulator** | `Ctrl + M` (Windows/Linux) or `Cmd + M` (macOS) |
+| **iOS Simulator** | `Cmd + D` |
+
+From the Developer Menu you can:
+
+- **Toggle Fast Refresh** — auto-reload when you save a file
+- **Open JS Debugger** — opens the debugger in your browser
+- **Show Performance Monitor** — shows FPS and memory usage
+
+### Console logs
+
+`console.log()` output appears in the **terminal where you ran `npx expo start`**. This is the fastest way to check values and flows.
+
+### React DevTools (advanced)
+
+```bash
+# Install globally
+npm install -g react-devtools
+
+# Start in a separate window
+react-devtools
+```
+
+Then open the Developer Menu on your phone — React DevTools connects automatically.
+
+---
+
+## 35 · Device connection troubleshooting
+
+| Problem | Fix |
+|---|---|
+| QR code doesn't connect | Verify phone and PC are on the **same Wi-Fi network** |
+| "Network response timed out" | Use `npx expo start --tunnel` |
+| Metro bundler stuck | Stop with `Ctrl + C`, then `npx expo start -c` (clear cache) |
+| `adb devices` empty list | Check USB debugging is enabled, accept the prompt on the phone |
+| App doesn't update | Check **Fast Refresh** is enabled (Developer Menu) |
+| "Expo Go is not compatible" | Update Expo Go from the store and run `npx expo install --fix` |
+| iPhone doesn't open the link | Install/update Expo Go from the App Store |
+
+### Quick commands
+
+```bash
+# Start (default: LAN)
+npx expo start
+
+# Start with tunnel (restrictive Wi-Fi)
+npx expo start --tunnel
+
+# Clear cache
+npx expo start -c
+
+# Open on Android (emulator or USB)
+# Press 'a' in the terminal
+
+# Open on iOS (macOS + Xcode only)
+# Press 'i' in the terminal
+
+# Verify connected Android devices
+adb devices
+
+# Restart adb if it hangs
+adb kill-server && adb start-server
+```

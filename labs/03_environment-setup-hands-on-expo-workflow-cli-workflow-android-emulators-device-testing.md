@@ -52,6 +52,8 @@ Nota Android (ADB):
 
 - Se `adb devices` mostra `unauthorized`: sblocca il telefono, accetta il prompt di USB debugging, poi riprova.
 
+> **Guida completa ADB (installazione + comandi + wireless debugging):** vedi **Cheat Sheet → §31 · ADB guide (Ubuntu / macOS / Windows)** nel file `00_cheatsheet_react-native-programming_en.md`.
+
 Ordine di reset (prova in sequenza):
 
 1) Reload dell’app
