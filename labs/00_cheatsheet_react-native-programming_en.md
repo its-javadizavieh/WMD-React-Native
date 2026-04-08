@@ -12,6 +12,44 @@ size: 16:9
 
 ---
 
+## Index
+
+| # | Topic |
+|---|---|
+| 1 | [Project setup (Expo)](#1--project-setup-expo) |
+| 2 | [Core component imports](#2--core-component-imports) |
+| 3 | [View - the universal container](#3--view---the-universal-container) |
+| 4 | [Text - rendering text content](#4--text---rendering-text-content) |
+| 5 | [Image - local and remote](#5--image---local-and-remote) |
+| 6 | [Pressable - handling taps](#6--pressable---handling-taps) |
+| 7 | [ScrollView vs FlatList](#7--scrollview-vs-flatlist) |
+| 8 | [TextInput - controlled input](#8--textinput---controlled-input) |
+| 9 | [useState - reactive state](#9--usestate---reactive-state) |
+| 10 | [useEffect - side effects and cleanup](#10--useeffect---side-effects-and-cleanup) |
+| 11a | [StyleSheet](#11a--stylesheet) |
+| 11b | [Flexbox quick reference](#11b--flexbox-quick-reference) |
+| 12 | [Conditional rendering patterns](#12--conditional-rendering-patterns) |
+| 13 | [Forms - validation pattern](#13--forms---validation-pattern) |
+| 14 | [fetch - REST API calls](#14--fetch---rest-api-calls) |
+| 15 | [Async data pattern (load → show → error)](#15--async-data-pattern-load--show--error) |
+| 16 | [React Navigation - setup](#16--react-navigation---setup) |
+| 17 | [Navigation - navigate, params, goBack](#17--navigation---navigate-params-goback) |
+| 18 | [Tab and Drawer navigators](#18--tab-and-drawer-navigators) |
+| 19 | [AsyncStorage - local persistence](#19--asyncstorage---local-persistence) |
+| 20 | [Context - sharing state globally](#20--context---sharing-state-globally) |
+| 21 | [Zustand - lightweight global store](#21--zustand---lightweight-global-store) |
+| 22 | [Custom hooks - reusable logic](#22--custom-hooks---reusable-logic) |
+| 23 | [Responsive StyleSheet and Flexbox](#23--responsive-stylesheet-and-flexbox) |
+| 24 | [Permissions (expo)](#24--permissions-expo) |
+| 25 | [Notifications (expo)](#25--notifications-expo) |
+| 26 | [Deep linking](#26--deep-linking) |
+| 27 | [Animated - basic animations](#27--animated---basic-animations) |
+| 28 | [Platform-specific code](#28--platform-specific-code) |
+| 29 | [Common project structure](#29--common-project-structure) |
+| 30 | [Debugging checklist](#30--debugging-checklist) |
+
+---
+
 ## 1 · Project setup (Expo)
 
 ```tsx
