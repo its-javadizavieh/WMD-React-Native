@@ -78,7 +78,11 @@ adb devices
 
 **App avviata**
 
-![Lab 03 - App avviata](imgs/lab_03_main.png)
+![Lab 03 - App avviata](imgs/lab_03_main_1.png)
+
+**App avviata**
+
+![Lab 03 - App avviata](imgs/lab_03_main_2.png)
 
 **Console log**
 

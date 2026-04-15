@@ -67,7 +67,11 @@ Prima della consegna, forza questi stati:
 
 **Stato success con note**
 
-![Lab 04 - Stato success con note](imgs/lab_04_success.png)
+![Lab 04 - Stato success con note](imgs/lab_04_success_1.png)
+
+**Stato success con note**
+
+![Lab 04 - Stato success con note](imgs/lab_04_success_2.png)
 
 
 ## Consegna minima

@@ -55,7 +55,11 @@ async function fetchTodos() {
 
 **Lista todos**
 
-![Lab 06 - Lista todos](imgs/lab_06_main.png)
+![Lab 06 - Lista todos](imgs/lab_06_main_1.png)
+
+**Lista todos**
+
+![Lab 06 - Lista todos](imgs/lab_06_main_2.png)
 
 **Stato errore**
 

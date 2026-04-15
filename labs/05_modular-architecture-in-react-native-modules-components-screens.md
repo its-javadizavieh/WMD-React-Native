@@ -78,7 +78,11 @@ export { addNote, listNotes } from "./services/notes";
 
 **Schermata utenti**
 
-![Lab 05 - Schermata utenti](imgs/lab_05_main.png)
+![Lab 05 - Schermata utenti](imgs/lab_05_main_1.png)
+
+**Schermata utenti**
+
+![Lab 05 - Schermata utenti](imgs/lab_05_main_2.png)
 
 **Struttura cartelle**
 
