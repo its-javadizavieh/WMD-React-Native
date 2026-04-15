@@ -1,11 +1,12 @@
-# Lab 09 - Esercitazione - State with useState; controlled components (intro)
+# Lab 09 – Stato con useState e componenti controllati
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 09 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Costruisci un form controllato con `useState`.
+- Implementa validazione derivata (senza stato duplicato).
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,68 +14,80 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Devi costruire un **mini form** (es. “Sign in” o “Sign up”) per esercitare `useState` e i **controlled components**.
+Costruisci un mini form "Sign in" con campi email e password. Ogni campo è controllato da `useState`, la validazione è derivata dallo stato.
 
-Obiettivo: input prevedibili + validazione semplice.
+> **Perché questo lab:** i controlled components sono il modo standard di gestire form in React/RN. Lo stato è la "single source of truth" e la UI riflette lo stato.
 
-## Step (numerati)
+## Cosa imparerai
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Crea un form con almeno 2 campi `TextInput` (es. email + password).
-3. Implementa controlled components:
+1. Come collegare `TextInput` → `useState` (`value` + `onChangeText`).
+2. Come derivare la validazione dallo stato (no stato extra per "isValid").
+3. Perché `setCount((prev) => prev + 1)` è più sicuro di `setCount(count + 1)`.
+4. Come mostrare errori solo dopo il submit (pattern `submitted`).
 
-    - ogni input ha `value`
-    - ogni input aggiorna lo stato con `onChangeText`
+## Starter pattern (solo promemoria)
 
-4. Implementa una validazione minima:
+```tsx
+const [email, setEmail] = React.useState("");
+const emailOk = email.includes("@");
 
-    - email deve contenere `@`
-    - password min 6 caratteri
+<TextInput value={email} onChangeText={setEmail} placeholder="Email" />
+<Text>{emailOk ? "OK" : "Too short"}</Text>
+```
 
-5. Gestisci **1 edge case**:
+## Passi
 
-    - trim dell’email
-    - “submit” disabilitato finché non valido (oppure errori mostrati solo dopo submit)
+1. **Avvia progetto Expo** — verifica che l'app parta.
+2. **Crea il form** — Due `TextInput`: email e password, ciascuno con il proprio `useState`.
+3. **Validazione derivata** — `emailOk = email.includes("@")`, `passwordOk = password.length >= 6`.
+4. **Submit** — Un `Pressable` che imposta `setSubmitted(true)`.
+5. **Errori condizionali** — Mostra gli errori solo se `submitted && !emailOk`.
+6. **Edge case** — Pulsante con opacity ridotta se il form non è valido.
 
-6. Demo rapida (30–60 secondi) spiegando lo shape dello stato e perché non mutarlo.
-7. Cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Screenshot attesi
 
-## Output atteso
+**Form vuoto**
 
-- App eseguibile su emulatore o device
+![Lab 09 - Form vuoto](imgs/lab_09_main.png)
+
+**Errori dopo submit**
+
+![Lab 09 - Errori dopo submit](imgs/lab_09_errors.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
-- Controlled components implementati correttamente
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
 - [ ] Avvio progetto senza errori
 - [ ] Feature completata e dimostrabile
 - [ ] Edge case gestito con messaggio chiaro
-- [ ] Validazione minima presente
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native textinput controlled
+- usestate form validation react native
+- controlled vs uncontrolled input

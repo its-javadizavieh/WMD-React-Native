@@ -1,11 +1,11 @@
-# Lab 13 - Esercitazione - React Navigation: setup and core concepts
+# Lab 13 – React Navigation: setup e concetti base
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 13 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Setup `NavigationContainer` + `createNativeStackNavigator`.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,35 +13,52 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Implementa una mini-app con **React Navigation** (stack) e **2 schermate**:
+Setup `NavigationContainer` + `createNativeStackNavigator`. Due screen: Home → Details con navigazione.
 
-- `Home` (lista o contenuto semplice)
-- `Details` (schermata di dettaglio)
+> **Perché questo lab:** esercitare i pattern della lezione 13 in una mini-app concreta.
 
-La consegna è completata quando riesci a dimostrare il flusso **Home → Details → Back** in modo stabile.
+## Cosa imparerai
 
-## Step (numerati)
+1. Come installare React Navigation con Expo.
+2. Come creare un `Stack.Navigator` con due screen.
+3. Come navigare con `navigation.navigate("Details", { id: "a1" })`.
+4. Come tornare indietro con `navigation.goBack()`.
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Installa React Navigation (Expo workflow) e riavvia Metro.
-3. Aggiungi `NavigationContainer` e uno stack navigator.
-4. Crea `HomeScreen` e `DetailsScreen` e registrale nello stack.
-5. Da Home, naviga a Details (es. al tap su un item) e aggiungi un pulsante Back.
-6. Edge case obbligatorio: gestisci *uno* stato esplicito verificabile (es. lista vuota con messaggio dedicato).
-7. Se utile, organizza in moduli: `screens/`, `components/`, `services/`.
-8. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-9. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Dipendenze (Expo)
 
-## Output atteso
+```bash
+npx expo install @react-navigation/native @react-navigation/native-stack react-native-screens react-native-safe-area-context
+```
 
-- App eseguibile su emulatore o device
+## Passi
+
+1. **Installa dipendenze** — Esegui i comandi di installazione sopra.
+2. **App.tsx** — Crea `NavigationContainer` con `Stack.Navigator` e due screen: Home e Details.
+3. **HomeScreen** — Un pulsante che naviga a Details con `navigation.navigate("Details", { id: "a1" })`.
+4. **DetailsScreen** — Mostra l'id ricevuto e un pulsante "Go back".
+5. **Edge case** — Se `route.params?.id` è mancante, mostra "Missing id".
+
+## Screenshot attesi
+
+**Home**
+
+![Lab 13 - Home](imgs/lab_13_home.png)
+
+**Details**
+
+![Lab 13 - Details](imgs/lab_13_details.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -50,22 +67,21 @@ La consegna è completata quando riesci a dimostrare il flusso **Home → Detail
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react navigation expo setup
+stack navigator react native
+navigation.navigate params

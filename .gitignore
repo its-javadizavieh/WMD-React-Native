@@ -10,3 +10,8 @@
 # Never publish exams (questions/solutions)
 verifiche/
 **/verifiche/
+
+# Allow lab_solutions folder (but not all files)
+!lab_solutions/
+!lab_solutions/01_solution-introduction-rn-vs-react-js-pros-cons-architecture-overview-setup-overview-expo-cli-emulators.md
+!lab_solutions/02_solution-bridge-architecture-and-native-rendering-concepts-limitations.md

@@ -1,11 +1,12 @@
-# Lab 05 - Esercitazione - Modular architecture in React Native (modules, components, screens)
+# Lab 05 – Architettura modulare in React Native
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 05 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Refactora una mini-app in struttura modulare: screens / components / services.
+- Crea almeno 1 componente riusabile e 1 servizio.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,42 +14,82 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Prendi una mini-app funzionante (anche quella dei lab precedenti) e **refactorala** per rispettare una struttura modulare chiara.
+Prendi l'app Notes del lab 04 (o un'app simile) e **spezzala** in file separati con una struttura chiara.
 
-Obiettivo: a fine lab, il progetto deve avere una separazione chiara tra **screens**, **components** e **services**.
+> **Perché questo lab:** in un progetto reale, tutto in App.tsx diventa illeggibile. Imparare ora la separazione in cartelle evita refactoring costosi dopo.
 
-## Step (numerati)
+## Cosa imparerai
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Crea le cartelle: `screens/`, `components/`, `services/`.
-3. Estrai **almeno 1 componente** riusabile in `components/` (nessun cambio di comportamento).
-4. Sposta **almeno 1 side effect** in `services/` (es. accesso dati, wrapper di API, helper con stato).
-5. Crea/usa **una screen** in `screens/` che gestisca lo stato e chiami `services/`, passando i dati ai componenti.
-6. Verifica la direzione degli import: `screens → components/services`. I services non importano UI.
-7. Gestisci **almeno un edge case** con messaggio chiaro (es. input vuoto, lista vuota, errore).
-8. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-9. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+1. La struttura `screens/` → `components/` → `services/`.
+2. La regola degli import: screens importano tutto, services non importano UI.
+3. Come creare un componente riusabile con props callback (`onPress`).
+4. Come esportare da un barrel file (`index.tsx`).
 
-## Bonus (facoltativo, per progetti più grandi): esportare da un solo file
+## File da creare
 
-Per evitare import profondi, puoi esportare da un solo punto:
+```
+services/users.ts
+components/PrimaryButton.tsx
+screens/UsersScreen.tsx
+App.tsx
+```
+
+## Starter pattern (solo promemoria)
+
+```tsx
+// components/PrimaryButton.tsx
+import { Pressable, Text } from "react-native";
+
+export function PrimaryButton(
+  { label, onPress }: { label: string; onPress: () => void }
+) {
+  return (
+    <Pressable onPress={onPress} style={{ padding: 12, borderWidth: 1, borderRadius: 8 }}>
+      <Text style={{ fontWeight: "600" }}>{label}</Text>
+    </Pressable>
+  );
+}
+```
+
+## Passi
+
+1. **Crea le cartelle** — `screens/`, `components/`, `services/`.
+2. **services/users.ts** — Esporta una funzione `getUsers()` che ritorna `["Ada", "Grace"]`.
+3. **components/PrimaryButton.tsx** — Componente con props `label` e `onPress`.
+4. **screens/UsersScreen.tsx** — Screen che chiama `getUsers()` in un `useEffect` e mostra il primo utente.
+5. **App.tsx** — Importa e renderizza `<UsersScreen />`.
+6. **Verifica import** — screens → components + services, mai il contrario.
+7. **Edge case** — Se la lista utenti è vuota, mostra "Nessun utente ancora".
+
+## Barrel export (opzionale)
 
 ```ts
 // features/notes/index.tsx
-export { NotesScreen } from './screens/NotesScreen';
-export { addNote, listNotes } from './services/notes';
+export { NotesScreen } from "./screens/NotesScreen";
+export { addNote, listNotes } from "./services/notes";
 ```
 
-## Output atteso
+## Screenshot attesi
 
-- App eseguibile su emulatore o device
+**Schermata utenti**
+
+![Lab 05 - Schermata utenti](imgs/lab_05_main.png)
+
+**Struttura cartelle**
+
+![Lab 05 - Struttura cartelle](imgs/lab_05_structure.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -57,22 +98,21 @@ export { addNote, listNotes } from './services/notes';
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native project structure
+- barrel exports typescript
+- react native screens components services

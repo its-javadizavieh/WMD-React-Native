@@ -1,41 +1,71 @@
-# Lab 12 - Esercitazione - Guided review (covers Lessons 01–11)
+# Lab 12 – Verifica intermedia e riepilogo guidato (Lezioni 01-11)
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 12 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Riepilogo dei pattern principali: UiState, load(), retry.
+- Dimostra di saper costruire una schermata con stati espliciti.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
-2h
+4h (verifica + revisione)
 
 ## Prerequisiti
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Realizza una piccola feature coerente con i micro-argomenti della lezione.
+Costruisci una schermata che usa il pattern UiState completo: loading / empty / error / success. È un ripasso di tutti i concetti visti nelle lezioni 01-11.
 
-Obiettivo: consegnare qualcosa di pulito e verificabile (non una demo improvvisata).
+> **Perché questo lab:** è il punto di verifica. Se riesci a costruire questa schermata da zero, hai solidità sulle basi.
 
-## Step (numerati)
+## Cosa ripasserai
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Implementa una feature piccola coerente con i micro-argomenti della lezione.
-3. Aggiungi gestione di stato e almeno un edge case (es. lista vuota, errore rete, permesso negato).
-4. Se utile, organizza in moduli: `screens/`, `components/`, `services/`.
-5. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-6. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+1. `useState` con `status` string per gli stati.
+2. Una funzione `load()` che gestisce loading → success/error.
+3. UI condizionale per ogni stato.
+4. `useEffect` per il caricamento iniziale.
 
-## Output atteso
+## Starter pattern (solo promemoria)
 
-- App eseguibile su emulatore o device
+```tsx
+function load() {
+  setStatus("loading");
+  setTimeout(() => {
+    setStatus("success");
+  }, 800);
+}
+
+<Pressable onPress={load}>
+  <Text>Riprova</Text>
+</Pressable>
+```
+
+## Passi
+
+1. **Avvia progetto** — da zero o riusando un lab precedente.
+2. **Definisci stati** — idle / loading / empty / error / success.
+3. **Funzione load()** — Simula un fetch con `setTimeout`.
+4. **UI per ogni stato** — Un `if` per ciascuno.
+5. **Pulsante Riprova** — Richiama `load()`.
+6. **Cleanup e consegna.**
+
+## Screenshot attesi
+
+**Midterm review**
+
+![Lab 12 - Midterm review](imgs/lab_12_main.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -44,22 +74,20 @@ Obiettivo: consegnare qualcosa di pulito e verificabile (non una demo improvvisa
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native usestate loading pattern
+- react native screen states

@@ -1,11 +1,12 @@
-# Lab 10 - Esercitazione - useEffect; async side-effects and cleanup
+# Lab 10 – useEffect, effetti asincroni e cleanup
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 10 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Usa `useEffect` con timer e funzione di cleanup.
+- Mostra stati espliciti: loading → success / error.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,70 +14,82 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Devi costruire una schermata che carica dati in modo asincrono usando `useEffect`, gestendo correttamente **stati UI** e **cleanup**.
+Costruisci una schermata che simula il caricamento dati con `setTimeout` dentro `useEffect`. Implementa un cleanup con `clearTimeout` e un pulsante "Riprova" per simulare l'errore.
 
-Tema suggerito: “Todos list” (da JSONPlaceholder).
+> **Perché questo lab:** `useEffect` è il hook per gli effetti collaterali (fetch, timer, listener). Il cleanup evita memory leak.
 
-## Step (numerati)
+## Cosa imparerai
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Implementa `useEffect` per caricare dati all’avvio (mount).
-3. Gestisci **3 stati espliciti**:
+1. Come funziona `useEffect(() => { ... return cleanup }, [])`.
+2. Perché il cleanup è importante (evita aggiornamenti su componenti smontati).
+3. Come simulare loading con `setTimeout`.
+4. Come gestire loading / success / error in modo esplicito.
 
-    - `loading`
-    - `error`
-    - `success`
+## Starter pattern (solo promemoria)
 
-4. Aggiungi un pulsante “Reload” per rilanciare il caricamento.
-5. Implementa **1 requisito di cleanup** (uno solo):
+```tsx
+React.useEffect(() => {
+  const id = setTimeout(() => {
+    setStatus("success");
+  }, 1000);
 
-    - abort/cancellazione della richiesta (se possibile)
-    - oppure cleanup di un `setInterval`/timer creato per demo
+  return () => clearTimeout(id);
+}, []);
+```
 
-6. Gestisci **1 edge case**:
+## Passi
 
-    - errore rete (mostra messaggio + retry)
-    - risposta vuota
+1. **Avvia progetto Expo** — verifica che l'app parta.
+2. **useEffect con timer** — Al mount, imposta "loading". Dopo 1s, "success". Ritorna `clearTimeout`.
+3. **Schermata condizionale** — `if (status === "loading") return <Text>Caricamento...</Text>`.
+4. **Pulsante Retry** — Imposta "loading" e dopo 1s "error", per simulare un fallimento.
+5. **Pulsante Reload** — Richiama la funzione di caricamento.
+6. **Edge case** — Verifica che il cleanup cancella il timer.
 
-7. Demo rapida (30–60 secondi) spiegando *quando* si esegue l’effetto e *perché* il cleanup serve.
-8. Cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Screenshot attesi
 
-## Output atteso
+**Loading**
 
-- App eseguibile su emulatore o device
+![Lab 10 - Loading](imgs/lab_10_loading.png)
+
+**Success**
+
+![Lab 10 - Success](imgs/lab_10_success.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
-- useEffect usato correttamente (con stati e cleanup)
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
 - [ ] Avvio progetto senza errori
 - [ ] Feature completata e dimostrabile
 - [ ] Edge case gestito con messaggio chiaro
-- [ ] Cleanup dell’effetto presente
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- useeffect cleanup react native
+- settimeout useeffect react
+- react native loading state pattern

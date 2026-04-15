@@ -1,11 +1,11 @@
-# Lab 17 - Esercitazione - Asynchronous workflows in mobile (loading/error states)
+# Lab 17 – Gestione asincrona in mobile: loading / error states
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 17 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Simulazione success / failure con bottoni.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,34 +13,42 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Prendi una schermata asincrona (es. una fetch da Lesson 16 o una qualsiasi operazione async) e rendila *prevedibile* tramite una gestione stati chiara.
+Simulazione success / failure con bottoni. Oggetto stato unico con campo `status`.
 
-## Step (numerati)
+> **Perché questo lab:** esercitare i pattern della lezione 17 in una mini-app concreta.
 
-1. Avvia l’app e scegli una schermata con async (fetch o altra operazione).
-2. Definisci uno stato unico per la UI (es. `loading/error/empty/success`).
-3. Implementa una funzione `load()` che:
+## Cosa imparerai
 
-- imposta `loading`
-- gestisce `success`
-- gestisce `empty` (se applicabile)
-- gestisce `error` con messaggio
+1. Come usare un singolo oggetto stato `{ status, message }`.
+2. Come simulare successo e fallimento con pulsanti.
+3. Come usare `ActivityIndicator` per il loading.
+4. Perché un oggetto stato unico evita stati incoerenti.
 
-1. Aggiungi un pulsante Retry che richiama `load()`.
-2. Edge case obbligatorio: evita update di stato quando la schermata non è più montata (niente warning/bug da "outdated update").
-3. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Passi
 
-## Output atteso
+1. **Avvia progetto** — verifica che l'app parta.
+2. **Stato unico** — `const [state, setState] = React.useState({ status: "idle", message: "" })`.
+3. **Funzione load(shouldFail)** — Imposta "loading", attende 800ms, poi success/error.
+4. **UI condizionale** — `ActivityIndicator` per loading, messaggio per error/success.
+5. **Due pulsanti** — "Retry (success)" e "Retry (fail)" per testare entrambi i flussi.
 
-- App eseguibile su emulatore o device
-- Stati async espliciti (loading/error/empty/success)
-- Retry funzionante
-- Edge case dimostrabile: niente update "outdated" dopo navigazione/unmount
+## Screenshot attesi
+
+**Async workflow**
+
+![Lab 17 - Async workflow](imgs/lab_17_main.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
+- UI chiara e leggibile
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -49,22 +57,20 @@ Prendi una schermata asincrona (es. una fetch da Lesson 16 o una qualsiasi opera
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native loading state
+activityindicator react native

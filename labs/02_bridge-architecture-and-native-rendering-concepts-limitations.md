@@ -1,11 +1,12 @@
-# Lab 02 - Esercitazione - Bridge architecture and native rendering (concepts, limitations)
+# Lab 02 – Architettura bridge e rendering nativo
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 02 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Osserva i re-render con `console.log` e un contatore.
+- Usa `FlatList` con `keyExtractor` per liste performanti.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,34 +14,72 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Costruisci una schermata con contatore e un componente figlio per osservare i re-render con `console.count`. Poi usa `FlatList` per mostrare una lista.
+Costruisci una schermata con un contatore e un componente figlio `Row`. Usa `console.log` per osservare quante volte ogni componente si ri-renderizza. Poi aggiungi una `FlatList` con 20+ elementi.
 
-## Step (numerati)
+> **Perché questo lab:** capire che i re-render sono normali (non un bug), e imparare a usare `FlatList` invece di `ScrollView` per liste lunghe.
 
-1. Crea (o riusa) un progetto Expo e avvialo.
-2. Implementa un contatore con `useState` e aggiungi `console.count` nei componenti.
-3. Aggiungi un componente figlio che riceve una callback e osserva quando si ri-renderizza.
-4. Implementa una lista usando `FlatList` con un `keyExtractor` stabile.
-5. Scrivi 5 righe nel README del lab: cosa hai visto e perché succede.
-6. Cleanup obbligatorio.
+## Cosa imparerai
 
-## Come tenere l'app veloce (regole semplici)
+1. Come usare `console.log` con un contatore per osservare i cicli di render.
+2. La differenza tra `ScrollView` (renderizza tutto) e `FlatList` (renderizza solo il visibile).
+3. Come funziona `keyExtractor` e perché serve una chiave stabile.
 
-1) Evita lavoro pesante dentro il render (sort/filter di array grandi)
-2) Dividi i componenti grandi in componenti più piccoli
-3) Usa `FlatList` per liste lunghe
-4) Tieni gli aggiornamenti di stato semplici
+## Starter pattern (solo promemoria)
 
-## Output atteso
+```tsx
+let rowRenderCount = 0;
 
-- App eseguibile su emulatore o device
+function Row({ title }: { title: string }) {
+  rowRenderCount += 1;
+  console.log(`Row render #${rowRenderCount} – ${title}`);
+  return (
+    <View style={styles.row}>
+      <Text>{title}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  row: {
+    padding: 12,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    marginBottom: 8,
+  },
+});
+```
+
+## Passi
+
+1. **Crea/riusa un progetto Expo** — verifica che parta su emulatore/device.
+2. **SafeAreaView** — Avvolgi il contenuto con `SafeAreaView` (da `react-native`) per evitare che il testo finisca sotto la status bar.
+3. **Contatore + console.log** — Aggiungi `const [count, setCount] = React.useState(0)` e un contatore `appRenderCount` con `console.log` nel corpo della funzione App.
+4. **Componente Row** — Crea `Row` con un contatore `rowRenderCount` e `console.log` dentro la funzione. Aggiungi bordi con `StyleSheet` (borderWidth, borderColor, borderRadius) per rendere ogni riga visivamente distinta.
+5. **FlatList** — Genera 20 elementi con `Array.from({ length: 20 }, (_, i) => ({ id: String(i+1), title: "Item " + (i+1) }))` e mostrali con `FlatList`. Usa `contentContainerStyle` per il padding della lista.
+6. **Osserva i log** — Premi il pulsante e guarda quante volte App e Row si ri-renderizzano.
+7. **README** — Scrivi 3-5 righe: cosa hai osservato nei log e perché succede.
+
+## Screenshot attesi
+
+**Lista con FlatList**
+
+![Lab 02 - Lista con FlatList](imgs/lab_02_main.png)
+
+**Console con re-render**
+
+![Lab 02 - Console con re-render](imgs/lab_02_console.png)
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -49,22 +88,21 @@ Costruisci una schermata con contatore e un componente figlio per osservare i re
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- react native rerender console.count
-- react native performance rerender
-- expo logs console.count
+- react native rerender console.log
 - flatlist keyextractor react native
+- expo logs console.log

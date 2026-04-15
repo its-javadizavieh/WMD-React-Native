@@ -1,11 +1,12 @@
-# Lab 04 - Esercitazione - Mobile problem solving and app-oriented design
+# Lab 04 – Problem solving e progettazione mobile
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 04 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Costruisci una feature con stati espliciti: loading / empty / success / error.
+- Implementa un pattern retry su errore.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,41 +14,67 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Realizza una piccola feature coerente con i micro-argomenti della lezione (problem solving + design app-oriented). L’obiettivo è consegnare una soluzione verificabile: **flow chiaro**, **stati espliciti**, **1 edge case gestito**.
+Realizza una mini app "Notes" con un input per aggiungere note e una lista per mostrarle. La UI deve avere stati chiari e un pulsante "Riprova" in caso di errore.
 
-## Step (numerati)
+> **Perché questo lab:** esercitare il pattern "definisci gli stati prima, poi costruisci la UI sopra". Questo approccio evita bug legati a stati incoerenti.
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Scrivi prima di tutto (nel README del progetto o in fondo al lab) una requirement in 1 frase: “L’utente può … così che …”.
-3. Definisci gli stati della feature/schermata: **empty / loading / success / error** (anche solo a testo).
-4. Implementa la feature in modo minimale seguendo gli stati definiti.
-5. Aggiungi gestione di **almeno un edge case** (es. input vuoto, lista vuota, errore rete, permesso negato) con messaggio chiaro.
-    - Regola: lo stato “error” deve essere **actionable** (es. retry o next step).
-6. (Facoltativo se utile) Organizza in moduli: `screens/`, `components/`, `services/`.
-7. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-8. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Cosa imparerai
 
-## Manual test checklist (obbligatoria)
+1. Come definire gli stati di una schermata **prima** di scrivere la UI.
+2. Come usare `setTimeout` per simulare un caricamento.
+3. Come gestire lo stato `error` con un'azione (retry).
+4. Come rendere ogni stato visibile all'utente.
 
-Prima della consegna, forza intenzionalmente questi stati:
+## Starter pattern (solo promemoria)
 
-- Loading: inserisci un `setTimeout` o una `await` finta per vedere il loader
-- Empty: ritorna una lista vuota dal servizio
-- Error: fai `throw new Error()` nel servizio e verifica UI + messaggio
-- Success: ritorna dati validi
+```tsx
+const [status, setStatus] = React.useState("loading");
 
-Se non riesci a mostrare uno stato, il flow non è completo.
+if (status === "loading") return <Text>Caricamento...</Text>;
+if (status === "error") return <Text>Caricamento fallito</Text>;
+if (status === "empty") return <Text>Ancora niente qui</Text>;
+return <Text>Pronto</Text>;
+```
 
-## Output atteso
+## Passi
 
-- App eseguibile su emulatore o device
+1. **Avvia progetto Expo** — verifica che l'app parta.
+2. **Definisci gli stati** — Scrivi su carta o nel README: empty, loading, success, error.
+3. **Implementa `load()`** — Una funzione che imposta "loading", attende 300ms, poi mostra i dati o "empty".
+4. **Aggiungi input** — Un `TextInput` + pulsante "Add" per aggiungere note alla lista.
+5. **Edge case** — Lo stato `error` deve avere un pulsante "Riprova" che richiama `load()`.
+6. **Test manuale** — Forza ogni stato e verifica che la UI sia corretta.
+
+## Manual test checklist
+
+Prima della consegna, forza questi stati:
+
+- **Loading:** inserisci un delay per vedere il loader
+- **Empty:** non aggiungere note e verifica il messaggio
+- **Error:** fai `throw new Error()` e verifica il retry
+- **Success:** aggiungi note e verificale in lista
+
+## Screenshot attesi
+
+**Stato empty**
+
+![Lab 04 - Stato empty](imgs/lab_04_empty.png)
+
+**Stato success con note**
+
+![Lab 04 - Stato success con note](imgs/lab_04_success.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -56,22 +83,21 @@ Se non riesci a mostrare uno stato, il flow non è completo.
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
 - expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native usestate loading error
+- react native retry pattern

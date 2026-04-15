@@ -1,11 +1,12 @@
-# Lab 03 - Esercitazione - Environment setup hands-on: Expo workflow, CLI workflow, Android emulators, device testing
+# Lab 03 – Setup ambiente: Expo, CLI, emulatori
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 03 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Setup completo e verificabile: Metro, emulator/device, logs.
+- Crea una checklist riusabile per tutto il corso.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,27 +14,82 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Setup completo e verificabile: ogni studente deve riuscire ad avviare l’app e a fare debug di base su emulator o device. L’obiettivo è avere una checklist riusabile per tutto il corso.
+Ogni studente deve dimostrare di poter avviare l'app, eseguire un test di interazione, e trovare i log sia nel terminale Metro sia nel device.
 
-## Step (numerati)
+> **Perché questo lab:** avere una checklist di setup solida evita perdite di tempo nei lab successivi.
 
-1. Verifica Node.js LTS e crea un progetto Expo.
-2. Avvia l’app e documenta: come aprirla su emulator e come su device reale.
-3. Esegui `npx expo start -c` e spiega quando serve.
-4. Aggiungi un `console.log` in `useEffect` e verifica dove compare (terminal/device).
-5. Se la rete dà problemi: prova `--tunnel` e annota pro/contro.
-6. Consegna una checklist in fondo al file del lab (10 punti).
+## Cosa imparerai
 
-## Output atteso
+1. Come avviare un progetto Expo con `npx expo start`.
+2. Quando usare `--tunnel` (rete bloccata) e `-c` (cache corrotta).
+3. Dove appaiono i `console.log`: terminale Metro vs debugger device.
+4. Come verificare la connessione con `adb devices`.
 
-- App eseguibile su emulatore o device
+## Starter pattern (solo promemoria)
+
+```tsx
+import React from "react";
+import { Pressable, Text, View } from "react-native";
+
+export default function App() {
+  const [status, setStatus] = React.useState("ready");
+
+  React.useEffect(() => {
+    console.log("App mounted");
+  }, []);
+
+  return (
+    <View style={{ padding: 24, gap: 12 }}>
+      <Text>Status: {status}</Text>
+      <Pressable onPress={() => setStatus("button pressed")}>
+        <Text>Test interaction</Text>
+      </Pressable>
+    </View>
+  );
+}
+```
+
+## Passi
+
+1. **Verifica Node.js** — `node -v` deve mostrare LTS. Crea un progetto con `npx create-expo-app`.
+2. **Avvia l'app** — Esegui `npx expo start` e apri su emulator o device reale.
+3. **Cache** — Esegui `npx expo start -c` e spiega quando serve (bundle vecchio, errori strani).
+4. **Log** — Aggiungi `console.log("App mounted")` in un `useEffect` e verifica dove appare.
+5. **Tunnel** — Se la rete dà problemi, prova `npx expo start --tunnel` e annota pro/contro.
+6. **Checklist** — In fondo al file, scrivi una checklist di 10 punti per il setup.
+
+## Comandi utili
+
+```bash
+npx create-expo-app my-app --template blank-typescript
+cd my-app
+npx expo start
+npx expo start --tunnel
+npx expo start -c
+adb devices
+```
+
+## Screenshot attesi
+
+**App avviata**
+
+![Lab 03 - App avviata](imgs/lab_03_main.png)
+
+**Console log**
+
+![Lab 03 - Console log](imgs/lab_03_logs.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -42,33 +98,22 @@ Setup completo e verificabile: ogni studente deve riuscire ad avviare l’app e 
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-Nota Android (ADB):
+> **Guida ADB:** vedi Cheat Sheet → §31 nel file `00_cheatsheet_react-native-programming_en.md`.
 
-- Se `adb devices` mostra `unauthorized`: sblocca il telefono, accetta il prompt di USB debugging, poi riprova.
-
-> **Guida completa ADB (installazione + comandi + wireless debugging):** vedi **Cheat Sheet → §31 · ADB guide (Ubuntu / macOS / Windows)** nel file `00_cheatsheet_react-native-programming_en.md`.
-
-Ordine di reset (prova in sequenza):
-
-1) Reload dell’app
-2) Restart Metro
-3) `npx expo start -c`
-4) Restart emulator/device
-
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
 - expo start --tunnel
 - adb devices

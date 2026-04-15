@@ -1,11 +1,11 @@
-# Lab 19 - Esercitazione - Global state: Context / Redux / Zustand (tradeoffs and patterns)
+# Lab 19 – Stato globale: Context / Redux / Zustand
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 19 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Context + Provider con `useState`.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,39 +13,47 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Implementa una feature che richiede stato condiviso tra *almeno due* schermate.
+Context + Provider con `useState`. Hook custom per consumare il contesto. Toggle tema light/dark.
 
-Scegli UNO scenario:
+> **Perché questo lab:** esercitare i pattern della lezione 19 in una mini-app concreta.
 
-- “Preferiti”: aggiungi/rimuovi un item dai preferiti in una schermata e visualizzalo in un’altra
-- “Theme toggle”: cambia un’impostazione globale e usala in due schermate
+## Cosa imparerai
 
-## Step (numerati)
+1. Come creare un Context con `React.createContext`.
+2. Come creare un Provider che wrappa l'app.
+3. Come consumare il contesto con `React.useContext`.
+4. Il pattern theme toggle: light ↔ dark.
 
-1. Avvia l’app e verifica navigazione/2 schermate (o crea due schermate).
-1. Implementa uno stato globale con Context + reducer:
+## Passi
 
-- stato minimo (es. `favorites: string[]` oppure `theme: 'light' | 'dark'`)
-- azioni minime (add/remove o toggle)
+1. **Avvia progetto** — verifica che l'app parta.
+2. **ThemeContext** — `React.createContext({ theme: "light", toggleTheme: () => {} })`.
+3. **ThemeProvider** — Usa `useState("light")` e una funzione `toggleTheme`.
+4. **Screen** — Usa `React.useContext(ThemeContext)` per leggere il tema e mostrare un toggle.
+5. **App.tsx** — Wrappa `<Screen />` con `<ThemeProvider>`.
+6. **Edge case** — Cambia lo sfondo in base al tema (light → bianco, dark → #333).
 
-1. Consuma lo stato in due schermate:
+## Screenshot attesi
 
-- una schermata aggiorna lo stato
-- una schermata legge e mostra lo stato
+**Theme light**
 
-1. Edge case obbligatorio: gestisci uno stato vuoto (es. “nessun preferito”).
-1. (Bonus, 5 minuti) Scrivi 3 righe di riflessione: perché qui basta Context? quando preferiresti Zustand/Redux?
-1. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+![Lab 19 - Theme light](imgs/lab_19_light.png)
 
-## Output atteso
+**Theme dark**
 
-- Stato globale aggiornabile e visibile in più schermate
-- Edge case gestito: stato vuoto con messaggio chiaro
+![Lab 19 - Theme dark](imgs/lab_19_dark.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
+- UI chiara e leggibile
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -54,22 +62,21 @@ Scegli UNO scenario:
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react context provider usecontext
+react native theme toggle
+creatcontext react native

@@ -1,11 +1,11 @@
-# Lab 22 - Esercitazione - Native features: camera/location/sensors; permissions and security
+# Lab 22 – Funzionalità native: posizione, permessi e sicurezza
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 22 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Flusso permission-first: richiedi permesso → leggi dato.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,47 +13,52 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Implementa **UNA** feature che usa una capacità nativa:
+Flusso permission-first: richiedi permesso → leggi dato. Fallback se negato con link a Settings.
 
-- camera **oppure** location **oppure** un sensore
+> **Perché questo lab:** esercitare i pattern della lezione 22 in una mini-app concreta.
 
-La feature deve avere una UX “permission-first”:
+## Cosa imparerai
 
-- richiedi il permesso solo dopo un’azione utente
-- gestisci denial e “non disponibile” senza crash
-- spiega in UI perché la permission serve (privacy/security mindset)
+1. Come installare `expo-location`.
+2. Come richiedere un permesso con `requestForegroundPermissionsAsync`.
+3. Come gestire il rifiuto del permesso con UI fallback.
+4. Come aprire le Settings del device con `Linking.openSettings()`.
 
-## Step (numerati)
+## Dipendenze (Expo)
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-1. Scegli una capability (camera/location/sensori) e installa **solo** il package necessario (Expo workflow).
-1. Implementa una UI con un bottone “Start/Request” che:
+```bash
+npx expo install expo-location
+```
 
-    - chiede permesso (just-in-time)
-    - se granted, esegue l’azione (es. legge posizione / apre camera)
+## Passi
 
-1. Modella stati espliciti (esempio): `idle/requesting/denied/error/success`.
-1. Edge case obbligatorio (scegline almeno uno e rendilo dimostrabile):
+1. **Installa** — `npx expo install expo-location`.
+2. **Funzione askLocation()** — Richiede permesso e ritorna "granted" o "denied".
+3. **UI per ogni stato** — unknown / denied / granted con lat/lng.
+4. **Fallback su denied** — Pulsante "Open Settings" che chiama `Linking.openSettings()`.
+5. **Edge case** — Nega il permesso e verifica che l'app resta usabile.
 
-    - permesso negato
-    - feature non disponibile su emulatore/device
-    - errore runtime (try/catch + messaggio)
+## Screenshot attesi
 
-1. (Bonus) Aggiungi un’azione “Apri impostazioni” quando la permission è negata.
-1. Se utile, organizza in moduli: `screens/`, `components/`, `services/`.
-1. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-1. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+**Permesso richiesto**
 
-## Output atteso
+![Lab 22 - Permesso richiesto](imgs/lab_22_permission.png)
 
-- App eseguibile su emulatore o device
+**Location**
+
+![Lab 22 - Location](imgs/lab_22_location.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -62,22 +67,21 @@ La feature deve avere una UX “permission-first”:
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- expo-location permissions
+react native linking openSettings
+expo install expo-location

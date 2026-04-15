@@ -1,11 +1,11 @@
-# Lab 16 - Esercitazione - REST calls with fetch / Axios; async handling
+# Lab 16 – Fetch / Axios e chiamate REST
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 16 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Carica dati da REST API con `fetch`, mostra in `FlatList`.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,43 +13,46 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Realizza una schermata che carica dati da una REST API e li mostra in UI.
+Carica dati da REST API con `fetch`, mostra in `FlatList`. Gestisci loading / error / success.
 
-Scegli UNA API tra queste (o equivalente):
+> **Perché questo lab:** esercitare i pattern della lezione 16 in una mini-app concreta.
 
-- <https://jsonplaceholder.typicode.com/posts>
-- <https://dummyjson.com/products>
+## Cosa imparerai
 
-## Step (numerati)
+1. Come usare `fetch` con controllo `res.ok`.
+2. Come gestire errori HTTP (non trattarli come successo).
+3. Come mostrare i dati con `FlatList`.
+4. Il pattern load → .then → .catch.
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Crea un modulo `services/` con UNA funzione (es. `getPosts()` o `getProducts()`).
-3. Implementa la chiamata con `fetch` (oppure Axios se preferisci):
+## Passi
 
-- gestisci errori di rete
-- gestisci HTTP non-2xx (non trattarli come successo)
+1. **Avvia progetto** — verifica che l'app parta.
+2. **Funzione loadPosts()** — `fetch` da `jsonplaceholder.typicode.com/posts?_limit=5` con controllo `res.ok`.
+3. **Schermata** — 3 stati: loading, error (con Retry), success (FlatList).
+4. **useEffect** — Chiama `load()` al mount.
+5. **Edge case** — Simula errore (URL sbagliata) e mostra messaggio con pulsante Retry.
 
-1. Nella schermata, mostra stati espliciti:
+## Screenshot attesi
 
-- loading
-- error (con pulsante Retry)
-- empty (se lista vuota)
-- success (lista)
+**Posts**
 
-1. Edge case obbligatorio: simula un errore (es. URL sbagliato) e mostra un messaggio chiaro.
-2. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+![Lab 16 - Posts](imgs/lab_16_main.png)
 
-## Output atteso
+**Errore**
 
-- App eseguibile su emulatore o device
+![Lab 16 - Errore](imgs/lab_16_error.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno una schermata con dati REST + stati (loading/error/empty/success)
-- Edge case dimostrabile (errore rete o HTTP non-2xx)
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -58,22 +61,21 @@ Scegli UNA API tra queste (o equivalente):
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- fetch api react native
+jsonplaceholder posts
+react native flatlist data

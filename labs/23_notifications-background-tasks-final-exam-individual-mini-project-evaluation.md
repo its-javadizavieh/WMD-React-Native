@@ -1,11 +1,11 @@
-# Lab 23 - Esercitazione - Notifications + background tasks; mini-project readiness
+# Lab 23 – Notifiche, background task ed esame finale
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 23 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Scheduling notifica locale con `expo-notifications`.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,50 +13,49 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Implementa una feature minima di **notifiche locali** (Expo Notifications) con permission-first UX.
+Scheduling notifica locale con `expo-notifications`. Flusso permessi e gestione rifiuto. Esame finale.
 
-In più, prepara il progetto per la consegna del **mini-progetto individuale**: deve essere riproducibile, demo-able e con cleanup chiaro.
+> **Perché questo lab:** esercitare i pattern della lezione 23 in una mini-app concreta.
 
-## Step (numerati)
+## Cosa imparerai
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-1. Installa Expo Notifications e riavvia Metro.
-1. Crea una schermata con UI a stati espliciti (esempio):
+1. Come installare `expo-notifications`.
+2. Come richiedere permesso notifiche.
+3. Come schedulare una notifica locale con timer.
+4. Come gestire il rifiuto permesso con fallback UI.
 
-    - `idle` (spiega cosa farà)
-    - `requesting` (permission/check)
-    - `denied` (fallback + spiegazione)
-    - `scheduled` (conferma)
-    - `error` (messaggio + retry)
+## Dipendenze (Expo)
 
-1. Permission-first flow:
+```bash
+npx expo install expo-notifications
+```
 
-    - controlla permessi
-    - richiedi solo quando serve
-    - gestisci denial senza bloccare l’app
+## Passi
 
-1. Programma una notifica locale (es. tra 3–10 secondi) e mostra feedback in UI.
-1. Edge case obbligatorio: permesso negato (e, su Android, assicurati che il canale esista).
-1. Background constraints (nota scritta, 3 righe): perché la delivery non è garantita e come lo comunichi in UX.
-1. Checklist “pronto per consegna” (verifica almeno questi punti):
+1. **Installa** — `npx expo install expo-notifications`.
+2. **setNotificationHandler** — Config per mostrare alert su notifica ricevuta.
+3. **Funzione schedule()** — Richiede permesso, poi schedula una notifica a 5 secondi.
+4. **UI per ogni stato** — idle / denied / scheduled.
+5. **Edge case** — Nega il permesso e verifica il messaggio.
+6. **Esame finale** — Questa è anche la struttura per il mini-progetto individuale.
 
-    - `npm install` / install pulita
-    - `npx expo start -c` funziona
-    - `git status` pulito (o modifiche spiegate)
-    - demo 30–60 secondi con edge case
+## Screenshot attesi
 
-1. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+**Notifica schedulata**
 
-## Output atteso
+![Lab 23 - Notifica schedulata](imgs/lab_23_main.png)
 
-- App eseguibile su emulatore o device
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -65,22 +64,21 @@ In più, prepara il progetto per la consegna del **mini-progetto individuale**: 
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- expo-notifications schedule
+expo install expo-notifications
+react native local notification

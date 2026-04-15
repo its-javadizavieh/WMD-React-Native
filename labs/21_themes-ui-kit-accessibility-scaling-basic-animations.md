@@ -1,11 +1,11 @@
-# Lab 21 - Esercitazione - Themes/UI kit; accessibility + scaling; basic animations
+# Lab 21 – Temi, UI kit, accessibilità e animazioni base
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 21 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Oggetto `theme` con design tokens.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,49 +13,43 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Costruisci una mini “UI kit demo” composta da:
+Oggetto `theme` con design tokens. `accessibilityRole` e `maxFontSizeMultiplier` per a11y.
 
-- **theme tokens** (almeno spacing + typography + radius)
-- **2–3 primitive riutilizzabili** (es. `Card`, `PrimaryButton`, `Title`)
-- **1 miglioramento accessibilità/scaling** verificabile
-- **1 animazione base** (feedback su press, expand, ecc.)
+> **Perché questo lab:** esercitare i pattern della lezione 21 in una mini-app concreta.
 
-Obiettivo: una schermata che mostra coerenza visiva, leggibilità e feedback (non una palette o design system completo).
+## Cosa imparerai
 
-## Step (numerati)
+1. Come creare un oggetto theme con spacing, radius, fontSize.
+2. Come usare `accessibilityRole="button"` sui Pressable.
+3. Come usare `maxFontSizeMultiplier` per limitare il scaling del testo.
+4. Come dare feedback visivo con opacity su `pressed`.
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-1. Crea un file di theme tokens (es. `src/ui/theme.ts`) con:
+## Passi
 
-    - `spacing` (pochi valori)
-    - `typography` (2–3 size)
-    - `radius`
+1. **Avvia progetto** — verifica che l'app parta.
+2. **Theme object** — `const theme = { spacing: 12, radius: 12, titleSize: 20 }`.
+3. **Card** — Componente che usa `theme.spacing` e `theme.radius`.
+4. **Pressable accessibile** — `accessibilityRole="button"`, opacity su pressed.
+5. **maxFontSizeMultiplier** — Aggiungi a `Text` per limitare il scaling.
+6. **Edge case** — Aumenta la font size del device e verifica che il layout regga.
 
-1. Crea 2–3 primitive riutilizzabili (es. `Card`, `PrimaryButton`) che usano i tokens.
-1. Costruisci una schermata demo usando *solo* quelle primitive (no duplicazioni inutili).
-1. Accessibilità/scaling obbligatorio:
+## Screenshot attesi
 
-    - aggiungi `accessibilityRole`/`accessibilityLabel` dove serve
-    - verifica font scaling / testo lungo: il layout resta leggibile (wrap, no overflow)
+**UI kit demo**
 
-1. Animazione base obbligatoria:
+![Lab 21 - UI kit demo](imgs/lab_21_main.png)
 
-    - feedback su press (scale/opacity) oppure piccola transizione
 
-1. Edge case obbligatorio: testo lungo + font grandi → UI ancora leggibile.
-1. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-1. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Consegna minima
 
-## Output atteso
-
-- App eseguibile su emulatore o device
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -64,22 +58,21 @@ Obiettivo: una schermata che mostra coerenza visiva, leggibilità e feedback (no
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native accessibilityRole
+maxFontSizeMultiplier react native
+design tokens react native

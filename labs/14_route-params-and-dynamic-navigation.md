@@ -1,11 +1,11 @@
-# Lab 14 - Esercitazione - Route params and dynamic navigation
+# Lab 14 – Parametri di route e navigazione dinamica
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 14 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Lista con `FlatList` → navigazione a dettaglio con `id`.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,39 +13,46 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Partendo da un’app con navigazione (o creandola da zero), implementa un flusso **lista → dettaglio** dove la schermata di dettaglio dipende da un **route param** (tipicamente un `id`).
+Lista con `FlatList` → navigazione a dettaglio con `id`. Validazione parametro: id mancante o item non trovato.
 
-L’obiettivo è dimostrare che:
+> **Perché questo lab:** esercitare i pattern della lezione 14 in una mini-app concreta.
 
-- navighi passando un param valido
-- la schermata di dettaglio **valida** il param (input non affidabile)
-- gestisci esplicitamente: param mancante/invalid e id non trovato
+## Cosa imparerai
 
-## Step (numerati)
+1. Come passare parametri con `navigation.navigate("Details", { id: item.id })`.
+2. Come leggere i parametri con `route.params?.id`.
+3. Come validare parametri (difensivo): se mancano → fallback UI.
+4. Come cercare un item nel dataset e gestire "non trovato".
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-1. Crea (o riusa) uno stack con `Home` (lista) e `Details` (dettaglio).
-1. In `Home`, naviga a `Details` passando il minimo indispensabile (es. `{ id }`).
-1. In `Details`, leggi il param da `route.params` e validalo:
+## Passi
 
-    - id mancante o tipo sbagliato → stato “Param non valido” + pulsante Back
+1. **Installa dipendenze** — React Navigation (se non già presente).
+2. **HomeScreen** — `FlatList` con 3 items. Ogni riga naviga a Details con l'`id`.
+3. **DetailsScreen** — Legge `route.params?.id`, cerca l'item nel dataset.
+4. **Fallback** — Se `id` manca → "Invalid route param". Se item non esiste → "Product not found".
+5. **Go back** — Pulsante per tornare.
 
-1. Edge case obbligatorio: gestisci `id` valido ma non presente nella sorgente dati → stato “Not found” + Back.
-1. Aggiungi un modo per riprodurre l’errore (es. bottone “vai a Details senza param”).
-1. Se utile, organizza in moduli: `screens/`, `components/`, `services/`.
-1. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-1. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Screenshot attesi
 
-## Output atteso
+**Lista items**
 
-- App eseguibile su emulatore o device
+![Lab 14 - Lista items](imgs/lab_14_list.png)
+
+**Dettaglio**
+
+![Lab 14 - Dettaglio](imgs/lab_14_details.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -54,22 +61,20 @@ L’obiettivo è dimostrare che:
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react navigation route params
+flatlist navigation react native

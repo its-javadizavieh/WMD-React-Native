@@ -1,11 +1,12 @@
-# Lab 07 - Esercitazione - React Native base components (Part 1)
+# Lab 07 – Componenti base React Native (Parte 1)
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 07 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Costruisci una schermata usando `View`, `Text`, `Image`, `ScrollView`, `Pressable`.
+- Implementa un fallback per immagini mancanti.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,64 +14,87 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Devi realizzare una **schermata statica ma curata** usando solo i componenti base (Part 1) e una struttura leggibile.
+Realizza una schermata "Profile + Highlights": un header con avatar e nome, una card con contenuti, un bottone interattivo.
 
-Tema suggerito: “Profile + Highlights”.
+> **Perché questo lab:** conoscere i componenti primitivi è la base. Ogni schermata che costruirai userà `View`, `Text`, `Image`, `Pressable`.
 
-## Step (numerati)
+## Cosa imparerai
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Implementa una schermata che contenga **almeno**:
+1. Come comporre la UI con `View` (contenitore), `Text` (testo), `Image` (immagini).
+2. Come usare `ScrollView` per contenuti che possono overflow.
+3. Come gestire immagini mancanti con `onError` e fallback.
+4. Come dare feedback visivo con `Pressable` e `pressed` state.
 
-    - una sezione header con `Image` + `Text`
-    - una card (anche semplice) con contenuti testuali
-    - un’area interattiva con `Pressable` (anche solo per loggare/mostrare un messaggio)
+## Starter pattern (solo promemoria)
 
-3. Usa `ScrollView` se la schermata può andare in overflow (anche solo per abitudine corretta).
-4. Gestisci **1 edge case** legato ai componenti base:
+```tsx
+import { Image, Pressable, Text, View } from "react-native";
 
-    - immagine mancante → fallback (iniziali o placeholder)
-    - testo troppo lungo → layout ancora leggibile
+<View style={{ padding: 16, gap: 12 }}>
+  <Text style={{ fontSize: 20, fontWeight: "600" }}>Title</Text>
+  <Image
+    source={{ uri: "https://picsum.photos/200" }}
+    style={{ width: 200, height: 120, borderRadius: 12 }}
+  />
+  <Pressable onPress={() => {}} style={{ padding: 10, borderWidth: 1, borderRadius: 8 }}>
+    <Text style={{ fontWeight: "600" }}>Tap</Text>
+  </Pressable>
+</View>
+```
 
-5. Mantieni lo stile semplice ma coerente: spaziature costanti, allineamenti chiari.
-6. Demo rapida (30–60 secondi) spiegando le scelte di layout.
-7. Cleanup obbligatorio e verifica che il progetto riparta pulito.
+## Passi
 
-## Output atteso
+1. **Avvia progetto Expo** — verifica che l'app parta.
+2. **Header** — Crea un layout orizzontale (`flexDirection: "row"`) con un avatar `Image` e un testo.
+3. **Card** — Una `View` con bordi, padding e contenuti testuali.
+4. **Bottone** — Un `Pressable` con feedback `opacity: 0.6` quando premuto.
+5. **Fallback immagine** — Se l'URL è sbagliato, mostra un `?` al posto dell'immagine usando `onError`.
+6. **ScrollView** — Wrappa tutto in `ScrollView` per gestire overflow.
 
-- App eseguibile su emulatore o device
+## Screenshot attesi
+
+**Profilo con avatar**
+
+![Lab 07 - Profilo con avatar](imgs/lab_07_main.png)
+
+**Fallback immagine**
+
+![Lab 07 - Fallback immagine](imgs/lab_07_fallback.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
 - [ ] Avvio progetto senza errori
 - [ ] Feature completata e dimostrabile
 - [ ] Edge case gestito con messaggio chiaro
-- [ ] Uso corretto di `View`/`Text`/`Image`/`Pressable`
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native image onError fallback
+- react native scrollview vs flatlist
+- pressable pressed state react native

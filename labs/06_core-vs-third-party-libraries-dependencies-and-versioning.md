@@ -1,11 +1,12 @@
-# Lab 06 - Esercitazione - Core vs third-party libraries; dependencies and versioning
+# Lab 06 – Librerie core e terze parti, dipendenze e versioning
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 06 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Implementa una feature di rete con `fetch` (o Axios).
+- Gestisci errori HTTP esplicitamente.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,57 +14,60 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Devi aggiungere **una piccola feature di rete** (fetch di dati) e dimostrare di saper gestire **dipendenze e versioning** in modo disciplinato.
+Carica una lista di todos da `https://jsonplaceholder.typicode.com/todos?_limit=5` e mostrala con `FlatList`. Gestisci loading, error e success.
 
-Scegli una di queste due opzioni (una sola):
+> **Perché questo lab:** capire la differenza tra usare solo `fetch` (zero dipendenze) e aggiungere Axios (più comodo ma +1 dipendenza). In produzione questa scelta ha impatto su bundle size e manutenibilità.
 
-- **Opzione A (core-only):** implementa la feature usando solo `fetch`.
-- **Opzione B (third-party):** implementa la feature usando **Axios**.
+## Cosa imparerai
 
-In entrambi i casi devi documentare *perché* hai scelto quella strada.
+1. Come usare `fetch` con controllo `res.ok` per errori HTTP.
+2. Come gestire una lista di dati con `FlatList`.
+3. Come scegliere tra libreria core e terza parte.
+4. Come documentare le dipendenze nel README.
 
-## Step (numerati)
+## Starter pattern (solo promemoria)
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Crea un piccolo servizio `services/api.ts` con una funzione `fetchTodos(limit)` che legga da:
+```tsx
+async function fetchTodos() {
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/todos?_limit=5"
+  );
+  if (!res.ok) throw new Error("Request failed");
+  return res.json();
+}
+```
 
-- `https://jsonplaceholder.typicode.com/todos?_limit=10`
+## Passi
 
-1. Implementa una UI con **3 stati espliciti**: `loading`, `error`, `success`.
-2. Gestisci **1 edge case** a scelta:
+1. **Avvia progetto Expo** — verifica che l'app parta.
+2. **Funzione fetch** — Crea `fetchTodos()` che carica i dati e controlla `res.ok`.
+3. **Mostra la lista** — Usa `FlatList` con `keyExtractor` per mostrare i todos.
+4. **3 stati UI** — `loading` (testo), `error` (pulsante Retry), `success` (lista).
+5. **Edge case** — Simula un errore (URL sbagliata) e mostra il messaggio di errore con Retry.
+6. **README** — Documenta: cosa hai scelto (fetch o Axios), perché, nota su lockfile.
 
-- rete offline / errore HTTP
-- risposta vuota (0 elementi)
+## Screenshot attesi
 
-1. Se scegli l’**Opzione B (Axios)**:
+**Lista todos**
 
-- installa `axios` e verifica che siano stati aggiornati `package.json` e lockfile
-- mostra l’albero dipendenze con `npm ls axios` (va bene anche solo in terminale)
+![Lab 06 - Lista todos](imgs/lab_06_main.png)
 
-Nota Expo:
+**Stato errore**
 
-- `axios` è una libreria **pure JS**, quindi `npm install axios` va bene.
-- Per molte librerie con moduli nativi (camera, maps, ecc.), in Expo è spesso preferibile `npx expo install <pkg>` per avere versioni compatibili con l’SDK.
+![Lab 06 - Stato errore](imgs/lab_06_error.png)
 
-1. Documenta in `README.md` una sezione “Dependencies” con 3 righe:
 
-- cosa hai aggiunto (o perché non hai aggiunto nulla)
-- quale beneficio ottieni
-- una nota su lockfile/versioning (1 frase)
+## Consegna minima
 
-1. Esegui una demo rapida (30–60 secondi).
-2. Cleanup obbligatorio e verifica che il progetto riparta pulito.
-
-## Consiglio\n\nEvitare \"upgrade random\" durante lo sviluppo della feature. Aggiorna una cosa per volta e verifica subito.\n\n## Output atteso
-
-- App eseguibile su emulatore o device
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
+
 - `README.md` aggiornato con motivazione (core vs third-party)
 
 ## Checkpoint
@@ -71,26 +75,23 @@ Nota Expo:
 - [ ] Avvio progetto senza errori
 - [ ] Feature completata e dimostrabile
 - [ ] Edge case gestito con messaggio chiaro
-- [ ] Lockfile presente e coerente
-- [ ] Motivazione dipendenze scritta in `README.md`
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- fetch api react native
+- axios vs fetch react native
+- jsonplaceholder api

@@ -1,11 +1,12 @@
-# Lab 01 - Esercitazione - Introduction, RN vs React JS, pros/cons, architecture overview, setup overview (Expo/CLI/emulators)
+# Lab 01 – Introduzione a React Native vs React JS
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 01 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Crea la tua prima app Expo e verifica il setup end-to-end.
+- Costruisci una schermata con componenti e interazione base.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,27 +14,71 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Crea la tua prima mini-app Expo e costruisci 1 schermata ‘About this app’ che spiega, con testo e layout, la differenza tra React Native e React JS.
+Crea una mini-app Expo con una schermata "Hello React Native". La schermata deve contenere un titolo, un componente che riceve una prop `name`, e un contatore con `Pressable`.
 
-## Step (numerati)
+> **Perché questo lab:** verificare che Metro + Fast Refresh funzionino, e che sai costruire un componente con props e stato.
 
-1. Crea un nuovo progetto Expo e avvialo (`npx expo start`).
-2. Sostituisci il contenuto di `App` con una schermata che contiene: titolo, 2 paragrafi, 1 lista puntata.
-3. Estrai un componente `Greeting` che riceve `name` via props e mostrane l’uso nella UI.
-4. Aggiungi uno StyleSheet con: spacing coerente, testo grande per il titolo, centratura con flexbox.
-5. Esegui la demo su device o emulatore e verifica Fast Refresh modificando una stringa.
-6. Esegui cleanup obbligatorio e annota 3 problemi tipici di setup + soluzione.
+## Cosa imparerai
 
-## Output atteso
+1. Come creare un progetto Expo da zero.
+2. Come funziona il ciclo: salva → Fast Refresh → vedi il cambiamento.
+3. Come passare dati ai componenti tramite props.
+4. Come aggiungere interazione con `useState` e `Pressable`.
 
-- App eseguibile su emulatore o device
+## Starter pattern (solo promemoria)
+
+```tsx
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+function Greeting({ name }: { name: string }) {
+  return <Text>Ciao {name}</Text>;
+}
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Greeting name="Student" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { padding: 24 },
+});
+```
+
+## Passi
+
+1. **Crea il progetto** — Esegui `npx create-expo-app MyFirstApp --template blank-typescript` e poi `cd MyFirstApp && npx expo start`.
+2. **Schermata base** — Sostituisci il contenuto di `App.tsx` con: un titolo "Hello React Native", un testo che spiega la differenza tra RN e React JS.
+3. **Componente Greeting** — Crea una funzione `Greeting` che riceve `{ name: string }` e la mostra nell'UI.
+4. **Aggiungi contatore** — Usa `React.useState(0)` per un contatore e un `Pressable` per incrementarlo.
+5. **Aggiungi stili** — Crea un `StyleSheet.create` con spacing, font size per il titolo, bordi per il bottone.
+6. **Test Fast Refresh** — Modifica una stringa, salva e verifica che l'app si aggiorni senza reload manuale.
+7. **Edge case** — Se `name` è vuoto, mostra "student" come fallback.
+
+## Screenshot attesi
+
+**Schermata principale**
+
+![Lab 01 - Schermata principale](imgs/lab_01_main.png)
+
+**Contatore incrementato**
+
+![Lab 01 - Contatore incrementato](imgs/lab_01_counter.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -42,24 +87,22 @@ Crea la tua prima mini-app Expo e costruisci 1 schermata ‘About this app’ ch
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-Se la rete LAN è bloccata (VPN / Wi‑Fi isolato), prova:
+Se la rete LAN è bloccata (VPN / Wi‑Fi isolato), prova `npx expo start --tunnel`.
 
-- `npx expo start --tunnel`
-
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
 - npx create-expo-app
 - expo start -c

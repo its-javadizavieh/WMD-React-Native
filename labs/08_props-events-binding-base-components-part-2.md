@@ -1,11 +1,12 @@
-# Lab 08 - Esercitazione - Props, events, binding; base components (Part 2)
+# Lab 08 – Props, eventi e binding (Componenti base Parte 2)
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 08 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Crea componenti riusabili con props e callback.
+- Collega `TextInput` e `Switch` allo stato.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,69 +14,94 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Devi costruire una mini UI “Settings” per esercitare **props, eventi (callback) e binding** usando componenti base (Part 2).
+Costruisci una mini schermata "Settings" con righe riusabili. Ogni riga ha un label, una descrizione ed un elemento a destra (`TextInput` o `Switch`).
 
-Obiettivo: ottenere componenti riutilizzabili con contratti chiari.
+> **Perché questo lab:** il pattern "data down, events up" è la base di React. I componenti figli non decidono cosa fare, chiamano callback passate dal genitore.
 
-## Step (numerati)
+## Cosa imparerai
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-2. Crea un componente riutilizzabile `SettingRow` (o simile) con props:
+1. Come creare un componente con props `label`, `value`, `right` (ReactNode).
+2. Come collegare `TextInput` con `value` + `onChangeText`.
+3. Come collegare `Switch` con `value` + `onValueChange`.
+4. Il pattern "data down, events up" in pratica.
 
-    - `label: string`
-    - `description?: string`
-    - `right: ReactNode` (o un’alternativa equivalente)
+## File da creare
 
-3. Nella schermata principale, crea 2 righe impostazioni:
+```
+components/SettingRow.tsx
+App.tsx
+```
 
-    - una con `TextInput` (binding con `value` + `onChangeText`)
-    - una con `Switch` (binding con `value` + `onValueChange`)
+## Starter pattern (solo promemoria)
 
-4. Definisci **eventi chiari**: i componenti figli non devono “decidere” cosa fare, ma chiamare callback.
-5. Gestisci **1 edge case**:
+```tsx
+function SettingRow(
+  { label, value, onPress }: { label: string; value: string; onPress: () => void }
+) {
+  return (
+    <Pressable onPress={onPress} style={{ padding: 12, borderWidth: 1, borderRadius: 12 }}>
+      <Text style={{ fontWeight: "600" }}>{label}</Text>
+      <Text>{value}</Text>
+    </Pressable>
+  );
+}
+```
 
-    - input vuoto → messaggio o stato “non valido”
-    - input con soli spazi → trim
+## Passi
 
-6. Demo rapida: spiega in 3 frasi “data down, events up”.
-7. Cleanup obbligatorio e verifica che il progetto riparta pulito.
+1. **Avvia progetto Expo** — verifica che l'app parta.
+2. **SettingRow** — Crea `components/SettingRow.tsx` con props: `label`, `value`, `right` (ReactNode).
+3. **Riga con TextInput** — Usa SettingRow con un `TextInput` nel slot `right`.
+4. **Riga con Switch** — Usa SettingRow con un `Switch` nel slot `right`.
+5. **Validazione** — Se il nome è troppo corto (< 2 caratteri), mostra "Name is too short".
+6. **Demo** — Spiega in 3 frasi: "i dati scendono via props, gli eventi risalgono via callback".
 
-## Output atteso
+## Screenshot attesi
 
-- App eseguibile su emulatore o device
+**Settings screen**
+
+![Lab 08 - Settings screen](imgs/lab_08_main.png)
+
+**Validazione nome**
+
+![Lab 08 - Validazione nome](imgs/lab_08_validation.png)
+
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
-- Almeno 1 componente riutilizzabile con props ben definite
+- Un edge case gestito con un messaggio chiaro
+
+- Almeno 1 componente riutilizzabile con props
 
 ## Checkpoint
 
 - [ ] Avvio progetto senza errori
 - [ ] Feature completata e dimostrabile
 - [ ] Edge case gestito con messaggio chiaro
-- [ ] Props ed eventi (callback) coerenti e leggibili
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react native props callback
+- react native switch component
+- data down events up react

@@ -1,11 +1,11 @@
-# Lab 20 - Esercitazione - UI styling: StyleSheet + Flexbox + responsive mindset
+# Lab 20 – UI styling: StyleSheet, flexbox e responsive
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 20 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Layout responsive con `useWindowDimensions`.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,42 +13,47 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Realizza una schermata UI con layout Flexbox e styling tramite StyleSheet, che si adatta a schermi diversi (narrow vs wide / portrait vs landscape).
+Layout responsive con `useWindowDimensions`. Flexbox: colonna su mobile, riga su tablet.
 
-## Step (numerati)
+> **Perché questo lab:** esercitare i pattern della lezione 20 in una mini-app concreta.
 
-1. Crea una schermata con:
+## Cosa imparerai
 
-   - header (titolo + descrizione breve)
-   - contenuto (lista di card o griglia semplice)
+1. Come usare `useWindowDimensions` per rilevare la larghezza.
+2. Come cambiare layout con un breakpoint (`width >= 600`).
+3. Come usare `flexDirection: "row"` vs `"column"`.
+4. Come definire spacing tokens per coerenza.
 
-1. Usa StyleSheet (no stile “sparso” ovunque):
+## Passi
 
-   - stili riutilizzabili
-   - composizione con array di stili quando serve
+1. **Avvia progetto** — verifica che l'app parta.
+2. **Breakpoint** — `const isWide = width >= 600` tramite `useWindowDimensions()`.
+3. **Layout condizionale** — `flexDirection: isWide ? "row" : "column"`.
+4. **Spacing tokens** — `const SPACING = { sm: 4, md: 8, lg: 16 }` usati negli stili.
+5. **Due card** — Mostrate in colonna su mobile, in riga su tablet.
+6. **Edge case** — Testo lungo che wrappa correttamente.
 
-1. Usa Flexbox in modo intenzionale:
+## Screenshot attesi
 
-   - `flexDirection`, `justifyContent`, `alignItems`
-   - spaziature coerenti (padding/margin)
+**Layout mobile**
 
-1. Responsive obbligatorio:
+![Lab 20 - Layout mobile](imgs/lab_20_mobile.png)
 
-   - cambia layout in base a larghezza/orientamento (narrow vs wide)
+**Layout tablet**
 
-1. Edge case obbligatorio: gestisci testo lungo o device piccolo senza “tagli brutti” (layout ancora leggibile).
-1. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+![Lab 20 - Layout tablet](imgs/lab_20_tablet.png)
 
-## Output atteso
 
-- UI chiara e leggibile con StyleSheet + Flexbox
-- Due layout diversi (narrow vs wide)
-- Edge case gestito: leggibilità anche con contenuti lunghi/piccoli schermi
+## Consegna minima
+
+- App che parte su emulatore o device
+- UI chiara e leggibile
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -57,22 +62,21 @@ Realizza una schermata UI con layout Flexbox e styling tramite StyleSheet, che s
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- useWindowDimensions react native
+flexbox responsive react native
+stylesheet flexbox column row

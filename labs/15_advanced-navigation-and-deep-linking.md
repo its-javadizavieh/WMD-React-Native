@@ -1,11 +1,11 @@
-# Lab 15 - Esercitazione - Advanced navigation and deep linking
+# Lab 15 – Navigazione avanzata e deep linking
 
 ## Obiettivo
 
-- Applicare i micro-argomenti della lezione 15 in una consegna pratica.
-- Produrre una funzionalità dimostrabile con gestione errori/edge case.
+- Configurazione deep linking con `linking` object.
+- Gestisci almeno un edge case con un messaggio chiaro.
 
-## Durata (timebox)
+## Timebox
 
 2h
 
@@ -13,44 +13,46 @@
 
 - PC con Node.js LTS installato
 - VS Code e Git
-- Expo (consigliato per il corso) oppure React Native CLI (solo Android)
-- Android emulator *oppure* telefono reale (consigliato)
+- Expo oppure React Native CLI (Android)
+- Android emulator oppure telefono reale
 
 ## Scenario
 
-Estendi una mini-app con navigazione aggiungendo un **deep link** che apre direttamente una schermata di dettaglio.
+Configurazione deep linking con `linking` object. Validazione parametro da URL. Test con `npx uri-scheme open`.
 
-Esempio target:
+> **Perché questo lab:** esercitare i pattern della lezione 15 in una mini-app concreta.
 
-- `myapp://details/:id` → apre `Details` con param `id`
+## Cosa imparerai
 
-Nota: il deep link è input non affidabile → serve validazione e fallback UI.
+1. Come creare un `linking` config con `prefixes` e `config.screens`.
+2. Come testare deep link con `npx uri-scheme open`.
+3. Come validare parametri ricevuti da deep link.
+4. Perché i parametri da URL sono "unreliable input".
 
-## Step (numerati)
+## Passi
 
-1. Avvia (o crea) un progetto Expo e verifica che l’app parta su emulatore/device.
-1. Crea (o riusa) uno stack con `Home` e `Details`.
-1. Configura il `linking` in `NavigationContainer`:
+1. **Installa dipendenze** — React Navigation (se non già presente).
+2. **App.tsx** — Aggiungi `linking` object con `prefixes: ["myapp://"]` e mappa delle screen.
+3. **HomeScreen** — Pulsante che naviga a Details + testo che mostra il deep link path.
+4. **DetailsScreen** — Legge `route.params?.id`. Se manca → "Invalid deep link".
+5. **Test** — Esegui `npx uri-scheme open "myapp://details/a1" --android` nel terminale.
 
-    - prefix (es. `myapp://`)
-    - mapping route (es. `details/:id`)
+## Screenshot attesi
 
-1. Testa il deep link con `npx uri-scheme open "myapp://details/a1" --android`.
-1. In `Details`, valida `route.params?.id` e gestisci almeno questi casi:
+**Home con deep link**
 
-    - id mancante/invalid → UI di errore + Back
-    - id non trovato → UI “Not found” + Back
+![Lab 15 - Home con deep link](imgs/lab_15_home.png)
 
-1. Se vuoi, aggiungi una nota su back behavior (perché la UX deve essere prevedibile).
-1. Se utile, organizza in moduli: `screens/`, `components/`, `services/`.
-1. Esegui una demo rapida (30–60 secondi) e annota cosa hai imparato.
-1. Esegui il cleanup obbligatorio e verifica che il progetto riparta pulito.
+**Details via deep link**
 
-## Output atteso
+![Lab 15 - Details via deep link](imgs/lab_15_details.png)
 
-- App eseguibile su emulatore o device
+
+## Consegna minima
+
+- App che parte su emulatore o device
 - UI chiara e leggibile
-- Almeno un edge case gestito in modo esplicito
+- Un edge case gestito con un messaggio chiaro
 
 ## Checkpoint
 
@@ -59,22 +61,21 @@ Nota: il deep link è input non affidabile → serve validazione e fallback UI.
 - [ ] Edge case gestito con messaggio chiaro
 - [ ] Cleanup completato
 
-## Troubleshooting rapido
+## Problemi comuni
 
 - Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l’emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l’app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
+- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
 
-## Cleanup obbligatorio
+## Cleanup
 
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
-- Se hai usato permessi (camera/location): revoca i permessi dall’OS.
-- Se hai usato storage locale: svuota i dati dell’app o rimuovi le chiavi salvate.
+- Se hai usato permessi (camera/location): revoca i permessi dall'OS.
+- Se hai usato storage locale: svuota i dati dell'app o rimuovi le chiavi salvate.
 
-## Parole chiave Google (screenshot/guide)
+## Search terms
 
-- expo start android emulator
-- expo go cannot connect to metro
-- react native metro bundler address already in use
-- android emulator not starting virtualization
+- react navigation deep linking
+npx uri-scheme open
+expo deep link config
