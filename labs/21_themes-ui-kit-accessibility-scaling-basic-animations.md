@@ -40,9 +40,9 @@ Oggetto `theme` con design tokens. `accessibilityRole` e `maxFontSizeMultiplier`
 
 ## Screenshot attesi
 
-**UI kit demo**
+**UI kit demo — theme tokens, accessibilityRole e animazioni base**
 
-![Lab 21 - UI kit demo](imgs/lab_21_main.png)
+![Lab 21 – UI kit demo](imgs/lab_21_main.png)
 
 
 ## Consegna minima

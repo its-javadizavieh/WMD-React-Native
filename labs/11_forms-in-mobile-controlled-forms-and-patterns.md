@@ -57,13 +57,13 @@ const canSubmit = emailOk && passwordOk;
 
 ## Screenshot attesi
 
-**Form**
+**Form controllato — campi vuoti, pulsante disabilitato**
 
-![Lab 11 - Form](imgs/lab_11_main.png)
+![Lab 11 – Form controllato](imgs/lab_11_main.png)
 
-**Errori**
+**Errori di validazione — messaggi mostrati dopo submit**
 
-![Lab 11 - Errori](imgs/lab_11_errors.png)
+![Lab 11 – Errori di validazione](imgs/lab_11_errors.png)
 
 
 ## Consegna minima

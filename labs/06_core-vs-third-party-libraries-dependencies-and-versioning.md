@@ -53,17 +53,17 @@ async function fetchTodos() {
 
 ## Screenshot attesi
 
-**Lista todos**
+**Stato loading — caricamento todos**
 
-![Lab 06 - Lista todos](imgs/lab_06_main_1.png)
+![Lab 06 – Stato loading](imgs/lab_06_main_1.png)
 
-**Lista todos**
+**Todos caricati da API**
 
-![Lab 06 - Lista todos](imgs/lab_06_main_2.png)
+![Lab 06 – Todos caricati](imgs/lab_06_main_2.png)
 
-**Stato errore**
+**Stato errore — pulsante Retry**
 
-![Lab 06 - Stato errore](imgs/lab_06_error.png)
+![Lab 06 – Stato errore](imgs/lab_06_error.png)
 
 
 ## Consegna minima

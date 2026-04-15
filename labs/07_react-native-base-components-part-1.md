@@ -58,13 +58,13 @@ import { Image, Pressable, Text, View } from "react-native";
 
 ## Screenshot attesi
 
-**Profilo con avatar**
+**Profilo con avatar — Image, Text e ScrollView**
 
-![Lab 07 - Profilo con avatar](imgs/lab_07_main.png)
+![Lab 07 – Profilo con avatar](imgs/lab_07_main.png)
 
-**Fallback immagine**
+**Immagine mancante — fallback placeholder**
 
-![Lab 07 - Fallback immagine](imgs/lab_07_fallback.png)
+![Lab 07 – Fallback immagine](imgs/lab_07_fallback.png)
 
 
 ## Consegna minima

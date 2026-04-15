@@ -53,13 +53,13 @@ React.useEffect(() => {
 
 ## Screenshot attesi
 
-**Loading**
+**Stato loading — timer in corso con useEffect**
 
-![Lab 10 - Loading](imgs/lab_10_loading.png)
+![Lab 10 – Stato loading](imgs/lab_10_loading.png)
 
-**Success**
+**Stato success — dati caricati dopo il timer**
 
-![Lab 10 - Success](imgs/lab_10_success.png)
+![Lab 10 – Stato success](imgs/lab_10_success.png)
 
 
 ## Consegna minima

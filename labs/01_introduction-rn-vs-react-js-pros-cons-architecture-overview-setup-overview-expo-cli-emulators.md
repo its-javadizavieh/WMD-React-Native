@@ -65,13 +65,13 @@ const styles = StyleSheet.create({
 
 ## Screenshot attesi
 
-**Schermata principale**
+**Schermata iniziale — Count: 0**
 
-![Lab 01 - Schermata principale](imgs/lab_01_main.png)
+![Lab 01 – Schermata iniziale](imgs/lab_01_main.png)
 
-**Contatore incrementato**
+**Contatore incrementato — Count: 3**
 
-![Lab 01 - Contatore incrementato](imgs/lab_01_counter.png)
+![Lab 01 – Contatore incrementato](imgs/lab_01_counter.png)
 
 
 ## Consegna minima

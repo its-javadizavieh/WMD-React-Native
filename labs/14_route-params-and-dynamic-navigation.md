@@ -39,13 +39,13 @@ Lista con `FlatList` → navigazione a dettaglio con `id`. Validazione parametro
 
 ## Screenshot attesi
 
-**Lista items**
+**Lista items — FlatList con navigazione a dettaglio**
 
-![Lab 14 - Lista items](imgs/lab_14_list.png)
+![Lab 14 – Lista items](imgs/lab_14_list.png)
 
-**Dettaglio**
+**Dettaglio item — parametro id passato via route params**
 
-![Lab 14 - Dettaglio](imgs/lab_14_details.png)
+![Lab 14 – Dettaglio item](imgs/lab_14_details.png)
 
 
 ## Consegna minima

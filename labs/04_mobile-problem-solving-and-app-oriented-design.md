@@ -61,17 +61,17 @@ Prima della consegna, forza questi stati:
 
 ## Screenshot attesi
 
-**Stato empty**
+**Stato empty — nessuna nota, messaggio fallback**
 
-![Lab 04 - Stato empty](imgs/lab_04_empty.png)
+![Lab 04 – Stato empty](imgs/lab_04_empty.png)
 
-**Stato success con note**
+**Una nota aggiunta**
 
-![Lab 04 - Stato success con note](imgs/lab_04_success_1.png)
+![Lab 04 – Una nota aggiunta](imgs/lab_04_success_1.png)
 
-**Stato success con note**
+**Due note aggiunte**
 
-![Lab 04 - Stato success con note](imgs/lab_04_success_2.png)
+![Lab 04 – Due note aggiunte](imgs/lab_04_success_2.png)
 
 
 ## Consegna minima

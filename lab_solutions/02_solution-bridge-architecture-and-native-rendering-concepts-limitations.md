@@ -80,3 +80,21 @@ const styles = StyleSheet.create({
   buttonText: { fontWeight: "600" },
 });
 ```
+
+## Screenshot
+
+**FlatList con 20 item — stato iniziale (Count: 0)**
+
+![Lab 02 – FlatList stato iniziale](../labs/imgs/lab_02_main_1.png)
+
+**FlatList dopo 5 re-render (Count: 5)**
+
+![Lab 02 – FlatList dopo re-render](../labs/imgs/lab_02_main_2.png)
+
+**Console log — primo render (App + 12 Row)**
+
+![Lab 02 – Console primo render](../labs/imgs/lab_02_console_1.png)
+
+**Console log — secondo render dopo pressione pulsante**
+
+![Lab 02 – Console secondo render](../labs/imgs/lab_02_console_2.png)

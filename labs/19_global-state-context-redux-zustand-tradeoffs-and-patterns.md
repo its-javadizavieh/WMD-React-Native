@@ -40,13 +40,13 @@ Context + Provider con `useState`. Hook custom per consumare il contesto. Toggle
 
 ## Screenshot attesi
 
-**Theme light**
+**Tema light — Context + Provider con useState**
 
-![Lab 19 - Theme light](imgs/lab_19_light.png)
+![Lab 19 – Tema light](imgs/lab_19_light.png)
 
-**Theme dark**
+**Tema dark — toggle con useContext**
 
-![Lab 19 - Theme dark](imgs/lab_19_dark.png)
+![Lab 19 – Tema dark](imgs/lab_19_dark.png)
 
 
 ## Consegna minima

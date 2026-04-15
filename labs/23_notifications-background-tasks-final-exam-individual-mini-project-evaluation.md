@@ -46,9 +46,9 @@ npx expo install expo-notifications
 
 ## Screenshot attesi
 
-**Notifica schedulata**
+**Notifica schedulata — scheduling con permessi e UI per ogni stato**
 
-![Lab 23 - Notifica schedulata](imgs/lab_23_main.png)
+![Lab 23 – Notifica schedulata](imgs/lab_23_main.png)
 
 
 ## Consegna minima

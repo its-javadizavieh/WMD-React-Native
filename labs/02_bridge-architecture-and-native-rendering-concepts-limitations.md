@@ -67,13 +67,22 @@ const styles = StyleSheet.create({
 
 ## Screenshot attesi
 
-**Lista con FlatList**
+**FlatList con 20 item — stato iniziale (Count: 0)**
 
-![Lab 02 - Lista con FlatList](imgs/lab_02_main.png)
+![Lab 02 – FlatList stato iniziale](imgs/lab_02_main_1.png)
 
-**Console con re-render**
+**FlatList dopo 5 re-render (Count: 5)**
 
-![Lab 02 - Console con re-render](imgs/lab_02_console.png)
+![Lab 02 – FlatList dopo re-render](imgs/lab_02_main_2.png)
+
+**Console log — primo render (App + 12 Row)**
+
+![Lab 02 – Console primo render](imgs/lab_02_console_1.png)
+
+**Console log — secondo render dopo pressione pulsante**
+
+![Lab 02 – Console secondo render](imgs/lab_02_console_2.png)
+
 
 ## Consegna minima
 

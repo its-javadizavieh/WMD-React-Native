@@ -56,9 +56,9 @@ function load() {
 
 ## Screenshot attesi
 
-**Midterm review**
+**Midterm review — pattern UiState: loading / error / empty / success**
 
-![Lab 12 - Midterm review](imgs/lab_12_main.png)
+![Lab 12 – Midterm review](imgs/lab_12_main.png)
 
 
 ## Consegna minima

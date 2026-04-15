@@ -76,17 +76,17 @@ adb devices
 
 ## Screenshot attesi
 
-**App avviata**
+**App avviata — Status: ready**
 
-![Lab 03 - App avviata](imgs/lab_03_main_1.png)
+![Lab 03 – App avviata](imgs/lab_03_main_1.png)
 
-**App avviata**
+**Dopo pressione pulsante — Status: button pressed**
 
-![Lab 03 - App avviata](imgs/lab_03_main_2.png)
+![Lab 03 – Dopo interazione](imgs/lab_03_main_2.png)
 
-**Console log**
+**Console — LOG App mounted**
 
-![Lab 03 - Console log](imgs/lab_03_logs.png)
+![Lab 03 – Console log](imgs/lab_03_logs.png)
 
 
 ## Consegna minima

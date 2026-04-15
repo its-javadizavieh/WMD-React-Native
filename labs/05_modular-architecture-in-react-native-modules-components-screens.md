@@ -76,17 +76,17 @@ export { addNote, listNotes } from "./services/notes";
 
 ## Screenshot attesi
 
-**Schermata utenti**
+**Schermata utenti — primo utente (Ada)**
 
-![Lab 05 - Schermata utenti](imgs/lab_05_main_1.png)
+![Lab 05 – Primo utente](imgs/lab_05_main_1.png)
 
-**Schermata utenti**
+**Dopo pressione Next — secondo utente (Grace)**
 
-![Lab 05 - Schermata utenti](imgs/lab_05_main_2.png)
+![Lab 05 – Secondo utente](imgs/lab_05_main_2.png)
 
-**Struttura cartelle**
+**Struttura cartelle — components / screens / services**
 
-![Lab 05 - Struttura cartelle](imgs/lab_05_structure.png)
+![Lab 05 – Struttura cartelle](imgs/lab_05_structure.png)
 
 
 ## Consegna minima

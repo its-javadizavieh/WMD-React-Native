@@ -45,13 +45,13 @@ npx expo install @react-navigation/native @react-navigation/native-stack react-n
 
 ## Screenshot attesi
 
-**Home**
+**Home screen — NavigationContainer con Stack.Navigator**
 
-![Lab 13 - Home](imgs/lab_13_home.png)
+![Lab 13 – Home screen](imgs/lab_13_home.png)
 
-**Details**
+**Details screen — navigazione da Home a Details**
 
-![Lab 13 - Details](imgs/lab_13_details.png)
+![Lab 13 – Details screen](imgs/lab_13_details.png)
 
 
 ## Consegna minima

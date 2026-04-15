@@ -40,13 +40,13 @@ Layout responsive con `useWindowDimensions`. Flexbox: colonna su mobile, riga su
 
 ## Screenshot attesi
 
-**Layout mobile**
+**Layout mobile — Flexbox column su schermo stretto**
 
-![Lab 20 - Layout mobile](imgs/lab_20_mobile.png)
+![Lab 20 – Layout mobile](imgs/lab_20_mobile.png)
 
-**Layout tablet**
+**Layout tablet — Flexbox row su schermo largo**
 
-![Lab 20 - Layout tablet](imgs/lab_20_tablet.png)
+![Lab 20 – Layout tablet](imgs/lab_20_tablet.png)
 
 
 ## Consegna minima

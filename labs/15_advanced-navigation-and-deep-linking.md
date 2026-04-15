@@ -39,13 +39,13 @@ Configurazione deep linking con `linking` object. Validazione parametro da URL. 
 
 ## Screenshot attesi
 
-**Home con deep link**
+**Home con deep link — configurazione prefixes e screens**
 
-![Lab 15 - Home con deep link](imgs/lab_15_home.png)
+![Lab 15 – Home con deep link](imgs/lab_15_home.png)
 
-**Details via deep link**
+**Details via deep link — apertura diretta con URL**
 
-![Lab 15 - Details via deep link](imgs/lab_15_details.png)
+![Lab 15 – Details via deep link](imgs/lab_15_details.png)
 
 
 ## Consegna minima

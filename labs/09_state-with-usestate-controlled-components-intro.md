@@ -51,13 +51,13 @@ const emailOk = email.includes("@");
 
 ## Screenshot attesi
 
-**Form vuoto**
+**Form vuoto — stato iniziale, nessun errore visibile**
 
-![Lab 09 - Form vuoto](imgs/lab_09_main.png)
+![Lab 09 – Form vuoto](imgs/lab_09_main.png)
 
-**Errori dopo submit**
+**Errori dopo submit — validazione con messaggi inline**
 
-![Lab 09 - Errori dopo submit](imgs/lab_09_errors.png)
+![Lab 09 – Errori dopo submit](imgs/lab_09_errors.png)
 
 
 ## Consegna minima

@@ -39,13 +39,13 @@ Carica dati da REST API con `fetch`, mostra in `FlatList`. Gestisci loading / er
 
 ## Screenshot attesi
 
-**Posts**
+**Posts caricati — dati da REST API con fetch**
 
-![Lab 16 - Posts](imgs/lab_16_main.png)
+![Lab 16 – Posts caricati](imgs/lab_16_main.png)
 
-**Errore**
+**Stato errore — errore HTTP con pulsante Retry**
 
-![Lab 16 - Errore](imgs/lab_16_error.png)
+![Lab 16 – Stato errore](imgs/lab_16_error.png)
 
 
 ## Consegna minima

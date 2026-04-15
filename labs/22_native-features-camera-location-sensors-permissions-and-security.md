@@ -45,13 +45,13 @@ npx expo install expo-location
 
 ## Screenshot attesi
 
-**Permesso richiesto**
+**Permesso richiesto — flusso permission-first, UI per stato unknown/denied**
 
-![Lab 22 - Permesso richiesto](imgs/lab_22_permission.png)
+![Lab 22 – Permesso richiesto](imgs/lab_22_permission.png)
 
-**Location**
+**Location ottenuta — coordinate mostrate dopo permesso granted**
 
-![Lab 22 - Location](imgs/lab_22_location.png)
+![Lab 22 – Location ottenuta](imgs/lab_22_location.png)
 
 
 ## Consegna minima

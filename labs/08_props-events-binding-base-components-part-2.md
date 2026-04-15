@@ -63,13 +63,13 @@ function SettingRow(
 
 ## Screenshot attesi
 
-**Settings screen**
+**Settings screen — SettingRow con TextInput e Switch**
 
-![Lab 08 - Settings screen](imgs/lab_08_main.png)
+![Lab 08 – Settings screen](imgs/lab_08_main.png)
 
-**Validazione nome**
+**Validazione nome — messaggio di errore per nome troppo corto**
 
-![Lab 08 - Validazione nome](imgs/lab_08_validation.png)
+![Lab 08 – Validazione nome](imgs/lab_08_validation.png)
 
 
 ## Consegna minima

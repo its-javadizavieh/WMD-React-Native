@@ -39,9 +39,9 @@ Simulazione success / failure con bottoni. Oggetto stato unico con campo `status
 
 ## Screenshot attesi
 
-**Async workflow**
+**Workflow asincrono — stati loading / success / error in un unico oggetto**
 
-![Lab 17 - Async workflow](imgs/lab_17_main.png)
+![Lab 17 – Workflow asincrono](imgs/lab_17_main.png)
 
 
 ## Consegna minima
