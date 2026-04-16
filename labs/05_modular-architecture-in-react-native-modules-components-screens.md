@@ -27,8 +27,9 @@ Prendi l'app Notes del lab 04 (o un'app simile) e **spezzala** in file separati 
 
 1. La struttura `screens/` → `components/` → `services/`.
 2. La regola degli import: screens importano tutto, services non importano UI.
-3. Come creare un componente riusabile con props callback (`onPress`).
-4. Come esportare da un barrel file (`index.tsx`).
+3. Come definire un `interface` per le props di un componente.
+4. Come usare `useEffect` nella screen per leggere dati dal service.
+5. Come esportare da un barrel file (`index.tsx`).
 
 ## File da creare
 
@@ -45,9 +46,12 @@ App.tsx
 // components/PrimaryButton.tsx
 import { Pressable, Text } from "react-native";
 
-export function PrimaryButton(
-  { label, onPress }: { label: string; onPress: () => void }
-) {
+interface PrimaryButtonProps {
+  label: string;
+  onPress: () => void;
+}
+
+export function PrimaryButton({ label, onPress }: PrimaryButtonProps) {
   return (
     <Pressable onPress={onPress} style={{ padding: 12, borderWidth: 1, borderRadius: 8 }}>
       <Text style={{ fontWeight: "600" }}>{label}</Text>
@@ -60,11 +64,13 @@ export function PrimaryButton(
 
 1. **Crea le cartelle** — `screens/`, `components/`, `services/`.
 2. **services/users.ts** — Esporta una funzione `getUsers()` che ritorna `["Ada", "Grace"]`.
-3. **components/PrimaryButton.tsx** — Componente con props `label` e `onPress`.
-4. **screens/UsersScreen.tsx** — Screen che chiama `getUsers()` in un `useEffect` e mostra il primo utente.
-5. **App.tsx** — Importa e renderizza `<UsersScreen />`.
-6. **Verifica import** — screens → components + services, mai il contrario.
-7. **Edge case** — Se la lista utenti è vuota, mostra "Nessun utente ancora".
+3. **components/PrimaryButton.tsx** — Definisci `interface PrimaryButtonProps` con `label` e `onPress`.
+4. **screens/UsersScreen.tsx** — Usa `useEffect` per leggere `getUsers()` e salvare la lista nello stato della schermata.
+5. **Mostra il primo utente** — Dopo il caricamento, mostra `Ada` oppure il fallback `Nessun utente ancora` se la lista e vuota.
+6. **Aggiungi il pulsante Next** — Usa `PrimaryButton` per passare all'utente successivo solo quando la lista contiene dati.
+7. **App.tsx** — Importa e renderizza `<UsersScreen />`.
+8. **Verifica import** — screens → components + services, mai il contrario.
+9. **Edge case** — Se la lista utenti e vuota, non andare in modulo per zero: mostra il messaggio di fallback.
 
 ## Barrel export (opzionale)
 
