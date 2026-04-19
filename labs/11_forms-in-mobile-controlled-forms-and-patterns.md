@@ -2,8 +2,8 @@
 
 ## Obiettivo
 
-- Form controllato completo con validazione.
-- Bottone Submit disabilitato se non valido.
+- Form mobile completo con validazione e stati di submit espliciti.
+- Gestisci tastiera e layout su schermi piccoli.
 - Gestisci almeno un edge case con un messaggio chiaro.
 
 ## Timebox
@@ -19,52 +19,65 @@
 
 ## Scenario
 
-Costruisci un form "Sign in" completo: email + password, validazione, submitted state, pulsante styled.
+Costruisci un form mobile "Contact support": name, email e message, validazione, submit con `loading/error/success`, layout che resta usabile quando compare la tastiera.
 
-> **Perché questo lab:** consolidare il pattern form controllato con bottone disabilitato — è il form pattern usato nel 90% delle app reali.
+> **Perché questo lab:** dopo l'introduzione del lab 09, qui aggiungi i veri pattern dei form mobile: tastiera, submit disabilitato durante l'invio e feedback esplicito per successo o errore.
 
 ## Cosa imparerai
 
-1. Il pattern completo: `useState` → validazione derivata → submit → mostra errori.
-2. Come disabilitare un `Pressable` con `disabled` e `opacity`.
-3. Come usare `secureTextEntry` per le password.
-4. Come dare feedback visivo con colori (`backgroundColor: "#007AFF"`).
+1. Il pattern completo: `useState` → validazione derivata → submit → `loading/error/success`.
+2. Come usare `KeyboardAvoidingView` + `ScrollView` per i form mobile.
+3. Come usare `opacity` per comunicare che il form non e pronto, ma disabilitare il `Pressable` solo durante `loading`.
+4. Come simulare un submit async senza introdurre librerie esterne.
 
 ## Starter pattern (solo promemoria)
 
 ```tsx
-const emailOk = email.includes("@");
-const passwordOk = password.length >= 8;
-const canSubmit = emailOk && passwordOk;
+const shouldSimulateError = message.trim().toLowerCase().includes("error");
+const messageOk = message.trim().length >= 10 || shouldSimulateError;
+const canSubmit = nameOk && emailOk && messageOk;
+const isSending = status === "loading";
 
 <Pressable
-  onPress={handleSubmit}
-  disabled={!canSubmit}
-  style={{ opacity: canSubmit ? 1 : 0.4, padding: 14, borderRadius: 8, backgroundColor: "#007AFF" }}
+  onPress={onSubmit}
+  disabled={isSending}
+  style={{
+    opacity: canSubmit && !isSending ? 1 : 0.4,
+    padding: 14,
+    borderRadius: 8,
+    backgroundColor: "#007AFF",
+  }}
 >
-  <Text style={{ color: "#fff", textAlign: "center" }}>Submit</Text>
-</Pressable>
+  <Text style={{ color: "#fff", textAlign: "center" }}>
+    {status === "loading" ? "Sending..." : "Send"}
+  </Text>
+</Pressable>;
 ```
 
 ## Passi
 
 1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **Due campi** — Email (`autoCapitalize: "none"`) e Password (`secureTextEntry`).
-3. **Validazione** — `emailOk = email.includes("@")`, `passwordOk = password.length >= 8`.
-4. **Submit** — `setSubmitted(true)`. Errori visibili solo dopo submit.
-5. **Bottone styled** — Colore `#007AFF`, testo bianco, opacity 0.4 se non valido.
-6. **Successo** — Mostra "Pronto ✓" dopo submit valido.
+2. **Layout mobile** — Usa `KeyboardAvoidingView` e `ScrollView` così i campi restano visibili con la tastiera aperta.
+3. **Tre campi controllati** — Name, Email (`autoCapitalize: "none"`) e Message (`multiline`).
+4. **Validazione** — `nameOk = name.trim().length >= 2`, `emailOk = email.includes("@")`, `messageOk = message.trim().length >= 10`.
+5. **Submit** — `setSubmitted(true)`, poi se valido passa a `loading`.
+6. **Stati espliciti** — Dopo un `setTimeout`, mostra `success` oppure `error`.
+7. **Failure state testabile** — Se il messaggio contiene la parola `error`, simula un errore di rete anche con un testo corto, cosi il failure state e facile da provare.
+8. **Bottone styled** — Colore `#007AFF`, testo bianco, opacity ridotta quando il form non e pronto, ma `disabled` solo durante `loading` cosi il primo tap puo mostrare gli errori.
 
 ## Screenshot attesi
 
-**Form controllato — campi vuoti, pulsante disabilitato**
+**Form mobile — campi controllati con layout sicuro per tastiera**
 
 ![Lab 11 – Form controllato](imgs/lab_11_main.png)
 
-**Errori di validazione — messaggi mostrati dopo submit**
+**Submit state — feedback di errore o successo dopo invio**
 
-![Lab 11 – Errori di validazione](imgs/lab_11_errors.png)
-
+![Lab 11 – Errori di validazione](imgs/lab_11_errors_1.png)
+![Lab 11 – Errori di validazione](imgs/lab_11_errors_2.png)
+![Lab 11 – Errori di validazione](imgs/lab_11_errors_3.png)
+![Lab 11 – Errori di validazione](imgs/lab_11_errors_4.png)
+![Lab 11 – Errori di validazione](imgs/lab_11_errors_5.png)
 
 ## Consegna minima
 
@@ -94,6 +107,6 @@ const canSubmit = emailOk && passwordOk;
 
 ## Search terms
 
-- react native form validation pattern
-- pressable disabled opacity react native
-- secureTextEntry react native
+- react native keyboardavoidingview form
+- react native scrollview keyboardshouldpersisttaps
+- react native submit loading error success

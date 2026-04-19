@@ -25,7 +25,7 @@ Costruisci una mini schermata "Settings" con righe riusabili. Ogni riga ha un la
 
 ## Cosa imparerai
 
-1. Come creare un componente con props `label`, `value`, `right` (ReactNode).
+1. Come definire `interface SettingRowProps` con `label`, `value`, `right` (`React.ReactNode`).
 2. Come collegare `TextInput` con `value` + `onChangeText`.
 3. Come collegare `Switch` con `value` + `onValueChange`.
 4. Il pattern "data down, events up" in pratica.
@@ -40,14 +40,29 @@ App.tsx
 ## Starter pattern (solo promemoria)
 
 ```tsx
-function SettingRow(
-  { label, value, onPress }: { label: string; value: string; onPress: () => void }
-) {
+import { Text, View } from "react-native";
+
+interface SettingRowProps {
+  label: string;
+  value: string;
+  right: React.ReactNode;
+}
+
+function SettingRow({ label, value, right }: SettingRowProps) {
   return (
-    <Pressable onPress={onPress} style={{ padding: 12, borderWidth: 1, borderRadius: 12 }}>
-      <Text style={{ fontWeight: "600" }}>{label}</Text>
-      <Text>{value}</Text>
-    </Pressable>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        paddingVertical: 12,
+      }}
+    >
+      <View style={{ flex: 1 }}>
+        <Text style={{ fontWeight: "600" }}>{label}</Text>
+        <Text>{value}</Text>
+      </View>
+      <View>{right}</View>
+    </View>
   );
 }
 ```
@@ -55,7 +70,7 @@ function SettingRow(
 ## Passi
 
 1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **SettingRow** — Crea `components/SettingRow.tsx` con props: `label`, `value`, `right` (ReactNode).
+2. **SettingRow** — Crea `components/SettingRow.tsx` con `interface SettingRowProps` e props: `label`, `value`, `right` (`React.ReactNode`).
 3. **Riga con TextInput** — Usa SettingRow con un `TextInput` nel slot `right`.
 4. **Riga con Switch** — Usa SettingRow con un `Switch` nel slot `right`.
 5. **Validazione** — Se il nome è troppo corto (< 2 caratteri), mostra "Name is too short".
@@ -70,7 +85,6 @@ function SettingRow(
 **Validazione nome — messaggio di errore per nome troppo corto**
 
 ![Lab 08 – Validazione nome](imgs/lab_08_validation.png)
-
 
 ## Consegna minima
 

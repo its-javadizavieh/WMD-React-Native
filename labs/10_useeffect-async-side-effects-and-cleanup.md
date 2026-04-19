@@ -61,6 +61,9 @@ React.useEffect(() => {
 
 ![Lab 10 – Stato success](imgs/lab_10_success.png)
 
+**Stato error — caricamento fallito**
+
+![Lab 10 – Stato success](imgs/lab_10_error.png)
 
 ## Consegna minima
 

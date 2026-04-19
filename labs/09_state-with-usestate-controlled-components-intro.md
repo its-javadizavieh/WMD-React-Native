@@ -21,7 +21,7 @@
 
 Costruisci un mini form "Sign in" con campi email e password. Ogni campo è controllato da `useState`, la validazione è derivata dallo stato.
 
-> **Perché questo lab:** i controlled components sono il modo standard di gestire form in React/RN. Lo stato è la "single source of truth" e la UI riflette lo stato.
+> **Perché questo lab:** i controlled components sono il modo standard di gestire form in React/RN. Questo è il laboratorio **intro**: focus su `useState`, validazione derivata e timing del feedback. Gli stati di submit più completi arrivano nel lab 11.
 
 ## Cosa imparerai
 
@@ -48,6 +48,7 @@ const emailOk = email.includes("@");
 4. **Submit** — Un `Pressable` che imposta `setSubmitted(true)`.
 5. **Errori condizionali** — Mostra gli errori solo se `submitted && !emailOk`.
 6. **Edge case** — Pulsante con opacity ridotta se il form non è valido.
+7. **Scope del lab** — Non aggiungere ancora `loading`, `error` o `success` async: qui l'obiettivo è capire il pattern base dei controlled components.
 
 ## Screenshot attesi
 
@@ -57,8 +58,9 @@ const emailOk = email.includes("@");
 
 **Errori dopo submit — validazione con messaggi inline**
 
-![Lab 09 – Errori dopo submit](imgs/lab_09_errors.png)
-
+![Lab 09 – Errori dopo submit](imgs/lab_09_errors_1.png)
+![Lab 09 – Errori dopo submit](imgs/lab_09_errors_2.png)
+![Lab 09 – Errori dopo submit](imgs/lab_09_errors_3.png)
 
 ## Consegna minima
 
