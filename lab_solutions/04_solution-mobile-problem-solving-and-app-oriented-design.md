@@ -1,4 +1,4 @@
-# Lab 04 – Soluzione
+# Lab 04 - Soluzione
 
 ## Cosa mostra la soluzione
 
@@ -95,12 +95,12 @@ const styles = StyleSheet.create({
 
 **Stato empty — nessuna nota, messaggio fallback**
 
-![Lab 04 – Stato empty](../labs/imgs/lab_04_empty.png)
+![Lab 04 - Stato empty](../labs/imgs/lab_04_empty.png)
 
 **Una nota aggiunta**
 
-![Lab 04 – Una nota aggiunta](../labs/imgs/lab_04_success_1.png)
+![Lab 04 - Una nota aggiunta](../labs/imgs/lab_04_success_1.png)
 
 **Due note aggiunte**
 
-![Lab 04 – Due note aggiunte](../labs/imgs/lab_04_success_2.png)
+![Lab 04 - Due note aggiunte](../labs/imgs/lab_04_success_2.png)

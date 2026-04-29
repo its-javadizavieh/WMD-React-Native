@@ -1,4 +1,4 @@
-# Lab 14 – Parametri di route e navigazione dinamica
+# Lab 14 - Parametri di route e navigazione dinamica
 
 ## Obiettivo
 
@@ -41,12 +41,11 @@ Lista con `FlatList` → navigazione a dettaglio con `id`. Validazione parametro
 
 **Lista items — FlatList con navigazione a dettaglio**
 
-![Lab 14 – Lista items](imgs/lab_14_list.png)
+![Lab 14 - Lista items](imgs/lab_14_list.png)
 
 **Dettaglio item — parametro id passato via route params**
 
-![Lab 14 – Dettaglio item](imgs/lab_14_details.png)
-
+![Lab 14 - Dettaglio item](imgs/lab_14_details.png)
 
 ## Consegna minima
 
@@ -77,4 +76,4 @@ Lista con `FlatList` → navigazione a dettaglio con `id`. Validazione parametro
 ## Search terms
 
 - react navigation route params
-flatlist navigation react native
+  flatlist navigation react native

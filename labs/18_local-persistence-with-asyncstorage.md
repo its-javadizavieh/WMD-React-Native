@@ -1,4 +1,4 @@
-# Lab 18 – Gestione locale: AsyncStorage
+# Lab 18 - Gestione locale: AsyncStorage
 
 ## Obiettivo
 
@@ -47,8 +47,7 @@ npx expo install @react-native-async-storage/async-storage
 
 **Preferences salvate — persistenza locale con AsyncStorage**
 
-![Lab 18 – Preferences salvate](imgs/lab_18_main.png)
-
+![Lab 18 - Preferences salvate](imgs/lab_18_main.png)
 
 ## Consegna minima
 
@@ -79,5 +78,5 @@ npx expo install @react-native-async-storage/async-storage
 ## Search terms
 
 - asyncstorage react native
-expo install asyncstorage
-local storage react native
+  expo install asyncstorage
+  local storage react native

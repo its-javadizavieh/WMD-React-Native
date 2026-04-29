@@ -1,4 +1,4 @@
-# Lab 13 – React Navigation: setup e concetti base
+# Lab 13 - React Navigation: setup e concetti base
 
 ## Obiettivo
 
@@ -47,12 +47,11 @@ npx expo install @react-navigation/native @react-navigation/native-stack react-n
 
 **Home screen — NavigationContainer con Stack.Navigator**
 
-![Lab 13 – Home screen](imgs/lab_13_home.png)
+![Lab 13 - Home screen](imgs/lab_13_home.png)
 
 **Details screen — navigazione da Home a Details**
 
-![Lab 13 – Details screen](imgs/lab_13_details.png)
-
+![Lab 13 - Details screen](imgs/lab_13_details.png)
 
 ## Consegna minima
 
@@ -83,5 +82,5 @@ npx expo install @react-navigation/native @react-navigation/native-stack react-n
 ## Search terms
 
 - react navigation expo setup
-stack navigator react native
-navigation.navigate params
+  stack navigator react native
+  navigation.navigate params

@@ -1,4 +1,4 @@
-# Lab 23 – Notifiche, background task ed esame finale
+# Lab 23 - Notifiche, background task ed esame finale
 
 ## Obiettivo
 
@@ -48,8 +48,7 @@ npx expo install expo-notifications
 
 **Notifica schedulata — scheduling con permessi e UI per ogni stato**
 
-![Lab 23 – Notifica schedulata](imgs/lab_23_main.png)
-
+![Lab 23 - Notifica schedulata](imgs/lab_23_main.png)
 
 ## Consegna minima
 
@@ -80,5 +79,5 @@ npx expo install expo-notifications
 ## Search terms
 
 - expo-notifications schedule
-expo install expo-notifications
-react native local notification
+  expo install expo-notifications
+  react native local notification

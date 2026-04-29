@@ -1,4 +1,4 @@
-# Lab 03 – Soluzione
+# Lab 03 - Soluzione
 
 ## Cosa mostra la soluzione
 
@@ -28,7 +28,10 @@ export default function App() {
         <View style={styles.container}>
           <Text style={styles.title}>Workflow check</Text>
           <Text>Status: {status}</Text>
-          <Pressable style={styles.button} onPress={() => setStatus("button pressed")}>
+          <Pressable
+            style={styles.button}
+            onPress={() => setStatus("button pressed")}
+          >
             <Text style={styles.buttonText}>Test interaction</Text>
           </Pressable>
         </View>
@@ -52,7 +55,6 @@ const styles = StyleSheet.create({
 });
 ```
 
-
 ### Comandi utili
 
 ```bash
@@ -67,12 +69,12 @@ npx expo start -c
 
 **App avviata — Status: ready**
 
-![Lab 03 – App avviata](../labs/imgs/lab_03_main_1.png)
+![Lab 03 - App avviata](../labs/imgs/lab_03_main_1.png)
 
 **Dopo pressione pulsante — Status: button pressed**
 
-![Lab 03 – Dopo interazione](../labs/imgs/lab_03_main_2.png)
+![Lab 03 - Dopo interazione](../labs/imgs/lab_03_main_2.png)
 
 **Console — LOG App mounted**
 
-![Lab 03 – Console log](../labs/imgs/lab_03_logs.png)
+![Lab 03 - Console log](../labs/imgs/lab_03_logs.png)

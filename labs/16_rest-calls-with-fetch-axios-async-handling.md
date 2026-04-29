@@ -1,4 +1,4 @@
-# Lab 16 – Fetch / Axios e chiamate REST
+# Lab 16 - Fetch / Axios e chiamate REST
 
 ## Obiettivo
 
@@ -41,12 +41,11 @@ Carica dati da REST API con `fetch`, mostra in `FlatList`. Gestisci loading / er
 
 **Posts caricati — dati da REST API con fetch**
 
-![Lab 16 – Posts caricati](imgs/lab_16_main.png)
+![Lab 16 - Posts caricati](imgs/lab_16_main.png)
 
 **Stato errore — errore HTTP con pulsante Retry**
 
-![Lab 16 – Stato errore](imgs/lab_16_error.png)
-
+![Lab 16 - Stato errore](imgs/lab_16_error.png)
 
 ## Consegna minima
 
@@ -77,5 +76,5 @@ Carica dati da REST API con `fetch`, mostra in `FlatList`. Gestisci loading / er
 ## Search terms
 
 - fetch api react native
-jsonplaceholder posts
-react native flatlist data
+  jsonplaceholder posts
+  react native flatlist data

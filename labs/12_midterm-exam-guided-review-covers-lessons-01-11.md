@@ -1,4 +1,4 @@
-# Lab 12 – Verifica intermedia e riepilogo guidato (Lezioni 01-11)
+# Lab 12 - Verifica intermedia e riepilogo guidato (Lezioni 01-11)
 
 ## Obiettivo
 
@@ -42,7 +42,7 @@ function load() {
 
 <Pressable onPress={load}>
   <Text>Riprova</Text>
-</Pressable>
+</Pressable>;
 ```
 
 ## Passi
@@ -58,8 +58,7 @@ function load() {
 
 **Midterm review — pattern UiState: loading / error / empty / success**
 
-![Lab 12 – Midterm review](imgs/lab_12_main.png)
-
+![Lab 12 - Midterm review](imgs/lab_12_main.png)
 
 ## Consegna minima
 

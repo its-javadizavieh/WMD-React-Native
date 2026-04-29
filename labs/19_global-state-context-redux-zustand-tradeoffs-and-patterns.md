@@ -1,4 +1,4 @@
-# Lab 19 – Stato globale: Context / Redux / Zustand
+# Lab 19 - Stato globale: Context / Redux / Zustand
 
 ## Obiettivo
 
@@ -42,12 +42,11 @@ Context + Provider con `useState`. Hook custom per consumare il contesto. Toggle
 
 **Tema light — Context + Provider con useState**
 
-![Lab 19 – Tema light](imgs/lab_19_light.png)
+![Lab 19 - Tema light](imgs/lab_19_light.png)
 
 **Tema dark — toggle con useContext**
 
-![Lab 19 – Tema dark](imgs/lab_19_dark.png)
-
+![Lab 19 - Tema dark](imgs/lab_19_dark.png)
 
 ## Consegna minima
 
@@ -78,5 +77,5 @@ Context + Provider con `useState`. Hook custom per consumare il contesto. Toggle
 ## Search terms
 
 - react context provider usecontext
-react native theme toggle
-creatcontext react native
+  react native theme toggle
+  creatcontext react native

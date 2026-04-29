@@ -1,4 +1,4 @@
-# Lab 11 – Form in mobile: form controllati e pattern
+# Lab 11 - Form in mobile: form controllati e pattern
 
 ## Obiettivo
 
@@ -69,15 +69,15 @@ const isSending = status === "loading";
 
 **Form mobile — campi controllati con layout sicuro per tastiera**
 
-![Lab 11 – Form controllato](imgs/lab_11_main.png)
+![Lab 11 - Form controllato](imgs/lab_11_main.png)
 
 **Submit state — feedback di errore o successo dopo invio**
 
-![Lab 11 – Errori di validazione](imgs/lab_11_errors_1.png)
-![Lab 11 – Errori di validazione](imgs/lab_11_errors_2.png)
-![Lab 11 – Errori di validazione](imgs/lab_11_errors_3.png)
-![Lab 11 – Errori di validazione](imgs/lab_11_errors_4.png)
-![Lab 11 – Errori di validazione](imgs/lab_11_errors_5.png)
+![Lab 11 - Errori di validazione](imgs/lab_11_errors_1.png)
+![Lab 11 - Errori di validazione](imgs/lab_11_errors_2.png)
+![Lab 11 - Errori di validazione](imgs/lab_11_errors_3.png)
+![Lab 11 - Errori di validazione](imgs/lab_11_errors_4.png)
+![Lab 11 - Errori di validazione](imgs/lab_11_errors_5.png)
 
 ## Consegna minima
 

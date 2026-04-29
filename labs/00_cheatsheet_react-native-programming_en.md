@@ -6,6 +6,7 @@ size: 16:9
 ---
 
 <!-- _class: cover -->
+
 | DOCENTE | Seyedhossein Javadizavieh |
 | UNITA' FORMATIVA | React Native |
 | ARGOMENTO | React Native Programming - Cheat Sheet |
@@ -14,44 +15,44 @@ size: 16:9
 
 ## Index
 
-| # | Topic |
-|---|---|
-| 1 | [Project setup (Expo)](#1--project-setup-expo) |
-| 2 | [Core component imports](#2--core-component-imports) |
-| 3 | [View - the universal container](#3--view---the-universal-container) |
-| 4 | [Text - rendering text content](#4--text---rendering-text-content) |
-| 5 | [Image - local and remote](#5--image---local-and-remote) |
-| 6 | [Pressable - handling taps](#6--pressable---handling-taps) |
-| 7 | [ScrollView vs FlatList](#7--scrollview-vs-flatlist) |
-| 8 | [TextInput - controlled input](#8--textinput---controlled-input) |
-| 9 | [useState - reactive state](#9--usestate---reactive-state) |
-| 10 | [useEffect - side effects and cleanup](#10--useeffect---side-effects-and-cleanup) |
-| 11a | [StyleSheet](#11a--stylesheet) |
-| 11b | [Flexbox quick reference](#11b--flexbox-quick-reference) |
-| 12 | [Conditional rendering patterns](#12--conditional-rendering-patterns) |
-| 13 | [Forms - validation pattern](#13--forms---validation-pattern) |
-| 14 | [fetch - REST API calls](#14--fetch---rest-api-calls) |
-| 15 | [Async data pattern (load → show → error)](#15--async-data-pattern-load--show--error) |
-| 16 | [React Navigation - setup](#16--react-navigation---setup) |
-| 17 | [Navigation - navigate, params, goBack](#17--navigation---navigate-params-goback) |
-| 18 | [Tab and Drawer navigators](#18--tab-and-drawer-navigators) |
-| 19 | [AsyncStorage - local persistence](#19--asyncstorage---local-persistence) |
-| 20 | [Context - sharing state globally](#20--context---sharing-state-globally) |
-| 21 | [Zustand - lightweight global store](#21--zustand---lightweight-global-store) |
-| 22 | [Custom hooks - reusable logic](#22--custom-hooks---reusable-logic) |
-| 23 | [Responsive StyleSheet and Flexbox](#23--responsive-stylesheet-and-flexbox) |
-| 24 | [Permissions (expo)](#24--permissions-expo) |
-| 25 | [Notifications (expo)](#25--notifications-expo) |
-| 26 | [Deep linking](#26--deep-linking) |
-| 27 | [Animated - basic animations](#27--animated---basic-animations) |
-| 28 | [Platform-specific code](#28--platform-specific-code) |
-| 29 | [Common project structure](#29--common-project-structure) |
-| 30 | [Debugging checklist](#30--debugging-checklist) |
-| 31 | [ADB guide (Ubuntu / macOS / Windows)](#31--adb-guide-ubuntu--macos--windows) |
-| 32 | [Connect Android device (Expo Go + USB + emulator)](#32--connect-android-device-expo-go--usb--emulator) |
-| 33 | [Connect iPhone (Expo Go + simulator)](#33--connect-iphone-expo-go--simulator) |
-| 34 | [Developer menu and debug tools](#34--developer-menu-and-debug-tools) |
-| 35 | [Device connection troubleshooting](#35--device-connection-troubleshooting) |
+| #   | Topic                                                                                                   |
+| --- | ------------------------------------------------------------------------------------------------------- |
+| 1   | [Project setup (Expo)](#1--project-setup-expo)                                                          |
+| 2   | [Core component imports](#2--core-component-imports)                                                    |
+| 3   | [View - the universal container](#3--view---the-universal-container)                                    |
+| 4   | [Text - rendering text content](#4--text---rendering-text-content)                                      |
+| 5   | [Image - local and remote](#5--image---local-and-remote)                                                |
+| 6   | [Pressable - handling taps](#6--pressable---handling-taps)                                              |
+| 7   | [ScrollView vs FlatList](#7--scrollview-vs-flatlist)                                                    |
+| 8   | [TextInput - controlled input](#8--textinput---controlled-input)                                        |
+| 9   | [useState - reactive state](#9--usestate---reactive-state)                                              |
+| 10  | [useEffect - side effects and cleanup](#10--useeffect---side-effects-and-cleanup)                       |
+| 11a | [StyleSheet](#11a--stylesheet)                                                                          |
+| 11b | [Flexbox quick reference](#11b--flexbox-quick-reference)                                                |
+| 12  | [Conditional rendering patterns](#12--conditional-rendering-patterns)                                   |
+| 13  | [Forms - validation pattern](#13--forms---validation-pattern)                                           |
+| 14  | [fetch - REST API calls](#14--fetch---rest-api-calls)                                                   |
+| 15  | [Async data pattern (load → show → error)](#15--async-data-pattern-load--show--error)                   |
+| 16  | [React Navigation - setup](#16--react-navigation---setup)                                               |
+| 17  | [Navigation - navigate, params, goBack](#17--navigation---navigate-params-goback)                       |
+| 18  | [Tab and Drawer navigators](#18--tab-and-drawer-navigators)                                             |
+| 19  | [AsyncStorage - local persistence](#19--asyncstorage---local-persistence)                               |
+| 20  | [Context - sharing state globally](#20--context---sharing-state-globally)                               |
+| 21  | [Zustand - lightweight global store](#21--zustand---lightweight-global-store)                           |
+| 22  | [Custom hooks - reusable logic](#22--custom-hooks---reusable-logic)                                     |
+| 23  | [Responsive StyleSheet and Flexbox](#23--responsive-stylesheet-and-flexbox)                             |
+| 24  | [Permissions (expo)](#24--permissions-expo)                                                             |
+| 25  | [Notifications (expo)](#25--notifications-expo)                                                         |
+| 26  | [Deep linking](#26--deep-linking)                                                                       |
+| 27  | [Animated - basic animations](#27--animated---basic-animations)                                         |
+| 28  | [Platform-specific code](#28--platform-specific-code)                                                   |
+| 29  | [Common project structure](#29--common-project-structure)                                               |
+| 30  | [Debugging checklist](#30--debugging-checklist)                                                         |
+| 31  | [ADB guide (Ubuntu / macOS / Windows)](#31--adb-guide-ubuntu--macos--windows)                           |
+| 32  | [Connect Android device (Expo Go + USB + emulator)](#32--connect-android-device-expo-go--usb--emulator) |
+| 33  | [Connect iPhone (Expo Go + simulator)](#33--connect-iphone-expo-go--simulator)                          |
+| 34  | [Developer menu and debug tools](#34--developer-menu-and-debug-tools)                                   |
+| 35  | [Device connection troubleshooting](#35--device-connection-troubleshooting)                             |
 
 ---
 
@@ -80,20 +81,20 @@ npx expo start --ios
 
 ```tsx
 import {
-  View,          // container (like <div>)
-  Text,          // all text must be inside <Text>
-  Image,         // local or remote images
-  TextInput,     // text field
-  Pressable,     // tappable wrapper (replaces TouchableOpacity)
-  ScrollView,    // scrollable area (small content)
-  FlatList,      // virtualized list (large content)
-  SectionList,   // grouped virtualized list
+  View, // container (like <div>)
+  Text, // all text must be inside <Text>
+  Image, // local or remote images
+  TextInput, // text field
+  Pressable, // tappable wrapper (replaces TouchableOpacity)
+  ScrollView, // scrollable area (small content)
+  FlatList, // virtualized list (large content)
+  SectionList, // grouped virtualized list
   ActivityIndicator, // spinner
-  Switch,        // toggle
-  Modal,         // overlay dialog
-  StatusBar,     // control status bar appearance
-  StyleSheet,    // create optimized style objects
-} from 'react-native';
+  Switch, // toggle
+  Modal, // overlay dialog
+  StatusBar, // control status bar appearance
+  StyleSheet, // create optimized style objects
+} from "react-native";
 ```
 
 ---
@@ -162,18 +163,16 @@ import {
 ```tsx
 // Pressable with visual feedback
 <Pressable
-  onPress={() => console.log('Tapped!')}
-  onLongPress={() => console.log('Long press!')}
+  onPress={() => console.log("Tapped!")}
+  onLongPress={() => console.log("Long press!")}
   style={({ pressed }) => ({
     opacity: pressed ? 0.6 : 1,
     padding: 14,
-    backgroundColor: '#007AFF',
+    backgroundColor: "#007AFF",
     borderRadius: 8,
   })}
 >
-  <Text style={{ color: '#fff', textAlign: 'center' }}>
-    Tap me
-  </Text>
+  <Text style={{ color: "#fff", textAlign: "center" }}>Tap me</Text>
 </Pressable>
 ```
 
@@ -205,18 +204,18 @@ interface Item {
 />
 ```
 
-| Use case | Component |
-|---|---|
-| < 50 items, mixed content | **ScrollView** |
-| Large list, uniform rows | **FlatList** |
-| Grouped sections | **SectionList** |
+| Use case                  | Component       |
+| ------------------------- | --------------- |
+| < 50 items, mixed content | **ScrollView**  |
+| Large list, uniform rows  | **FlatList**    |
+| Grouped sections          | **SectionList** |
 
 ---
 
 ## 8 · TextInput - controlled input
 
 ```tsx
-const [email, setEmail] = React.useState('');
+const [email, setEmail] = React.useState("");
 
 // Controlled: value always reflects state
 <TextInput
@@ -228,12 +227,12 @@ const [email, setEmail] = React.useState('');
   autoCorrect={false}
   style={{
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderRadius: 8,
     padding: 12,
-    color: '#fff',
+    color: "#fff",
   }}
-/>
+/>;
 ```
 
 Common **keyboardType** values: `default` | `email-address` | `numeric` | `phone-pad`
@@ -243,7 +242,7 @@ Common **keyboardType** values: `default` | `email-address` | `numeric` | `phone
 ## 9 · useState - reactive state
 
 ```tsx
-import React from 'react';
+import React from "react";
 
 // Declare state with initial value
 const [count, setCount] = React.useState(0);
@@ -255,7 +254,7 @@ setCount(10);
 setCount((prev) => prev + 1);
 
 // Update object/array state (immutable patterns)
-setUser((prev) => ({ ...prev, name: 'Ada' }));
+setUser((prev) => ({ ...prev, name: "Ada" }));
 setItems((prev) => [...prev, newItem]);
 setItems((prev) => prev.filter((i) => i.id !== id));
 ```
@@ -285,11 +284,11 @@ React.useEffect(() => {
 }, []);
 ```
 
-| Dependency array | Runs when |
-|---|---|
-| `[]` | Once on **mount** |
-| `[a, b]` | When **a** or **b** changes |
-| *(omitted)* | Every render (avoid) |
+| Dependency array | Runs when                   |
+| ---------------- | --------------------------- |
+| `[]`             | Once on **mount**           |
+| `[a, b]`         | When **a** or **b** changes |
+| _(omitted)_      | Every render (avoid)        |
 
 ---
 
@@ -299,16 +298,16 @@ React.useEffect(() => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     gap: 12,
   },
   card: {
     padding: 16,
-    backgroundColor: '#1e1e1e',
+    backgroundColor: "#1e1e1e",
     borderRadius: 12,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 4,
@@ -324,17 +323,17 @@ const styles = StyleSheet.create({
 
 ## 11b · Flexbox quick reference
 
-| Property | Values |
-|---|---|
-| **flexDirection** | `column` (default), `row` |
-| **justifyContent** | `flex-start`, `center`, `flex-end` |
-| | `space-between`, `space-around`, `space-evenly` |
-| **alignItems** | `stretch` (default), `flex-start`, `center`, `flex-end` |
-| **flexWrap** | `nowrap` (default), `wrap` |
-| **gap** | number (e.g. `12`) - spacing between children |
-| **flex** | `1` - fill available space |
-| **alignSelf** | override parent `alignItems` for one child |
-| **position** | `relative` (default), `absolute` |
+| Property           | Values                                                  |
+| ------------------ | ------------------------------------------------------- |
+| **flexDirection**  | `column` (default), `row`                               |
+| **justifyContent** | `flex-start`, `center`, `flex-end`                      |
+|                    | `space-between`, `space-around`, `space-evenly`         |
+| **alignItems**     | `stretch` (default), `flex-start`, `center`, `flex-end` |
+| **flexWrap**       | `nowrap` (default), `wrap`                              |
+| **gap**            | number (e.g. `12`) - spacing between children           |
+| **flex**           | `1` - fill available space                              |
+| **alignSelf**      | override parent `alignItems` for one child              |
+| **position**       | `relative` (default), `absolute`                        |
 
 ---
 
@@ -347,10 +346,14 @@ interface Item {
 }
 
 // Short-circuit
-{isLoading && <ActivityIndicator />}
+{
+  isLoading && <ActivityIndicator />;
+}
 
 // Ternary
-{error ? <Text>{error}</Text> : <DataView data={data} />}
+{
+  error ? <Text>{error}</Text> : <DataView data={data} />;
+}
 
 // Early return
 if (loading) return <ActivityIndicator />;
@@ -358,9 +361,9 @@ if (error) return <Text>Error: {error}</Text>;
 return <DataView data={data} />;
 
 // Rendering a list
-{items.map((item: Item) => (
-  <Text key={item.id}>{item.name}</Text>
-))}
+{
+  items.map((item: Item) => <Text key={item.id}>{item.name}</Text>);
+}
 ```
 
 ---
@@ -368,10 +371,10 @@ return <DataView data={data} />;
 ## 13 · Forms - validation pattern
 
 ```tsx
-const [email, setEmail] = React.useState('');
+const [email, setEmail] = React.useState("");
 const [touched, setTouched] = React.useState(false);
 
-const emailOk = email.includes('@');
+const emailOk = email.includes("@");
 const showError = touched && !emailOk;
 
 <TextInput
@@ -379,12 +382,12 @@ const showError = touched && !emailOk;
   onChangeText={setEmail}
   onBlur={() => setTouched(true)}
   placeholder="Email"
-/>
+/>;
 
 // Show error only after the user interacts
-{showError && (
-  <Text style={{ color: '#ff4444' }}>Invalid email</Text>
-)}
+{
+  showError && <Text style={{ color: "#ff4444" }}>Invalid email</Text>;
+}
 
 // Disable submit until valid
 <Pressable
@@ -393,7 +396,7 @@ const showError = touched && !emailOk;
   onPress={handleSubmit}
 >
   <Text>Submit</Text>
-</Pressable>
+</Pressable>;
 ```
 
 ---
@@ -402,19 +405,19 @@ const showError = touched && !emailOk;
 
 ```tsx
 // GET request
-const response = await fetch('https://api.example.com/items');
+const response = await fetch("https://api.example.com/items");
 const data = await response.json();
 
 // POST request
-const response = await fetch('https://api.example.com/items', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ title: 'New item' }),
+const response = await fetch("https://api.example.com/items", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ title: "New item" }),
 });
 
 // DELETE request
 await fetch(`https://api.example.com/items/${id}`, {
-  method: 'DELETE',
+  method: "DELETE",
 });
 ```
 
@@ -493,27 +496,28 @@ export default function App() {
 ## 17 · Navigation - navigate, params, goBack
 
 ```tsx
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 type RootStackParamList = {
   [screen: string]: object | undefined;
 };
 
-
 // Navigate to a screen with params
-function HomeScreen({ navigation }: NativeStackScreenProps<RootStackParamList>) {
+function HomeScreen({
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) {
   return (
-    <Pressable
-      onPress={() => navigation.navigate('Detail', { id: 42 })}
-    >
+    <Pressable onPress={() => navigation.navigate("Detail", { id: 42 })}>
       <Text>Go to Detail</Text>
     </Pressable>
   );
 }
 
 // Read params on the target screen
-function DetailScreen({ route, navigation }: NativeStackScreenProps<RootStackParamList>) {
+function DetailScreen({
+  route,
+  navigation,
+}: NativeStackScreenProps<RootStackParamList>) {
   const { id } = route.params;
   return (
     <View>
@@ -532,22 +536,22 @@ function DetailScreen({ route, navigation }: NativeStackScreenProps<RootStackPar
 
 ```tsx
 // Bottom tabs
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 
 <Tab.Navigator>
   <Tab.Screen name="Feed" component={FeedScreen} />
   <Tab.Screen name="Profile" component={ProfileScreen} />
-</Tab.Navigator>
+</Tab.Navigator>;
 
 // Drawer
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator } from "@react-navigation/drawer";
 const Drawer = createDrawerNavigator();
 
 <Drawer.Navigator>
   <Drawer.Screen name="Home" component={HomeScreen} />
   <Drawer.Screen name="Settings" component={SettingsScreen} />
-</Drawer.Navigator>
+</Drawer.Navigator>;
 ```
 
 - **Nest** navigators: Tab inside Stack, Drawer wrapping Stack
@@ -557,23 +561,23 @@ const Drawer = createDrawerNavigator();
 ## 19 · AsyncStorage - local persistence
 
 ```tsx
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Save a value
-await AsyncStorage.setItem('token', 'abc123');
+await AsyncStorage.setItem("token", "abc123");
 
 // Save an object (must stringify)
-await AsyncStorage.setItem('user', JSON.stringify(user));
+await AsyncStorage.setItem("user", JSON.stringify(user));
 
 // Read a value
-const token = await AsyncStorage.getItem('token');
+const token = await AsyncStorage.getItem("token");
 
 // Read an object (must parse)
-const raw = await AsyncStorage.getItem('user');
+const raw = await AsyncStorage.getItem("user");
 const user = raw ? JSON.parse(raw) : null;
 
 // Remove
-await AsyncStorage.removeItem('token');
+await AsyncStorage.removeItem("token");
 
 // Clear everything
 await AsyncStorage.clear();
@@ -609,7 +613,7 @@ function AuthProvider({ children }: AuthProviderProps) {
 // 3. Consume anywhere with useContext
 function ProfileScreen() {
   const { user } = React.useContext(AuthContext);
-  return <Text>{user?.name ?? 'Guest'}</Text>;
+  return <Text>{user?.name ?? "Guest"}</Text>;
 }
 ```
 
@@ -621,7 +625,7 @@ function ProfileScreen() {
 ## 21 · Zustand - lightweight global store
 
 ```tsx
-import { create } from 'zustand';
+import { create } from "zustand";
 
 // Define store
 interface CartItem {
@@ -638,8 +642,7 @@ interface CartState {
 
 const useCartStore = create<CartState>((set) => ({
   items: [],
-  addItem: (item) =>
-    set((s) => ({ items: [...s.items, item] })),
+  addItem: (item) => set((s) => ({ items: [...s.items, item] })),
   removeItem: (id) =>
     set((s) => ({ items: s.items.filter((i) => i.id !== id) })),
   clear: () => set({ items: [] }),
@@ -676,7 +679,9 @@ function useFetch<T = unknown>(url: string) {
         if (!cancelled) setLoading(false);
       }
     })();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [url]);
 
   return { data, loading, error };
@@ -688,7 +693,7 @@ function useFetch<T = unknown>(url: string) {
 ## 23 · Responsive StyleSheet and Flexbox
 
 ```tsx
-import { Dimensions, useWindowDimensions } from 'react-native';
+import { Dimensions, useWindowDimensions } from "react-native";
 
 // Hook (updates on rotation)
 function MyComponent() {
@@ -696,17 +701,19 @@ function MyComponent() {
   const isLandscape = width > height;
 
   return (
-    <View style={{
-      flexDirection: isLandscape ? 'row' : 'column',
-      padding: width > 600 ? 32 : 16,
-    }}>
+    <View
+      style={{
+        flexDirection: isLandscape ? "row" : "column",
+        padding: width > 600 ? 32 : 16,
+      }}
+    >
       <Text>Adaptive layout</Text>
     </View>
   );
 }
 
 // Percentage-based
-<View style={{ width: '80%', alignSelf: 'center' }} />
+<View style={{ width: "80%", alignSelf: "center" }} />;
 ```
 
 ---
@@ -714,19 +721,19 @@ function MyComponent() {
 ## 24 · Permissions (expo)
 
 ```tsx
-import * as Location from 'expo-location';
-import * as ImagePicker from 'expo-image-picker';
+import * as Location from "expo-location";
+import * as ImagePicker from "expo-image-picker";
 
 // Location
 const { status } = await Location.requestForegroundPermissionsAsync();
-if (status === 'granted') {
+if (status === "granted") {
   const loc = await Location.getCurrentPositionAsync({});
   console.log(loc.coords.latitude, loc.coords.longitude);
 }
 
 // Camera / Gallery
 const { status } = await ImagePicker.requestCameraPermissionsAsync();
-if (status === 'granted') {
+if (status === "granted") {
   const result = await ImagePicker.launchCameraAsync({
     allowsEditing: true,
     quality: 0.8,
@@ -740,7 +747,7 @@ if (status === 'granted') {
 ## 25 · Notifications (expo)
 
 ```tsx
-import * as Notifications from 'expo-notifications';
+import * as Notifications from "expo-notifications";
 
 // Request permission
 const { status } = await Notifications.requestPermissionsAsync();
@@ -748,16 +755,16 @@ const { status } = await Notifications.requestPermissionsAsync();
 // Schedule a local notification
 await Notifications.scheduleNotificationAsync({
   content: {
-    title: 'Reminder',
-    body: 'Check your tasks!',
+    title: "Reminder",
+    body: "Check your tasks!",
   },
   trigger: { seconds: 10 },
 });
 
 // Listen for received notifications
 React.useEffect(() => {
-  const sub = Notifications.addNotificationReceivedListener(
-    (n) => console.log(n)
+  const sub = Notifications.addNotificationReceivedListener((n) =>
+    console.log(n),
   );
   return () => sub.remove();
 }, []);
@@ -799,7 +806,7 @@ const linking = {
 ## 27 · Animated - basic animations
 
 ```tsx
-import { Animated } from 'react-native';
+import { Animated } from "react-native";
 
 const opacity = React.useRef(new Animated.Value(0)).current;
 
@@ -815,7 +822,7 @@ React.useEffect(() => {
 // Apply to component
 <Animated.View style={{ opacity }}>
   <Text>Fading in…</Text>
-</Animated.View>
+</Animated.View>;
 ```
 
 Animatable with **native driver**: `opacity`, `transform` (translate, scale, rotate)
@@ -825,15 +832,15 @@ Animatable with **native driver**: `opacity`, `transform` (translate, scale, rot
 ## 28 · Platform-specific code
 
 ```tsx
-import { Platform } from 'react-native';
+import { Platform } from "react-native";
 
 // Inline check
-const padding = Platform.OS === 'ios' ? 44 : 24;
+const padding = Platform.OS === "ios" ? 44 : 24;
 
 // Platform.select
 const shadowStyle = Platform.select({
   ios: {
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
@@ -877,18 +884,18 @@ my-app/
 
 ## 30 · Debugging checklist
 
-| Problem | Fix |
-|---|---|
-| **Red error screen** | Read the error message → fix the JS |
-| **White screen** | Check console for crash → wrap in `try/catch` |
-| **Metro bundler stuck** | `npx expo start --clear` |
-| **Module not found** | `npx expo install <pkg>` |
-| **Stale cache** | Delete `node_modules`, run `npm install` |
-| **Android emulator not found** | Start emulator first, then `npx expo start` |
-| **Network request failed** | Check URL, use `10.0.2.2` for Android emulator |
-| **CORS error** | Does not exist in RN - check API URL |
-| **Slow list** | Switch from `ScrollView` to `FlatList` |
-| **State not updating** | Return a **new** object/array, not mutated one |
+| Problem                        | Fix                                            |
+| ------------------------------ | ---------------------------------------------- |
+| **Red error screen**           | Read the error message → fix the JS            |
+| **White screen**               | Check console for crash → wrap in `try/catch`  |
+| **Metro bundler stuck**        | `npx expo start --clear`                       |
+| **Module not found**           | `npx expo install <pkg>`                       |
+| **Stale cache**                | Delete `node_modules`, run `npm install`       |
+| **Android emulator not found** | Start emulator first, then `npx expo start`    |
+| **Network request failed**     | Check URL, use `10.0.2.2` for Android emulator |
+| **CORS error**                 | Does not exist in RN - check API URL           |
+| **Slow list**                  | Switch from `ScrollView` to `FlatList`         |
+| **State not updating**         | Return a **new** object/array, not mutated one |
 
 ---
 
@@ -951,11 +958,11 @@ adb --version
 adb devices
 ```
 
-| Output | Meaning |
-|---|---|
-| `<serial>  device` | Connected and authorized |
-| `<serial>  unauthorized` | Accept the prompt on the phone |
-| *(empty list)* | Cable/driver issue - see troubleshooting below |
+| Output                   | Meaning                                        |
+| ------------------------ | ---------------------------------------------- |
+| `<serial>  device`       | Connected and authorized                       |
+| `<serial>  unauthorized` | Accept the prompt on the phone                 |
+| _(empty list)_           | Cable/driver issue - see troubleshooting below |
 
 ---
 
@@ -1013,14 +1020,14 @@ adb usb
 
 ### Troubleshooting
 
-| Problem | Fix |
-|---|---|
-| `unauthorized` | Unlock phone → accept USB debugging prompt → retry |
-| `offline` | Unplug → `adb kill-server` → replug |
-| **Not detected (Linux)** | Add udev rule: `sudo apt install android-tools-adb` and replug |
-| **Not detected (Windows)** | Install OEM USB driver from phone manufacturer website |
-| **Not detected (macOS)** | Try a different USB cable (some cables are charge-only) |
-| `adb: command not found` | Add `platform-tools` to PATH (see install section) |
+| Problem                    | Fix                                                            |
+| -------------------------- | -------------------------------------------------------------- |
+| `unauthorized`             | Unlock phone → accept USB debugging prompt → retry             |
+| `offline`                  | Unplug → `adb kill-server` → replug                            |
+| **Not detected (Linux)**   | Add udev rule: `sudo apt install android-tools-adb` and replug |
+| **Not detected (Windows)** | Install OEM USB driver from phone manufacturer website         |
+| **Not detected (macOS)**   | Try a different USB cable (some cables are charge-only)        |
+| `adb: command not found`   | Add `platform-tools` to PATH (see install section)             |
 
 ---
 
@@ -1034,10 +1041,10 @@ adb usb
 
 ### Install Expo Go
 
-| Platform | Store | Search for |
-|---|---|---|
-| **Android** | Google Play Store | "Expo Go" |
-| **iPhone** | Apple App Store | "Expo Go" |
+| Platform    | Store             | Search for |
+| ----------- | ----------------- | ---------- |
+| **Android** | Google Play Store | "Expo Go"  |
+| **iPhone**  | Apple App Store   | "Expo Go"  |
 
 ### Option A: QR code (Wi-Fi, no cable)
 
@@ -1111,11 +1118,11 @@ npx expo start --tunnel
 
 ### iPhone limitations
 
-| Aspect | Detail |
-|---|---|
-| **Expo Go** | Works for development, but some native libraries (e.g. real push notifications) need a development build |
-| **iOS Simulator** | Available **only on macOS** (requires Xcode) |
-| **USB cable** | Not needed for Expo Go — Wi-Fi is enough |
+| Aspect            | Detail                                                                                                   |
+| ----------------- | -------------------------------------------------------------------------------------------------------- |
+| **Expo Go**       | Works for development, but some native libraries (e.g. real push notifications) need a development build |
+| **iOS Simulator** | Available **only on macOS** (requires Xcode)                                                             |
+| **USB cable**     | Not needed for Expo Go — Wi-Fi is enough                                                                 |
 
 ### iOS Simulator (macOS only)
 
@@ -1129,12 +1136,12 @@ npx expo start --tunnel
 
 ### Open the Developer Menu
 
-| Target | How to open |
-|---|---|
-| **Android phone** | Shake the phone |
-| **iPhone** | Shake the phone |
+| Target               | How to open                                     |
+| -------------------- | ----------------------------------------------- |
+| **Android phone**    | Shake the phone                                 |
+| **iPhone**           | Shake the phone                                 |
 | **Android emulator** | `Ctrl + M` (Windows/Linux) or `Cmd + M` (macOS) |
-| **iOS Simulator** | `Cmd + D` |
+| **iOS Simulator**    | `Cmd + D`                                       |
 
 From the Developer Menu you can:
 
@@ -1162,15 +1169,15 @@ Then open the Developer Menu on your phone — React DevTools connects automatic
 
 ## 35 · Device connection troubleshooting
 
-| Problem | Fix |
-|---|---|
-| QR code doesn't connect | Verify phone and PC are on the **same Wi-Fi network** |
-| "Network response timed out" | Use `npx expo start --tunnel` |
-| Metro bundler stuck | Stop with `Ctrl + C`, then `npx expo start -c` (clear cache) |
-| `adb devices` empty list | Check USB debugging is enabled, accept the prompt on the phone |
-| App doesn't update | Check **Fast Refresh** is enabled (Developer Menu) |
-| "Expo Go is not compatible" | Update Expo Go from the store and run `npx expo install --fix` |
-| iPhone doesn't open the link | Install/update Expo Go from the App Store |
+| Problem                      | Fix                                                            |
+| ---------------------------- | -------------------------------------------------------------- |
+| QR code doesn't connect      | Verify phone and PC are on the **same Wi-Fi network**          |
+| "Network response timed out" | Use `npx expo start --tunnel`                                  |
+| Metro bundler stuck          | Stop with `Ctrl + C`, then `npx expo start -c` (clear cache)   |
+| `adb devices` empty list     | Check USB debugging is enabled, accept the prompt on the phone |
+| App doesn't update           | Check **Fast Refresh** is enabled (Developer Menu)             |
+| "Expo Go is not compatible"  | Update Expo Go from the store and run `npx expo install --fix` |
+| iPhone doesn't open the link | Install/update Expo Go from the App Store                      |
 
 ### Quick commands
 

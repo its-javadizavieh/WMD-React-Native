@@ -1,4 +1,4 @@
-# Lab 08 – Props, eventi e binding (Componenti base Parte 2)
+# Lab 08 - Props, eventi e binding (Componenti base Parte 2)
 
 ## Obiettivo
 
@@ -80,11 +80,11 @@ function SettingRow({ label, value, right }: SettingRowProps) {
 
 **Settings screen — SettingRow con TextInput e Switch**
 
-![Lab 08 – Settings screen](imgs/lab_08_main.png)
+![Lab 08 - Settings screen](imgs/lab_08_main.png)
 
 **Validazione nome — messaggio di errore per nome troppo corto**
 
-![Lab 08 – Validazione nome](imgs/lab_08_validation.png)
+![Lab 08 - Validazione nome](imgs/lab_08_validation.png)
 
 ## Consegna minima
 

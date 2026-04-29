@@ -1,4 +1,4 @@
-# Lab 10 – useEffect, effetti asincroni e cleanup
+# Lab 10 - useEffect, effetti asincroni e cleanup
 
 ## Obiettivo
 
@@ -55,15 +55,15 @@ React.useEffect(() => {
 
 **Stato loading — timer in corso con useEffect**
 
-![Lab 10 – Stato loading](imgs/lab_10_loading.png)
+![Lab 10 - Stato loading](imgs/lab_10_loading.png)
 
 **Stato success — dati caricati dopo il timer**
 
-![Lab 10 – Stato success](imgs/lab_10_success.png)
+![Lab 10 - Stato success](imgs/lab_10_success.png)
 
 **Stato error — caricamento fallito**
 
-![Lab 10 – Stato success](imgs/lab_10_error.png)
+![Lab 10 - Stato success](imgs/lab_10_error.png)
 
 ## Consegna minima
 

@@ -1,4 +1,4 @@
-# Lab 01 – Soluzione
+# Lab 01 - Soluzione
 
 ## Cosa mostra la soluzione
 
@@ -29,7 +29,10 @@ export default function App() {
           <Text style={styles.title}>Hello React Native</Text>
           <Greeting name="Ada" />
           <Text>Count: {count}</Text>
-          <Pressable style={styles.button} onPress={() => setCount((c) => c + 1)}>
+          <Pressable
+            style={styles.button}
+            onPress={() => setCount((c) => c + 1)}
+          >
             <Text style={styles.buttonText}>Increment</Text>
           </Pressable>
         </View>
@@ -57,8 +60,8 @@ const styles = StyleSheet.create({
 
 **Schermata iniziale — Count: 0**
 
-![Lab 01 – Schermata iniziale](../labs/imgs/lab_01_main.png)
+![Lab 01 - Schermata iniziale](../labs/imgs/lab_01_main.png)
 
 **Contatore incrementato — Count: 3**
 
-![Lab 01 – Contatore incrementato](../labs/imgs/lab_01_counter.png)
+![Lab 01 - Contatore incrementato](../labs/imgs/lab_01_counter.png)

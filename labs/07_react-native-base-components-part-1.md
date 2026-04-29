@@ -1,4 +1,4 @@
-# Lab 07 – Componenti base React Native (Parte 1)
+# Lab 07 - Componenti base React Native (Parte 1)
 
 ## Obiettivo
 
@@ -41,10 +41,13 @@ import { Image, Pressable, Text, View } from "react-native";
     source={{ uri: "https://picsum.photos/200" }}
     style={{ width: 200, height: 120, borderRadius: 12 }}
   />
-  <Pressable onPress={() => {}} style={{ padding: 10, borderWidth: 1, borderRadius: 8 }}>
+  <Pressable
+    onPress={() => {}}
+    style={{ padding: 10, borderWidth: 1, borderRadius: 8 }}
+  >
     <Text style={{ fontWeight: "600" }}>Tap</Text>
   </Pressable>
-</View>
+</View>;
 ```
 
 ## Passi
@@ -60,12 +63,11 @@ import { Image, Pressable, Text, View } from "react-native";
 
 **Profilo con avatar — Image, Text e ScrollView**
 
-![Lab 07 – Profilo con avatar](imgs/lab_07_main.png)
+![Lab 07 - Profilo con avatar](imgs/lab_07_main.png)
 
 **Immagine mancante — fallback placeholder**
 
-![Lab 07 – Fallback immagine](imgs/lab_07_fallback.png)
-
+![Lab 07 - Fallback immagine](imgs/lab_07_fallback.png)
 
 ## Consegna minima
 

@@ -1,4 +1,4 @@
-# Lab 06 – Librerie core e terze parti, dipendenze e versioning
+# Lab 06 - Librerie core e terze parti, dipendenze e versioning
 
 ## Obiettivo
 
@@ -35,7 +35,7 @@ Carica una lista di todos da `https://jsonplaceholder.typicode.com/todos?_limit=
 ```tsx
 async function fetchTodos() {
   const res = await fetch(
-    "https://jsonplaceholder.typicode.com/todos?_limit=5"
+    "https://jsonplaceholder.typicode.com/todos?_limit=5",
   );
   if (!res.ok) throw new Error("Request failed");
   return res.json();
@@ -55,16 +55,15 @@ async function fetchTodos() {
 
 **Stato loading — caricamento todos**
 
-![Lab 06 – Stato loading](imgs/lab_06_main_1.png)
+![Lab 06 - Stato loading](imgs/lab_06_main_1.png)
 
 **Todos caricati da API**
 
-![Lab 06 – Todos caricati](imgs/lab_06_main_2.png)
+![Lab 06 - Todos caricati](imgs/lab_06_main_2.png)
 
 **Stato errore — pulsante Retry**
 
-![Lab 06 – Stato errore](imgs/lab_06_error.png)
-
+![Lab 06 - Stato errore](imgs/lab_06_error.png)
 
 ## Consegna minima
 

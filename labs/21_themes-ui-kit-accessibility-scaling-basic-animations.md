@@ -1,4 +1,4 @@
-# Lab 21 – Temi, UI kit, accessibilità e animazioni base
+# Lab 21 - Temi, UI kit, accessibilità e animazioni base
 
 ## Obiettivo
 
@@ -42,8 +42,7 @@ Oggetto `theme` con design tokens. `accessibilityRole` e `maxFontSizeMultiplier`
 
 **UI kit demo — theme tokens, accessibilityRole e animazioni base**
 
-![Lab 21 – UI kit demo](imgs/lab_21_main.png)
-
+![Lab 21 - UI kit demo](imgs/lab_21_main.png)
 
 ## Consegna minima
 
@@ -74,5 +73,5 @@ Oggetto `theme` con design tokens. `accessibilityRole` e `maxFontSizeMultiplier`
 ## Search terms
 
 - react native accessibilityRole
-maxFontSizeMultiplier react native
-design tokens react native
+  maxFontSizeMultiplier react native
+  design tokens react native

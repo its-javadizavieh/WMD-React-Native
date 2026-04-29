@@ -1,4 +1,4 @@
-# Lab 09 – Stato con useState e componenti controllati
+# Lab 09 - Stato con useState e componenti controllati
 
 ## Obiettivo
 
@@ -54,13 +54,13 @@ const emailOk = email.includes("@");
 
 **Form vuoto — stato iniziale, nessun errore visibile**
 
-![Lab 09 – Form vuoto](imgs/lab_09_main.png)
+![Lab 09 - Form vuoto](imgs/lab_09_main.png)
 
 **Errori dopo submit — validazione con messaggi inline**
 
-![Lab 09 – Errori dopo submit](imgs/lab_09_errors_1.png)
-![Lab 09 – Errori dopo submit](imgs/lab_09_errors_2.png)
-![Lab 09 – Errori dopo submit](imgs/lab_09_errors_3.png)
+![Lab 09 - Errori dopo submit](imgs/lab_09_errors_1.png)
+![Lab 09 - Errori dopo submit](imgs/lab_09_errors_2.png)
+![Lab 09 - Errori dopo submit](imgs/lab_09_errors_3.png)
 
 ## Consegna minima
 

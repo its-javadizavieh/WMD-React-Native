@@ -1,4 +1,4 @@
-# Lab 04 – Problem solving e progettazione mobile
+# Lab 04 - Problem solving e progettazione mobile
 
 ## Obiettivo
 
@@ -63,16 +63,15 @@ Prima della consegna, forza questi stati:
 
 **Stato empty — nessuna nota, messaggio fallback**
 
-![Lab 04 – Stato empty](imgs/lab_04_empty.png)
+![Lab 04 - Stato empty](imgs/lab_04_empty.png)
 
 **Una nota aggiunta**
 
-![Lab 04 – Una nota aggiunta](imgs/lab_04_success_1.png)
+![Lab 04 - Una nota aggiunta](imgs/lab_04_success_1.png)
 
 **Due note aggiunte**
 
-![Lab 04 – Due note aggiunte](imgs/lab_04_success_2.png)
-
+![Lab 04 - Due note aggiunte](imgs/lab_04_success_2.png)
 
 ## Consegna minima
 

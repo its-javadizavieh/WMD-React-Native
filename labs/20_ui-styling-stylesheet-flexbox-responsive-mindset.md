@@ -1,4 +1,4 @@
-# Lab 20 – UI styling: StyleSheet, flexbox e responsive
+# Lab 20 - UI styling: StyleSheet, flexbox e responsive
 
 ## Obiettivo
 
@@ -42,12 +42,11 @@ Layout responsive con `useWindowDimensions`. Flexbox: colonna su mobile, riga su
 
 **Layout mobile — Flexbox column su schermo stretto**
 
-![Lab 20 – Layout mobile](imgs/lab_20_mobile.png)
+![Lab 20 - Layout mobile](imgs/lab_20_mobile.png)
 
 **Layout tablet — Flexbox row su schermo largo**
 
-![Lab 20 – Layout tablet](imgs/lab_20_tablet.png)
-
+![Lab 20 - Layout tablet](imgs/lab_20_tablet.png)
 
 ## Consegna minima
 
@@ -78,5 +77,5 @@ Layout responsive con `useWindowDimensions`. Flexbox: colonna su mobile, riga su
 ## Search terms
 
 - useWindowDimensions react native
-flexbox responsive react native
-stylesheet flexbox column row
+  flexbox responsive react native
+  stylesheet flexbox column row

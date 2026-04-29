@@ -1,4 +1,4 @@
-# Lab 17 – Gestione asincrona in mobile: loading / error states
+# Lab 17 - Gestione asincrona in mobile: loading / error states
 
 ## Obiettivo
 
@@ -41,8 +41,7 @@ Simulazione success / failure con bottoni. Oggetto stato unico con campo `status
 
 **Workflow asincrono — stati loading / success / error in un unico oggetto**
 
-![Lab 17 – Workflow asincrono](imgs/lab_17_main.png)
-
+![Lab 17 - Workflow asincrono](imgs/lab_17_main.png)
 
 ## Consegna minima
 
@@ -73,4 +72,4 @@ Simulazione success / failure con bottoni. Oggetto stato unico con campo `status
 ## Search terms
 
 - react native loading state
-activityindicator react native
+  activityindicator react native

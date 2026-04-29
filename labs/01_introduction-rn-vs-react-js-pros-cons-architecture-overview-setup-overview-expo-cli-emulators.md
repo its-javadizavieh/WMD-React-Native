@@ -1,4 +1,4 @@
-# Lab 01 – Introduzione a React Native vs React JS
+# Lab 01 - Introduzione a React Native vs React JS
 
 ## Obiettivo
 
@@ -67,12 +67,11 @@ const styles = StyleSheet.create({
 
 **Schermata iniziale — Count: 0**
 
-![Lab 01 – Schermata iniziale](imgs/lab_01_main.png)
+![Lab 01 - Schermata iniziale](imgs/lab_01_main.png)
 
 **Contatore incrementato — Count: 3**
 
-![Lab 01 – Contatore incrementato](imgs/lab_01_counter.png)
-
+![Lab 01 - Contatore incrementato](imgs/lab_01_counter.png)
 
 ## Consegna minima
 
