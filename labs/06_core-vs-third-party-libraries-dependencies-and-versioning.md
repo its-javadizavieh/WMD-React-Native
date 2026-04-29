@@ -44,16 +44,16 @@ async function fetchTodos() {
 
 ## Passi
 
-1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **Funzione fetch** — Crea `fetchTodos()` che carica i dati e controlla `res.ok`.
-3. **Mostra la lista** — Usa `FlatList` con `keyExtractor` per mostrare i todos.
-4. **3 stati UI** — `loading` (testo), `error` (pulsante Retry), `success` (lista).
-5. **Edge case** — Simula un errore (URL sbagliata) e mostra il messaggio di errore con Retry.
-6. **README** — Documenta: cosa hai scelto (fetch o Axios), perché, nota su lockfile.
+1. **Avvia progetto Expo** - verifica che l'app parta.
+2. **Funzione fetch** - Crea `fetchTodos()` che carica i dati e controlla `res.ok`.
+3. **Mostra la lista** - Usa `FlatList` con `keyExtractor` per mostrare i todos.
+4. **3 stati UI** - `loading` (testo), `error` (pulsante Retry), `success` (lista).
+5. **Edge case** - Simula un errore (URL sbagliata) e mostra il messaggio di errore con Retry.
+6. **README** - Documenta: cosa hai scelto (fetch o Axios), perché, nota su lockfile.
 
 ## Screenshot attesi
 
-**Stato loading — caricamento todos**
+**Stato loading - caricamento todos**
 
 ![Lab 06 - Stato loading](imgs/lab_06_main_1.png)
 
@@ -61,7 +61,7 @@ async function fetchTodos() {
 
 ![Lab 06 - Todos caricati](imgs/lab_06_main_2.png)
 
-**Stato errore — pulsante Retry**
+**Stato errore - pulsante Retry**
 
 ![Lab 06 - Stato errore](imgs/lab_06_error.png)
 

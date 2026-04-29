@@ -57,17 +57,17 @@ const styles = StyleSheet.create({
 
 ## Passi
 
-1. **Crea/riusa un progetto Expo** — verifica che parta su emulatore/device.
-2. **SafeAreaView** — Avvolgi il contenuto con `SafeAreaView` (da `react-native`) per evitare che il testo finisca sotto la status bar.
-3. **Contatore + console.log** — Aggiungi `const [count, setCount] = React.useState(0)` e un contatore `appRenderCount` con `console.log` nel corpo della funzione App.
-4. **Componente Row** — Crea `Row` con un contatore `rowRenderCount` e `console.log` dentro la funzione. Aggiungi bordi con `StyleSheet` (borderWidth, borderColor, borderRadius) per rendere ogni riga visivamente distinta.
-5. **FlatList** — Genera 20 elementi con `Array.from({ length: 20 }, (_, i) => ({ id: String(i+1), title: "Item " + (i+1) }))` e mostrali con `FlatList`. Usa `contentContainerStyle` per il padding della lista.
-6. **Osserva i log** — Premi il pulsante e guarda quante volte App e Row si ri-renderizzano.
-7. **README** — Scrivi 3-5 righe: cosa hai osservato nei log e perché succede.
+1. **Crea/riusa un progetto Expo** - verifica che parta su emulatore/device.
+2. **SafeAreaView** - Avvolgi il contenuto con `SafeAreaView` (da `react-native`) per evitare che il testo finisca sotto la status bar.
+3. **Contatore + console.log** - Aggiungi `const [count, setCount] = React.useState(0)` e un contatore `appRenderCount` con `console.log` nel corpo della funzione App.
+4. **Componente Row** - Crea `Row` con un contatore `rowRenderCount` e `console.log` dentro la funzione. Aggiungi bordi con `StyleSheet` (borderWidth, borderColor, borderRadius) per rendere ogni riga visivamente distinta.
+5. **FlatList** - Genera 20 elementi con `Array.from({ length: 20 }, (_, i) => ({ id: String(i+1), title: "Item " + (i+1) }))` e mostrali con `FlatList`. Usa `contentContainerStyle` per il padding della lista.
+6. **Osserva i log** - Premi il pulsante e guarda quante volte App e Row si ri-renderizzano.
+7. **README** - Scrivi 3-5 righe: cosa hai osservato nei log e perché succede.
 
 ## Screenshot attesi
 
-**FlatList con 20 item — stato iniziale (Count: 0)**
+**FlatList con 20 item - stato iniziale (Count: 0)**
 
 ![Lab 02 - FlatList stato iniziale](imgs/lab_02_main_1.png)
 
@@ -75,11 +75,11 @@ const styles = StyleSheet.create({
 
 ![Lab 02 - FlatList dopo re-render](imgs/lab_02_main_2.png)
 
-**Console log — primo render (App + 12 Row)**
+**Console log - primo render (App + 12 Row)**
 
 ![Lab 02 - Console primo render](imgs/lab_02_console_1.png)
 
-**Console log — secondo render dopo pressione pulsante**
+**Console log - secondo render dopo pressione pulsante**
 
 ![Lab 02 - Console secondo render](imgs/lab_02_console_2.png)
 

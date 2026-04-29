@@ -37,19 +37,19 @@ npx expo install @react-navigation/native @react-navigation/native-stack react-n
 
 ## Passi
 
-1. **Installa dipendenze** — Esegui i comandi di installazione sopra.
-2. **App.tsx** — Crea `NavigationContainer` con `Stack.Navigator` e due screen: Home e Details.
-3. **HomeScreen** — Un pulsante che naviga a Details con `navigation.navigate("Details", { id: "a1" })`.
-4. **DetailsScreen** — Mostra l'id ricevuto e un pulsante "Go back".
-5. **Edge case** — Se `route.params?.id` è mancante, mostra "Missing id".
+1. **Installa dipendenze** - Esegui i comandi di installazione sopra.
+2. **App.tsx** - Crea `NavigationContainer` con `Stack.Navigator` e due screen: Home e Details.
+3. **HomeScreen** - Un pulsante che naviga a Details con `navigation.navigate("Details", { id: "a1" })`.
+4. **DetailsScreen** - Mostra l'id ricevuto e un pulsante "Go back".
+5. **Edge case** - Se `route.params?.id` è mancante, mostra "Missing id".
 
 ## Screenshot attesi
 
-**Home screen — NavigationContainer con Stack.Navigator**
+**Home screen - NavigationContainer con Stack.Navigator**
 
 ![Lab 13 - Home screen](imgs/lab_13_home.png)
 
-**Details screen — navigazione da Home a Details**
+**Details screen - navigazione da Home a Details**
 
 ![Lab 13 - Details screen](imgs/lab_13_details.png)
 

@@ -43,12 +43,12 @@ return <Text>Pronto</Text>;
 
 ## Passi
 
-1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **Definisci gli stati** — Scrivi su carta o nel README: empty, loading, success, error.
-3. **Implementa `load()`** — Una funzione che imposta "loading", attende 300ms, poi mostra i dati o "empty".
-4. **Aggiungi input** — Un `TextInput` + pulsante "Add" per aggiungere note alla lista.
-5. **Edge case** — Lo stato `error` deve avere un pulsante "Riprova" che richiama `load()`.
-6. **Test manuale** — Forza ogni stato e verifica che la UI sia corretta.
+1. **Avvia progetto Expo** - verifica che l'app parta.
+2. **Definisci gli stati** - Scrivi su carta o nel README: empty, loading, success, error.
+3. **Implementa `load()`** - Una funzione che imposta "loading", attende 300ms, poi mostra i dati o "empty".
+4. **Aggiungi input** - Un `TextInput` + pulsante "Add" per aggiungere note alla lista.
+5. **Edge case** - Lo stato `error` deve avere un pulsante "Riprova" che richiama `load()`.
+6. **Test manuale** - Forza ogni stato e verifica che la UI sia corretta.
 
 ## Manual test checklist
 
@@ -61,7 +61,7 @@ Prima della consegna, forza questi stati:
 
 ## Screenshot attesi
 
-**Stato empty — nessuna nota, messaggio fallback**
+**Stato empty - nessuna nota, messaggio fallback**
 
 ![Lab 04 - Stato empty](imgs/lab_04_empty.png)
 

@@ -67,14 +67,14 @@ npx expo start -c
 
 ## Screenshot
 
-**App avviata — Status: ready**
+**App avviata - Status: ready**
 
 ![Lab 03 - App avviata](../labs/imgs/lab_03_main_1.png)
 
-**Dopo pressione pulsante — Status: button pressed**
+**Dopo pressione pulsante - Status: button pressed**
 
 ![Lab 03 - Dopo interazione](../labs/imgs/lab_03_main_2.png)
 
-**Console — LOG App mounted**
+**Console - LOG App mounted**
 
 ![Lab 03 - Console log](../labs/imgs/lab_03_logs.png)

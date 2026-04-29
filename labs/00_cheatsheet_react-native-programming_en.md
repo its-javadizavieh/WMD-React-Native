@@ -1122,7 +1122,7 @@ npx expo start --tunnel
 | ----------------- | -------------------------------------------------------------------------------------------------------- |
 | **Expo Go**       | Works for development, but some native libraries (e.g. real push notifications) need a development build |
 | **iOS Simulator** | Available **only on macOS** (requires Xcode)                                                             |
-| **USB cable**     | Not needed for Expo Go — Wi-Fi is enough                                                                 |
+| **USB cable**     | Not needed for Expo Go - Wi-Fi is enough                                                                 |
 
 ### iOS Simulator (macOS only)
 
@@ -1145,9 +1145,9 @@ npx expo start --tunnel
 
 From the Developer Menu you can:
 
-- **Toggle Fast Refresh** — auto-reload when you save a file
-- **Open JS Debugger** — opens the debugger in your browser
-- **Show Performance Monitor** — shows FPS and memory usage
+- **Toggle Fast Refresh** - auto-reload when you save a file
+- **Open JS Debugger** - opens the debugger in your browser
+- **Show Performance Monitor** - shows FPS and memory usage
 
 ### Console logs
 
@@ -1163,7 +1163,7 @@ npm install -g react-devtools
 react-devtools
 ```
 
-Then open the Developer Menu on your phone — React DevTools connects automatically.
+Then open the Developer Menu on your phone - React DevTools connects automatically.
 
 ---
 

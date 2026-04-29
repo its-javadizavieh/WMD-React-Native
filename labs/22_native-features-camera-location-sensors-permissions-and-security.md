@@ -37,19 +37,19 @@ npx expo install expo-location
 
 ## Passi
 
-1. **Installa** — `npx expo install expo-location`.
-2. **Funzione askLocation()** — Richiede permesso e ritorna "granted" o "denied".
-3. **UI per ogni stato** — unknown / denied / granted con lat/lng.
-4. **Fallback su denied** — Pulsante "Open Settings" che chiama `Linking.openSettings()`.
-5. **Edge case** — Nega il permesso e verifica che l'app resta usabile.
+1. **Installa** - `npx expo install expo-location`.
+2. **Funzione askLocation()** - Richiede permesso e ritorna "granted" o "denied".
+3. **UI per ogni stato** - unknown / denied / granted con lat/lng.
+4. **Fallback su denied** - Pulsante "Open Settings" che chiama `Linking.openSettings()`.
+5. **Edge case** - Nega il permesso e verifica che l'app resta usabile.
 
 ## Screenshot attesi
 
-**Permesso richiesto — flusso permission-first, UI per stato unknown/denied**
+**Permesso richiesto - flusso permission-first, UI per stato unknown/denied**
 
 ![Lab 22 - Permesso richiesto](imgs/lab_22_permission.png)
 
-**Location ottenuta — coordinate mostrate dopo permesso granted**
+**Location ottenuta - coordinate mostrate dopo permesso granted**
 
 ![Lab 22 - Location ottenuta](imgs/lab_22_location.png)
 

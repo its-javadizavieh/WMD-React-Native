@@ -44,24 +44,24 @@ React.useEffect(() => {
 
 ## Passi
 
-1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **useEffect con timer** — Al mount, imposta "loading". Dopo 1s, "success". Ritorna `clearTimeout`.
-3. **Schermata condizionale** — `if (status === "loading") return <Text>Caricamento...</Text>`.
-4. **Pulsante Retry** — Imposta "loading" e dopo 1s "error", per simulare un fallimento.
-5. **Pulsante Reload** — Richiama la funzione di caricamento.
-6. **Edge case** — Verifica che il cleanup cancella il timer.
+1. **Avvia progetto Expo** - verifica che l'app parta.
+2. **useEffect con timer** - Al mount, imposta "loading". Dopo 1s, "success". Ritorna `clearTimeout`.
+3. **Schermata condizionale** - `if (status === "loading") return <Text>Caricamento...</Text>`.
+4. **Pulsante Retry** - Imposta "loading" e dopo 1s "error", per simulare un fallimento.
+5. **Pulsante Reload** - Richiama la funzione di caricamento.
+6. **Edge case** - Verifica che il cleanup cancella il timer.
 
 ## Screenshot attesi
 
-**Stato loading — timer in corso con useEffect**
+**Stato loading - timer in corso con useEffect**
 
 ![Lab 10 - Stato loading](imgs/lab_10_loading.png)
 
-**Stato success — dati caricati dopo il timer**
+**Stato success - dati caricati dopo il timer**
 
 ![Lab 10 - Stato success](imgs/lab_10_success.png)
 
-**Stato error — caricamento fallito**
+**Stato error - caricamento fallito**
 
 ![Lab 10 - Stato success](imgs/lab_10_error.png)
 

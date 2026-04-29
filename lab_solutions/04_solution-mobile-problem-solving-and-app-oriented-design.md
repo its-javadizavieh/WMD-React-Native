@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 
 ## Screenshot
 
-**Stato empty — nessuna nota, messaggio fallback**
+**Stato empty - nessuna nota, messaggio fallback**
 
 ![Lab 04 - Stato empty](../labs/imgs/lab_04_empty.png)
 

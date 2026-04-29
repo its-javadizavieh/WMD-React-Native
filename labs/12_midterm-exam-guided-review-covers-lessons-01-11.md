@@ -47,16 +47,16 @@ function load() {
 
 ## Passi
 
-1. **Avvia progetto** — da zero o riusando un lab precedente.
-2. **Definisci stati** — idle / loading / empty / error / success.
-3. **Funzione load()** — Simula un fetch con `setTimeout`.
-4. **UI per ogni stato** — Un `if` per ciascuno.
-5. **Pulsante Riprova** — Richiama `load()`.
+1. **Avvia progetto** - da zero o riusando un lab precedente.
+2. **Definisci stati** - idle / loading / empty / error / success.
+3. **Funzione load()** - Simula un fetch con `setTimeout`.
+4. **UI per ogni stato** - Un `if` per ciascuno.
+5. **Pulsante Riprova** - Richiama `load()`.
 6. **Cleanup e consegna.**
 
 ## Screenshot attesi
 
-**Midterm review — pattern UiState: loading / error / empty / success**
+**Midterm review - pattern UiState: loading / error / empty / success**
 
 ![Lab 12 - Midterm review](imgs/lab_12_main.png)
 

@@ -2,9 +2,9 @@
 
 ## Obiettivo
 
-- Refactora una mini-app in struttura modulare: screens / components / services.
-- Crea almeno 1 componente riusabile e 1 servizio.
-- Gestisci almeno un edge case con un messaggio chiaro.
+- Prendi l'app Notes del lab 04 e modularizzala senza cambiare nulla della feature.
+- Spezza il codice in `screens/`, `components/` e `services/`.
+- Estrai `PrimaryButton` come componente riusabile e `notes`/`addMessage` come service separato.
 
 ## Timebox
 
@@ -19,21 +19,21 @@
 
 ## Scenario
 
-Prendi l'app Notes del lab 04 (o un'app simile) e **spezzala** in file separati con una struttura chiara.
+Il lab 05 **non è un esercizio nuovo**: è il lab 04 spezzato in moduli. Parti dalla tua soluzione Notes e distribuiscila su più file senza toccare nessun comportamento.
 
-> **Perché questo lab:** in un progetto reale, tutto in App.tsx diventa illeggibile. Imparare ora la separazione in cartelle evita refactoring costosi dopo.
+> **Perché questo lab:** dopo il lab 04 hai una schermata funzionante ma tutto in `App.tsx`. In un progetto reale questo diventa illeggibile in pochi giorni. Separare ora screens, components e services è il primo passo verso un'architettura mantenibile.
 
 ## Cosa imparerai
 
-1. La struttura `screens/` → `components/` → `services/`.
-2. La regola degli import: screens importano tutto, services non importano UI.
-3. Come definire un `interface` per le props di un componente.
-4. Come usare `useEffect` nella screen per leggere dati dal service.
-5. Come esportare da un barrel file (`index.tsx`).
+1. Come distribuire il codice del lab 04 tra `screens/`, `components/` e `services/`.
+2. La regola degli import: screens possono importare components e services, mai il contrario.
+3. Come estrarre un bottone riusabile con `interface` per le props.
+4. Come spostare dati e logica in un service dedicato.
+5. Come lasciare `App.tsx` ridotto al minimo.
 
 ## File da creare
 
-```
+```text
 services/users.ts
 components/PrimaryButton.tsx
 screens/UsersScreen.tsx
@@ -43,78 +43,58 @@ App.tsx
 ## Starter pattern (solo promemoria)
 
 ```tsx
-// components/PrimaryButton.tsx
-import { Pressable, Text } from "react-native";
+// App.tsx - deve restare così semplice
+import UsersScreen from "./screens/UsersScreen";
 
-interface PrimaryButtonProps {
-  label: string;
-  onPress: () => void;
-}
-
-export function PrimaryButton({ label, onPress }: PrimaryButtonProps) {
-  return (
-    <Pressable
-      onPress={onPress}
-      style={{ padding: 12, borderWidth: 1, borderRadius: 8 }}
-    >
-      <Text style={{ fontWeight: "600" }}>{label}</Text>
-    </Pressable>
-  );
+export default function App() {
+  return <UsersScreen />;
 }
 ```
 
 ## Passi
 
-1. **Crea le cartelle** — `screens/`, `components/`, `services/`.
-2. **services/users.ts** — Esporta una funzione `getUsers()` che ritorna `["Ada", "Grace"]`.
-3. **components/PrimaryButton.tsx** — Definisci `interface PrimaryButtonProps` con `label` e `onPress`.
-4. **screens/UsersScreen.tsx** — Usa `useEffect` per leggere `getUsers()` e salvare la lista nello stato della schermata.
-5. **Mostra il primo utente** — Dopo il caricamento, mostra `Ada` oppure il fallback `Nessun utente ancora` se la lista e vuota.
-6. **Aggiungi il pulsante Next** — Usa `PrimaryButton` per passare all'utente successivo solo quando la lista contiene dati.
-7. **App.tsx** — Importa e renderizza `<UsersScreen />`.
-8. **Verifica import** — screens → components + services, mai il contrario.
-9. **Edge case** — Se la lista utenti e vuota, non andare in modulo per zero: mostra il messaggio di fallback.
-
-## Barrel export (opzionale)
-
-```ts
-// features/notes/index.tsx
-export { NotesScreen } from "./screens/NotesScreen";
-export { addNote, listNotes } from "./services/notes";
-```
+1. **Riparti dal lab 04** - usa la tua soluzione Notes già funzionante, non creare una nuova app.
+2. **Crea le cartelle** - `screens/`, `components/`, `services/`.
+3. **Estrai il service** - sposta `notes` e `addMessage()` in `services/users.ts` ed esportali.
+4. **Estrai il bottone** - crea `components/PrimaryButton.tsx` con `interface PrimaryButtonProps` (`label` e `onPress`); rimuovi il `Pressable` inline dalla screen.
+5. **Crea la screen** - sposta tutta la UI in `screens/UsersScreen.tsx`: `TextInput`, stato, `load()`, `onAdd()`, lista note e messaggi di fallback.
+6. **Semplifica App.tsx** - importa e renderizza soltanto `<UsersScreen />`.
+7. **Non cambiare la feature** - il risultato finale deve comportarsi esattamente come il lab 04.
+8. **Verifica gli import** - screen → components + services; services non importano UI.
+9. **Edge case già presenti** - testo vuoto ignorato, stato `empty` con messaggio, stessa UX del lab precedente.
 
 ## Screenshot attesi
 
-**Schermata utenti — primo utente (Ada)**
+**Stesso stato empty del lab 04, ma con codice separato**
 
-![Lab 05 - Primo utente](imgs/lab_05_main_1.png)
+![Lab 05 - Stato empty](imgs/lab_04_empty.png)
 
-**Dopo pressione Next — secondo utente (Grace)**
+**Una nota aggiunta dopo il refactor modulare**
 
-![Lab 05 - Secondo utente](imgs/lab_05_main_2.png)
+![Lab 05 - Una nota aggiunta](imgs/lab_04_success_1.png)
 
-**Struttura cartelle — components / screens / services**
+**Struttura cartelle - components / screens / services**
 
 ![Lab 05 - Struttura cartelle](imgs/lab_05_structure.png)
 
 ## Consegna minima
 
 - App che parte su emulatore o device
-- UI chiara e leggibile
-- Un edge case gestito con un messaggio chiaro
+- Stessa feature del lab 04, ma distribuita su più file
+- Almeno un componente riusabile e un service separato
 
 ## Checkpoint
 
 - [ ] Avvio progetto senza errori
-- [ ] Feature completata e dimostrabile
-- [ ] Edge case gestito con messaggio chiaro
+- [ ] Lab 04 funziona ancora identicamente
+- [ ] Codice separato in `screens/`, `components/`, `services/`
 - [ ] Cleanup completato
 
 ## Problemi comuni
 
-- Se Metro non parte: chiudi processi in ascolto e riavvia `npx expo start`.
-- Se l'emulatore è lento: verifica virtualizzazione/KVM/Hyper-V o usa device reale.
-- Se l'app non si connette: controlla che PC e device siano sulla stessa rete (LAN).
+- Se un import non si risolve: controlla i percorsi relativi (`../components/...`, `../services/...`).
+- Se il pulsante non funziona: verifica che `label` e `onPress` siano passati correttamente.
+- Se la lista non si aggiorna: assicurati che `load()` venga richiamata dopo `addMessage()`.
 
 ## Cleanup
 
@@ -125,6 +105,6 @@ export { addNote, listNotes } from "./services/notes";
 
 ## Search terms
 
-- react native project structure
-- barrel exports typescript
+- react native modular architecture
+- react native extract component props
 - react native screens components services

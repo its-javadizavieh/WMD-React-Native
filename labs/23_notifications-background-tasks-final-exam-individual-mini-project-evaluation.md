@@ -37,16 +37,16 @@ npx expo install expo-notifications
 
 ## Passi
 
-1. **Installa** — `npx expo install expo-notifications`.
-2. **setNotificationHandler** — Config per mostrare alert su notifica ricevuta.
-3. **Funzione schedule()** — Richiede permesso, poi schedula una notifica a 5 secondi.
-4. **UI per ogni stato** — idle / denied / scheduled.
-5. **Edge case** — Nega il permesso e verifica il messaggio.
-6. **Esame finale** — Questa è anche la struttura per il mini-progetto individuale.
+1. **Installa** - `npx expo install expo-notifications`.
+2. **setNotificationHandler** - Config per mostrare alert su notifica ricevuta.
+3. **Funzione schedule()** - Richiede permesso, poi schedula una notifica a 5 secondi.
+4. **UI per ogni stato** - idle / denied / scheduled.
+5. **Edge case** - Nega il permesso e verifica il messaggio.
+6. **Esame finale** - Questa è anche la struttura per il mini-progetto individuale.
 
 ## Screenshot attesi
 
-**Notifica schedulata — scheduling con permessi e UI per ogni stato**
+**Notifica schedulata - scheduling con permessi e UI per ogni stato**
 
 ![Lab 23 - Notifica schedulata](imgs/lab_23_main.png)
 

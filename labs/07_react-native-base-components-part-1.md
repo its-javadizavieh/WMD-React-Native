@@ -52,20 +52,20 @@ import { Image, Pressable, Text, View } from "react-native";
 
 ## Passi
 
-1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **Header** — Crea un layout orizzontale (`flexDirection: "row"`) con un avatar `Image` e un testo.
-3. **Card** — Una `View` con bordi, padding e contenuti testuali.
-4. **Bottone** — Un `Pressable` con feedback `opacity: 0.6` quando premuto.
-5. **Fallback immagine** — Se l'URL è sbagliato, mostra un `?` al posto dell'immagine usando `onError`.
-6. **ScrollView** — Wrappa tutto in `ScrollView` per gestire overflow.
+1. **Avvia progetto Expo** - verifica che l'app parta.
+2. **Header** - Crea un layout orizzontale (`flexDirection: "row"`) con un avatar `Image` e un testo.
+3. **Card** - Una `View` con bordi, padding e contenuti testuali.
+4. **Bottone** - Un `Pressable` con feedback `opacity: 0.6` quando premuto.
+5. **Fallback immagine** - Se l'URL è sbagliato, mostra un `?` al posto dell'immagine usando `onError`.
+6. **ScrollView** - Wrappa tutto in `ScrollView` per gestire overflow.
 
 ## Screenshot attesi
 
-**Profilo con avatar — Image, Text e ScrollView**
+**Profilo con avatar - Image, Text e ScrollView**
 
 ![Lab 07 - Profilo con avatar](imgs/lab_07_main.png)
 
-**Immagine mancante — fallback placeholder**
+**Immagine mancante - fallback placeholder**
 
 ![Lab 07 - Fallback immagine](imgs/lab_07_fallback.png)
 

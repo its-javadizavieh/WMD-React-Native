@@ -31,20 +31,20 @@ Layout responsive con `useWindowDimensions`. Flexbox: colonna su mobile, riga su
 
 ## Passi
 
-1. **Avvia progetto** — verifica che l'app parta.
-2. **Breakpoint** — `const isWide = width >= 600` tramite `useWindowDimensions()`.
-3. **Layout condizionale** — `flexDirection: isWide ? "row" : "column"`.
-4. **Spacing tokens** — `const SPACING = { sm: 4, md: 8, lg: 16 }` usati negli stili.
-5. **Due card** — Mostrate in colonna su mobile, in riga su tablet.
-6. **Edge case** — Testo lungo che wrappa correttamente.
+1. **Avvia progetto** - verifica che l'app parta.
+2. **Breakpoint** - `const isWide = width >= 600` tramite `useWindowDimensions()`.
+3. **Layout condizionale** - `flexDirection: isWide ? "row" : "column"`.
+4. **Spacing tokens** - `const SPACING = { sm: 4, md: 8, lg: 16 }` usati negli stili.
+5. **Due card** - Mostrate in colonna su mobile, in riga su tablet.
+6. **Edge case** - Testo lungo che wrappa correttamente.
 
 ## Screenshot attesi
 
-**Layout mobile — Flexbox column su schermo stretto**
+**Layout mobile - Flexbox column su schermo stretto**
 
 ![Lab 20 - Layout mobile](imgs/lab_20_mobile.png)
 
-**Layout tablet — Flexbox row su schermo largo**
+**Layout tablet - Flexbox row su schermo largo**
 
 ![Lab 20 - Layout tablet](imgs/lab_20_tablet.png)
 

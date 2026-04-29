@@ -31,19 +31,19 @@ Carica dati da REST API con `fetch`, mostra in `FlatList`. Gestisci loading / er
 
 ## Passi
 
-1. **Avvia progetto** — verifica che l'app parta.
-2. **Funzione loadPosts()** — `fetch` da `jsonplaceholder.typicode.com/posts?_limit=5` con controllo `res.ok`.
-3. **Schermata** — 3 stati: loading, error (con Retry), success (FlatList).
-4. **useEffect** — Chiama `load()` al mount.
-5. **Edge case** — Simula errore (URL sbagliata) e mostra messaggio con pulsante Retry.
+1. **Avvia progetto** - verifica che l'app parta.
+2. **Funzione loadPosts()** - `fetch` da `jsonplaceholder.typicode.com/posts?_limit=5` con controllo `res.ok`.
+3. **Schermata** - 3 stati: loading, error (con Retry), success (FlatList).
+4. **useEffect** - Chiama `load()` al mount.
+5. **Edge case** - Simula errore (URL sbagliata) e mostra messaggio con pulsante Retry.
 
 ## Screenshot attesi
 
-**Posts caricati — dati da REST API con fetch**
+**Posts caricati - dati da REST API con fetch**
 
 ![Lab 16 - Posts caricati](imgs/lab_16_main.png)
 
-**Stato errore — errore HTTP con pulsante Retry**
+**Stato errore - errore HTTP con pulsante Retry**
 
 ![Lab 16 - Stato errore](imgs/lab_16_error.png)
 

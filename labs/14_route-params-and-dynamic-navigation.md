@@ -31,19 +31,19 @@ Lista con `FlatList` → navigazione a dettaglio con `id`. Validazione parametro
 
 ## Passi
 
-1. **Installa dipendenze** — React Navigation (se non già presente).
-2. **HomeScreen** — `FlatList` con 3 items. Ogni riga naviga a Details con l'`id`.
-3. **DetailsScreen** — Legge `route.params?.id`, cerca l'item nel dataset.
-4. **Fallback** — Se `id` manca → "Invalid route param". Se item non esiste → "Product not found".
-5. **Go back** — Pulsante per tornare.
+1. **Installa dipendenze** - React Navigation (se non già presente).
+2. **HomeScreen** - `FlatList` con 3 items. Ogni riga naviga a Details con l'`id`.
+3. **DetailsScreen** - Legge `route.params?.id`, cerca l'item nel dataset.
+4. **Fallback** - Se `id` manca → "Invalid route param". Se item non esiste → "Product not found".
+5. **Go back** - Pulsante per tornare.
 
 ## Screenshot attesi
 
-**Lista items — FlatList con navigazione a dettaglio**
+**Lista items - FlatList con navigazione a dettaglio**
 
 ![Lab 14 - Lista items](imgs/lab_14_list.png)
 
-**Dettaglio item — parametro id passato via route params**
+**Dettaglio item - parametro id passato via route params**
 
 ![Lab 14 - Dettaglio item](imgs/lab_14_details.png)
 

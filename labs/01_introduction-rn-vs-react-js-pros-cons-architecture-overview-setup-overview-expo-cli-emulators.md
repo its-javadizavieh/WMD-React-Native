@@ -55,21 +55,21 @@ const styles = StyleSheet.create({
 
 ## Passi
 
-1. **Crea il progetto** — Esegui `npx create-expo-app MyFirstApp --template blank-typescript` e poi `cd MyFirstApp && npx expo start`.
-2. **Schermata base** — Sostituisci il contenuto di `App.tsx` con: un titolo "Hello React Native", un testo che spiega la differenza tra RN e React JS.
-3. **Componente Greeting** — Crea una funzione `Greeting` che riceve `{ name: string }` e la mostra nell'UI.
-4. **Aggiungi contatore** — Usa `React.useState(0)` per un contatore e un `Pressable` per incrementarlo.
-5. **Aggiungi stili** — Crea un `StyleSheet.create` con spacing, font size per il titolo, bordi per il bottone.
-6. **Test Fast Refresh** — Modifica una stringa, salva e verifica che l'app si aggiorni senza reload manuale.
-7. **Edge case** — Se `name` è vuoto, mostra "student" come fallback.
+1. **Crea il progetto** - Esegui `npx create-expo-app MyFirstApp --template blank-typescript` e poi `cd MyFirstApp && npx expo start`.
+2. **Schermata base** - Sostituisci il contenuto di `App.tsx` con: un titolo "Hello React Native", un testo che spiega la differenza tra RN e React JS.
+3. **Componente Greeting** - Crea una funzione `Greeting` che riceve `{ name: string }` e la mostra nell'UI.
+4. **Aggiungi contatore** - Usa `React.useState(0)` per un contatore e un `Pressable` per incrementarlo.
+5. **Aggiungi stili** - Crea un `StyleSheet.create` con spacing, font size per il titolo, bordi per il bottone.
+6. **Test Fast Refresh** - Modifica una stringa, salva e verifica che l'app si aggiorni senza reload manuale.
+7. **Edge case** - Se `name` è vuoto, mostra "student" come fallback.
 
 ## Screenshot attesi
 
-**Schermata iniziale — Count: 0**
+**Schermata iniziale - Count: 0**
 
 ![Lab 01 - Schermata iniziale](imgs/lab_01_main.png)
 
-**Contatore incrementato — Count: 3**
+**Contatore incrementato - Count: 3**
 
 ![Lab 01 - Contatore incrementato](imgs/lab_01_counter.png)
 

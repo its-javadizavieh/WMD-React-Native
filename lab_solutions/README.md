@@ -4,9 +4,9 @@ Questa cartella contiene la **soluzione di riferimento** per ogni lezione del co
 
 ## Come usare queste soluzioni
 
-1. **Prima prova da solo** — completa il lab seguendo le istruzioni nella cartella `labs/`.
-2. **Confronta il tuo codice** — apri la soluzione corrispondente e confronta approccio, struttura e stile.
-3. **Copia nel progetto** — ogni soluzione è un file `App.tsx` completo e funzionante. Puoi copiarlo direttamente nel tuo progetto Expo per testarlo.
+1. **Prima prova da solo** - completa il lab seguendo le istruzioni nella cartella `labs/`.
+2. **Confronta il tuo codice** - apri la soluzione corrispondente e confronta approccio, struttura e stile.
+3. **Copia nel progetto** - ogni soluzione è un file `App.tsx` completo e funzionante. Puoi copiarlo direttamente nel tuo progetto Expo per testarlo.
 
 > **Attenzione:** copiare le soluzioni senza capirle non ti aiuterà all'esame. Usa le soluzioni per imparare, non per saltare il lavoro.
 
@@ -14,15 +14,15 @@ Questa cartella contiene la **soluzione di riferimento** per ogni lezione del co
 
 Ogni file `.md` contiene:
 
-- **Cosa mostra la soluzione** — breve descrizione di cosa fa il codice.
-- **Codice** — il codice `App.tsx` completo (e file aggiuntivi dove necessario).
+- **Cosa mostra la soluzione** - breve descrizione di cosa fa il codice.
+- **Codice** - il codice `App.tsx` completo (e file aggiuntivi dove necessario).
 
 ## Pattern comuni nelle soluzioni
 
-- **`SafeAreaProvider` + `SafeAreaView`** — da `react-native-safe-area-context`, evita che il contenuto finisca sotto la status bar.
-- **`Pressable` con stili visibili** — bordi, bordi arrotondati e sfondo grigio per rendere i pulsanti riconoscibili.
-- **Nessun `interface`** — i tipi delle props si scrivono inline: `{ name }: { name: string }`.
-- **Un solo file** — la maggior parte dei lab usa un singolo `App.tsx` per semplicità.
+- **`SafeAreaProvider` + `SafeAreaView`** - da `react-native-safe-area-context`, evita che il contenuto finisca sotto la status bar.
+- **`Pressable` con stili visibili** - bordi, bordi arrotondati e sfondo grigio per rendere i pulsanti riconoscibili.
+- **Nessun `interface`** - i tipi delle props si scrivono inline: `{ name }: { name: string }`.
+- **Un solo file** - la maggior parte dei lab usa un singolo `App.tsx` per semplicità.
 
 ## Indice
 

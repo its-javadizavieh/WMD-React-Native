@@ -31,19 +31,19 @@ Configurazione deep linking con `linking` object. Validazione parametro da URL. 
 
 ## Passi
 
-1. **Installa dipendenze** — React Navigation (se non già presente).
-2. **App.tsx** — Aggiungi `linking` object con `prefixes: ["myapp://"]` e mappa delle screen.
-3. **HomeScreen** — Pulsante che naviga a Details + testo che mostra il deep link path.
-4. **DetailsScreen** — Legge `route.params?.id`. Se manca → "Invalid deep link".
-5. **Test** — Esegui `npx uri-scheme open "myapp://details/a1" --android` nel terminale.
+1. **Installa dipendenze** - React Navigation (se non già presente).
+2. **App.tsx** - Aggiungi `linking` object con `prefixes: ["myapp://"]` e mappa delle screen.
+3. **HomeScreen** - Pulsante che naviga a Details + testo che mostra il deep link path.
+4. **DetailsScreen** - Legge `route.params?.id`. Se manca → "Invalid deep link".
+5. **Test** - Esegui `npx uri-scheme open "myapp://details/a1" --android` nel terminale.
 
 ## Screenshot attesi
 
-**Home con deep link — configurazione prefixes e screens**
+**Home con deep link - configurazione prefixes e screens**
 
 ![Lab 15 - Home con deep link](imgs/lab_15_home.png)
 
-**Details via deep link — apertura diretta con URL**
+**Details via deep link - apertura diretta con URL**
 
 ![Lab 15 - Details via deep link](imgs/lab_15_details.png)
 

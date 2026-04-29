@@ -56,22 +56,22 @@ const isSending = status === "loading";
 
 ## Passi
 
-1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **Layout mobile** — Usa `KeyboardAvoidingView` e `ScrollView` così i campi restano visibili con la tastiera aperta.
-3. **Tre campi controllati** — Name, Email (`autoCapitalize: "none"`) e Message (`multiline`).
-4. **Validazione** — `nameOk = name.trim().length >= 2`, `emailOk = email.includes("@")`, `messageOk = message.trim().length >= 10`.
-5. **Submit** — `setSubmitted(true)`, poi se valido passa a `loading`.
-6. **Stati espliciti** — Dopo un `setTimeout`, mostra `success` oppure `error`.
-7. **Failure state testabile** — Se il messaggio contiene la parola `error`, simula un errore di rete anche con un testo corto, cosi il failure state e facile da provare.
-8. **Bottone styled** — Colore `#007AFF`, testo bianco, opacity ridotta quando il form non e pronto, ma `disabled` solo durante `loading` cosi il primo tap puo mostrare gli errori.
+1. **Avvia progetto Expo** - verifica che l'app parta.
+2. **Layout mobile** - Usa `KeyboardAvoidingView` e `ScrollView` così i campi restano visibili con la tastiera aperta.
+3. **Tre campi controllati** - Name, Email (`autoCapitalize: "none"`) e Message (`multiline`).
+4. **Validazione** - `nameOk = name.trim().length >= 2`, `emailOk = email.includes("@")`, `messageOk = message.trim().length >= 10`.
+5. **Submit** - `setSubmitted(true)`, poi se valido passa a `loading`.
+6. **Stati espliciti** - Dopo un `setTimeout`, mostra `success` oppure `error`.
+7. **Failure state testabile** - Se il messaggio contiene la parola `error`, simula un errore di rete anche con un testo corto, cosi il failure state e facile da provare.
+8. **Bottone styled** - Colore `#007AFF`, testo bianco, opacity ridotta quando il form non e pronto, ma `disabled` solo durante `loading` cosi il primo tap puo mostrare gli errori.
 
 ## Screenshot attesi
 
-**Form mobile — campi controllati con layout sicuro per tastiera**
+**Form mobile - campi controllati con layout sicuro per tastiera**
 
 ![Lab 11 - Form controllato](imgs/lab_11_main.png)
 
-**Submit state — feedback di errore o successo dopo invio**
+**Submit state - feedback di errore o successo dopo invio**
 
 ![Lab 11 - Errori di validazione](imgs/lab_11_errors_1.png)
 ![Lab 11 - Errori di validazione](imgs/lab_11_errors_2.png)

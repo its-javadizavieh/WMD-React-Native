@@ -69,20 +69,20 @@ function SettingRow({ label, value, right }: SettingRowProps) {
 
 ## Passi
 
-1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **SettingRow** — Crea `components/SettingRow.tsx` con `interface SettingRowProps` e props: `label`, `value`, `right` (`React.ReactNode`).
-3. **Riga con TextInput** — Usa SettingRow con un `TextInput` nel slot `right`.
-4. **Riga con Switch** — Usa SettingRow con un `Switch` nel slot `right`.
-5. **Validazione** — Se il nome è troppo corto (< 2 caratteri), mostra "Name is too short".
-6. **Demo** — Spiega in 3 frasi: "i dati scendono via props, gli eventi risalgono via callback".
+1. **Avvia progetto Expo** - verifica che l'app parta.
+2. **SettingRow** - Crea `components/SettingRow.tsx` con `interface SettingRowProps` e props: `label`, `value`, `right` (`React.ReactNode`).
+3. **Riga con TextInput** - Usa SettingRow con un `TextInput` nel slot `right`.
+4. **Riga con Switch** - Usa SettingRow con un `Switch` nel slot `right`.
+5. **Validazione** - Se il nome è troppo corto (< 2 caratteri), mostra "Name is too short".
+6. **Demo** - Spiega in 3 frasi: "i dati scendono via props, gli eventi risalgono via callback".
 
 ## Screenshot attesi
 
-**Settings screen — SettingRow con TextInput e Switch**
+**Settings screen - SettingRow con TextInput e Switch**
 
 ![Lab 08 - Settings screen](imgs/lab_08_main.png)
 
-**Validazione nome — messaggio di errore per nome troppo corto**
+**Validazione nome - messaggio di errore per nome troppo corto**
 
 ![Lab 08 - Validazione nome](imgs/lab_08_validation.png)
 

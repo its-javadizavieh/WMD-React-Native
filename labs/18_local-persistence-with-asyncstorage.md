@@ -37,15 +37,15 @@ npx expo install @react-native-async-storage/async-storage
 
 ## Passi
 
-1. **Installa** — `npx expo install @react-native-async-storage/async-storage`.
-2. **Load al mount** — `AsyncStorage.getItem(KEY)` in un `useEffect`.
-3. **Save automatico** — `AsyncStorage.setItem(KEY, text)` in un secondo `useEffect` che dipende da `text`.
-4. **Reset** — Pulsante che chiama `AsyncStorage.removeItem(KEY)`.
-5. **Edge case** — Valore assente → mostra "(empty)".
+1. **Installa** - `npx expo install @react-native-async-storage/async-storage`.
+2. **Load al mount** - `AsyncStorage.getItem(KEY)` in un `useEffect`.
+3. **Save automatico** - `AsyncStorage.setItem(KEY, text)` in un secondo `useEffect` che dipende da `text`.
+4. **Reset** - Pulsante che chiama `AsyncStorage.removeItem(KEY)`.
+5. **Edge case** - Valore assente → mostra "(empty)".
 
 ## Screenshot attesi
 
-**Preferences salvate — persistenza locale con AsyncStorage**
+**Preferences salvate - persistenza locale con AsyncStorage**
 
 ![Lab 18 - Preferences salvate](imgs/lab_18_main.png)
 

@@ -31,20 +31,20 @@ Context + Provider con `useState`. Hook custom per consumare il contesto. Toggle
 
 ## Passi
 
-1. **Avvia progetto** — verifica che l'app parta.
-2. **ThemeContext** — `React.createContext({ theme: "light", toggleTheme: () => {} })`.
-3. **ThemeProvider** — Usa `useState("light")` e una funzione `toggleTheme`.
-4. **Screen** — Usa `React.useContext(ThemeContext)` per leggere il tema e mostrare un toggle.
-5. **App.tsx** — Wrappa `<Screen />` con `<ThemeProvider>`.
-6. **Edge case** — Cambia lo sfondo in base al tema (light → bianco, dark → #333).
+1. **Avvia progetto** - verifica che l'app parta.
+2. **ThemeContext** - `React.createContext({ theme: "light", toggleTheme: () => {} })`.
+3. **ThemeProvider** - Usa `useState("light")` e una funzione `toggleTheme`.
+4. **Screen** - Usa `React.useContext(ThemeContext)` per leggere il tema e mostrare un toggle.
+5. **App.tsx** - Wrappa `<Screen />` con `<ThemeProvider>`.
+6. **Edge case** - Cambia lo sfondo in base al tema (light → bianco, dark → #333).
 
 ## Screenshot attesi
 
-**Tema light — Context + Provider con useState**
+**Tema light - Context + Provider con useState**
 
 ![Lab 19 - Tema light](imgs/lab_19_light.png)
 
-**Tema dark — toggle con useContext**
+**Tema dark - toggle con useContext**
 
 ![Lab 19 - Tema dark](imgs/lab_19_dark.png)
 

@@ -31,16 +31,16 @@ Oggetto `theme` con design tokens. `accessibilityRole` e `maxFontSizeMultiplier`
 
 ## Passi
 
-1. **Avvia progetto** — verifica che l'app parta.
-2. **Theme object** — `const theme = { spacing: 12, radius: 12, titleSize: 20 }`.
-3. **Card** — Componente che usa `theme.spacing` e `theme.radius`.
-4. **Pressable accessibile** — `accessibilityRole="button"`, opacity su pressed.
-5. **maxFontSizeMultiplier** — Aggiungi a `Text` per limitare il scaling.
-6. **Edge case** — Aumenta la font size del device e verifica che il layout regga.
+1. **Avvia progetto** - verifica che l'app parta.
+2. **Theme object** - `const theme = { spacing: 12, radius: 12, titleSize: 20 }`.
+3. **Card** - Componente che usa `theme.spacing` e `theme.radius`.
+4. **Pressable accessibile** - `accessibilityRole="button"`, opacity su pressed.
+5. **maxFontSizeMultiplier** - Aggiungi a `Text` per limitare il scaling.
+6. **Edge case** - Aumenta la font size del device e verifica che il layout regga.
 
 ## Screenshot attesi
 
-**UI kit demo — theme tokens, accessibilityRole e animazioni base**
+**UI kit demo - theme tokens, accessibilityRole e animazioni base**
 
 ![Lab 21 - UI kit demo](imgs/lab_21_main.png)
 

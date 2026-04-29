@@ -56,12 +56,12 @@ export default function App() {
 
 ## Passi
 
-1. **Verifica Node.js** — `node -v` deve mostrare LTS. Crea un progetto con `npx create-expo-app`.
-2. **Avvia l'app** — Esegui `npx expo start` e apri su emulator o device reale.
-3. **Cache** — Esegui `npx expo start -c` e spiega quando serve (bundle vecchio, errori strani).
-4. **Log** — Aggiungi `console.log("App mounted")` in un `useEffect` e verifica dove appare.
-5. **Tunnel** — Se la rete dà problemi, prova `npx expo start --tunnel` e annota pro/contro.
-6. **Checklist** — In fondo al file, scrivi una checklist di 10 punti per il setup.
+1. **Verifica Node.js** - `node -v` deve mostrare LTS. Crea un progetto con `npx create-expo-app`.
+2. **Avvia l'app** - Esegui `npx expo start` e apri su emulator o device reale.
+3. **Cache** - Esegui `npx expo start -c` e spiega quando serve (bundle vecchio, errori strani).
+4. **Log** - Aggiungi `console.log("App mounted")` in un `useEffect` e verifica dove appare.
+5. **Tunnel** - Se la rete dà problemi, prova `npx expo start --tunnel` e annota pro/contro.
+6. **Checklist** - In fondo al file, scrivi una checklist di 10 punti per il setup.
 
 ## Comandi utili
 
@@ -76,15 +76,15 @@ adb devices
 
 ## Screenshot attesi
 
-**App avviata — Status: ready**
+**App avviata - Status: ready**
 
 ![Lab 03 - App avviata](imgs/lab_03_main_1.png)
 
-**Dopo pressione pulsante — Status: button pressed**
+**Dopo pressione pulsante - Status: button pressed**
 
 ![Lab 03 - Dopo interazione](imgs/lab_03_main_2.png)
 
-**Console — LOG App mounted**
+**Console - LOG App mounted**
 
 ![Lab 03 - Console log](imgs/lab_03_logs.png)
 

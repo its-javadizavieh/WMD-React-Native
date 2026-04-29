@@ -42,21 +42,21 @@ const emailOk = email.includes("@");
 
 ## Passi
 
-1. **Avvia progetto Expo** — verifica che l'app parta.
-2. **Crea il form** — Due `TextInput`: email e password, ciascuno con il proprio `useState`.
-3. **Validazione derivata** — `emailOk = email.includes("@")`, `passwordOk = password.length >= 6`.
-4. **Submit** — Un `Pressable` che imposta `setSubmitted(true)`.
-5. **Errori condizionali** — Mostra gli errori solo se `submitted && !emailOk`.
-6. **Edge case** — Pulsante con opacity ridotta se il form non è valido.
-7. **Scope del lab** — Non aggiungere ancora `loading`, `error` o `success` async: qui l'obiettivo è capire il pattern base dei controlled components.
+1. **Avvia progetto Expo** - verifica che l'app parta.
+2. **Crea il form** - Due `TextInput`: email e password, ciascuno con il proprio `useState`.
+3. **Validazione derivata** - `emailOk = email.includes("@")`, `passwordOk = password.length >= 6`.
+4. **Submit** - Un `Pressable` che imposta `setSubmitted(true)`.
+5. **Errori condizionali** - Mostra gli errori solo se `submitted && !emailOk`.
+6. **Edge case** - Pulsante con opacity ridotta se il form non è valido.
+7. **Scope del lab** - Non aggiungere ancora `loading`, `error` o `success` async: qui l'obiettivo è capire il pattern base dei controlled components.
 
 ## Screenshot attesi
 
-**Form vuoto — stato iniziale, nessun errore visibile**
+**Form vuoto - stato iniziale, nessun errore visibile**
 
 ![Lab 09 - Form vuoto](imgs/lab_09_main.png)
 
-**Errori dopo submit — validazione con messaggi inline**
+**Errori dopo submit - validazione con messaggi inline**
 
 ![Lab 09 - Errori dopo submit](imgs/lab_09_errors_1.png)
 ![Lab 09 - Errori dopo submit](imgs/lab_09_errors_2.png)

@@ -31,15 +31,15 @@ Simulazione success / failure con bottoni. Oggetto stato unico con campo `status
 
 ## Passi
 
-1. **Avvia progetto** — verifica che l'app parta.
-2. **Stato unico** — `const [state, setState] = React.useState({ status: "idle", message: "" })`.
-3. **Funzione load(shouldFail)** — Imposta "loading", attende 800ms, poi success/error.
-4. **UI condizionale** — `ActivityIndicator` per loading, messaggio per error/success.
-5. **Due pulsanti** — "Retry (success)" e "Retry (fail)" per testare entrambi i flussi.
+1. **Avvia progetto** - verifica che l'app parta.
+2. **Stato unico** - `const [state, setState] = React.useState({ status: "idle", message: "" })`.
+3. **Funzione load(shouldFail)** - Imposta "loading", attende 800ms, poi success/error.
+4. **UI condizionale** - `ActivityIndicator` per loading, messaggio per error/success.
+5. **Due pulsanti** - "Retry (success)" e "Retry (fail)" per testare entrambi i flussi.
 
 ## Screenshot attesi
 
-**Workflow asincrono — stati loading / success / error in un unico oggetto**
+**Workflow asincrono - stati loading / success / error in un unico oggetto**
 
 ![Lab 17 - Workflow asincrono](imgs/lab_17_main.png)
 

@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
 
 ## Screenshot
 
-**Schermata iniziale — Count: 0**
+**Schermata iniziale - Count: 0**
 
 ![Lab 01 - Schermata iniziale](../labs/imgs/lab_01_main.png)
 
-**Contatore incrementato — Count: 3**
+**Contatore incrementato - Count: 3**
 
 ![Lab 01 - Contatore incrementato](../labs/imgs/lab_01_counter.png)
