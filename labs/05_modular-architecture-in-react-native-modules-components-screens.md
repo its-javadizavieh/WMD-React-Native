@@ -1,4 +1,4 @@
-# Lab 05 – Architettura modulare in React Native
+# Lab 05 - Architettura modulare in React Native
 
 ## Obiettivo
 
@@ -53,7 +53,10 @@ interface PrimaryButtonProps {
 
 export function PrimaryButton({ label, onPress }: PrimaryButtonProps) {
   return (
-    <Pressable onPress={onPress} style={{ padding: 12, borderWidth: 1, borderRadius: 8 }}>
+    <Pressable
+      onPress={onPress}
+      style={{ padding: 12, borderWidth: 1, borderRadius: 8 }}
+    >
       <Text style={{ fontWeight: "600" }}>{label}</Text>
     </Pressable>
   );
@@ -84,16 +87,15 @@ export { addNote, listNotes } from "./services/notes";
 
 **Schermata utenti — primo utente (Ada)**
 
-![Lab 05 – Primo utente](imgs/lab_05_main_1.png)
+![Lab 05 - Primo utente](imgs/lab_05_main_1.png)
 
 **Dopo pressione Next — secondo utente (Grace)**
 
-![Lab 05 – Secondo utente](imgs/lab_05_main_2.png)
+![Lab 05 - Secondo utente](imgs/lab_05_main_2.png)
 
 **Struttura cartelle — components / screens / services**
 
-![Lab 05 – Struttura cartelle](imgs/lab_05_structure.png)
-
+![Lab 05 - Struttura cartelle](imgs/lab_05_structure.png)
 
 ## Consegna minima
 
