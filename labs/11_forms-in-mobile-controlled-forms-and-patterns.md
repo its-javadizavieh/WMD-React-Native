@@ -27,7 +27,7 @@ Costruisci un form mobile "Contact support": name, email e message, validazione,
 
 1. Il pattern completo: `useState` → validazione derivata → submit → `loading/error/success`.
 2. Come usare `KeyboardAvoidingView` + `ScrollView` per i form mobile.
-3. Come usare `opacity` per comunicare che il form non e pronto, ma disabilitare il `Pressable` solo durante `loading`.
+3. Come usare `opacity` per comunicare che il form non e' pronto, ma disabilitare il `Pressable` solo durante `loading`.
 4. Come simulare un submit async senza introdurre librerie esterne.
 
 ## Starter pattern (solo promemoria)
@@ -63,7 +63,7 @@ const isSending = status === "loading";
 5. **Submit** - `setSubmitted(true)`, poi se valido passa a `loading`.
 6. **Stati espliciti** - Dopo un `setTimeout`, mostra `success` oppure `error`.
 7. **Failure state testabile** - Se il messaggio contiene la parola `error`, simula un errore di rete anche con un testo corto, cosi il failure state e facile da provare.
-8. **Bottone styled** - Colore `#007AFF`, testo bianco, opacity ridotta quando il form non e pronto, ma `disabled` solo durante `loading` cosi il primo tap puo mostrare gli errori.
+8. **Bottone styled** - Colore `#007AFF`, testo bianco, opacity ridotta quando il form non e' pronto, ma `disabled` solo durante `loading` cosi il primo tap puo' mostrare gli errori.
 
 ## Screenshot attesi
 
