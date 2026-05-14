@@ -23,7 +23,14 @@ async function fetchTodos() {
   return res.json();
 }
 
+interface FlatListProps {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
 export default function App() {
+  // const [todos, setTodos] = React.useState<FlatListProps[]>([]);
   const [todos, setTodos] = React.useState([]);
   const [status, setStatus] = React.useState("loading");
 
@@ -53,7 +60,7 @@ export default function App() {
             </Pressable>
           )}
           {status === "success" && (
-            <FlatList
+            <FlatList<FlatListProps>
               data={todos}
               keyExtractor={(item) => String(item.id)}
               renderItem={({ item }) => (
