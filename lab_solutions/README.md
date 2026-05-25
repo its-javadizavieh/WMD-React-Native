@@ -26,28 +26,28 @@ Ogni file `.md` contiene:
 
 ## Indice
 
-| Lab | Argomento |
-|-----|-----------|
-| [01](01_solution-introduction-rn-vs-react-js-pros-cons-architecture-overview-setup-overview-expo-cli-emulators.md) | Introduzione a React Native, setup Expo |
-| [02](02_solution-bridge-architecture-and-native-rendering-concepts-limitations.md) | Bridge, re-render, FlatList |
-| [03](03_solution-environment-setup-hands-on-expo-workflow-cli-workflow-android-emulators-device-testing.md) | Ambiente di sviluppo, emulatori |
-| [04](04_solution-mobile-problem-solving-and-app-oriented-design.md) | Problem solving mobile, design |
-| [05](05_solution-modular-architecture-in-react-native-modules-components-screens.md) | Architettura modulare, screen e componenti |
-| [06](06_solution-core-vs-third-party-libraries-dependencies-and-versioning.md) | Librerie core vs terze parti |
-| [07](07_solution-react-native-base-components-part-1.md) | Componenti base (parte 1) |
-| [08](08_solution-props-events-binding-base-components-part-2.md) | Props, eventi, binding (parte 2) |
-| [09](09_solution-state-with-usestate-controlled-components-intro.md) | State con useState |
-| [10](10_solution-useeffect-async-side-effects-and-cleanup.md) | useEffect, side effects, cleanup |
-| [11](11_solution-forms-in-mobile-controlled-forms-and-patterns.md) | Form controllati |
-| [12](12_solution-midterm-exam-guided-review-covers-lessons-01-11.md) | Revisione guidata (midterm) |
-| [13](13_solution-react-navigation-setup-and-core-concepts.md) | React Navigation setup |
-| [14](14_solution-route-params-and-dynamic-navigation.md) | Route params, navigazione dinamica |
-| [15](15_solution-advanced-navigation-and-deep-linking.md) | Navigazione avanzata, deep linking |
-| [16](16_solution-rest-calls-with-fetch-axios-async-handling.md) | REST con fetch/axios |
-| [17](17_solution-asynchronous-workflows-in-mobile-loading-error-states.md) | Workflow asincroni, loading/error |
-| [18](18_solution-local-persistence-with-asyncstorage.md) | Persistenza locale, AsyncStorage |
-| [19](19_solution-global-state-context-redux-zustand-tradeoffs-and-patterns.md) | Stato globale, Context/Zustand |
-| [20](20_solution-ui-styling-stylesheet-flexbox-responsive-mindset.md) | Styling, StyleSheet, Flexbox |
-| [21](21_solution-themes-ui-kit-accessibility-scaling-basic-animations.md) | Temi, UI kit, accessibilità, animazioni |
-| [22](22_solution-native-features-camera-location-sensors-permissions-and-security.md) | Feature native, permessi, sicurezza |
-| [23](23_solution-notifications-background-tasks-final-exam-individual-mini-project-evaluation.md) | Notifiche, background tasks, progetto finale |
+| Lab                                                                                                                | Argomento                                    |
+| ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------- |
+| [01](01_solution-introduction-rn-vs-react-js-pros-cons-architecture-overview-setup-overview-expo-cli-emulators.md) | Introduzione a React Native, setup Expo      |
+| [02](02_solution-bridge-architecture-and-native-rendering-concepts-limitations.md)                                 | Bridge, re-render, FlatList                  |
+| [03](03_solution-environment-setup-hands-on-expo-workflow-cli-workflow-android-emulators-device-testing.md)        | Ambiente di sviluppo, emulatori              |
+| [04](04_solution-mobile-problem-solving-and-app-oriented-design.md)                                                | Problem solving mobile, design               |
+| [05](05_solution-modular-architecture-in-react-native-modules-components-screens.md)                               | Architettura modulare, screen e componenti   |
+| [06](06_solution-core-vs-third-party-libraries-dependencies-and-versioning.md)                                     | Librerie core vs terze parti                 |
+| [07](07_solution-react-native-base-components-part-1.md)                                                           | Componenti base (parte 1)                    |
+| [08](08_solution-props-events-binding-base-components-part-2.md)                                                   | Props, eventi, binding (parte 2)             |
+| [09](09_solution-state-with-usestate-controlled-components-intro.md)                                               | State con useState                           |
+| [10](10_solution-useeffect-async-side-effects-and-cleanup.md)                                                      | useEffect, side effects, cleanup             |
+| [11](11_solution-forms-in-mobile-controlled-forms-and-patterns.md)                                                 | Form controllati                             |
+| —                                                                                                                  | Verifica intermedia                          |
+| [13](13_solution-react-navigation-setup-and-core-concepts.md)                                                      | React Navigation setup                       |
+| [14](14_solution-route-params-and-dynamic-navigation.md)                                                           | Route params, navigazione dinamica           |
+| [15](15_solution-advanced-navigation-and-deep-linking.md)                                                          | Navigazione avanzata, deep linking           |
+| [16](16_solution-rest-calls-with-fetch-axios-async-handling.md)                                                    | REST con fetch/axios                         |
+| [17](17_solution-asynchronous-workflows-in-mobile-loading-error-states.md)                                         | Workflow asincroni, loading/error            |
+| [18](18_solution-local-persistence-with-asyncstorage.md)                                                           | Persistenza locale, AsyncStorage             |
+| [19](19_solution-global-state-context-redux-zustand-tradeoffs-and-patterns.md)                                     | Stato globale, Context/Zustand               |
+| [20](20_solution-ui-styling-stylesheet-flexbox-responsive-mindset.md)                                              | Styling, StyleSheet, Flexbox                 |
+| [21](21_solution-themes-ui-kit-accessibility-scaling-basic-animations.md)                                          | Temi, UI kit, accessibilità, animazioni      |
+| [22](22_solution-native-features-camera-location-sensors-permissions-and-security.md)                              | Feature native, permessi, sicurezza          |
+| [23](23_solution-notifications-background-tasks-final-exam-individual-mini-project-evaluation.md)                  | Notifiche, background tasks, progetto finale |
