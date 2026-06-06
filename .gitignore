@@ -8,7 +8,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/13_react-navigation-setup-and-route-params.md
 /labs/14_advanced-navigation-and-deep-linking.md
 /labs/15_rest-calls-and-async-ui-workflows.md
 /labs/16_local-persistence-with-asyncstorage.md
