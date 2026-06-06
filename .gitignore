@@ -7,6 +7,17 @@
 !labs/
 !labs/**
 
+# Never publish these lab files
+/labs/13_react-navigation-setup-and-route-params.md
+/labs/14_advanced-navigation-and-deep-linking.md
+/labs/15_rest-calls-and-async-ui-workflows.md
+/labs/16_local-persistence-with-asyncstorage.md
+/labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md
+/labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md
+/labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md
+/labs/20_native-features-camera-location-sensors-permissions-and-security.md
+/labs/21_notifications-background-tasks-final-exam-individual-mini-project-evaluation.md
+
 # Never publish exams (questions/solutions)
 verifiche/
 **/verifiche/
@@ -20,3 +31,7 @@ verifiche/
 !lab_solutions/05_solution-modular-architecture-in-react-native-modules-components-screens.md
 !lab_solutions/06_solution-core-vs-third-party-libraries-dependencies-and-versioning.md
 !lab_solutions/07_solution-react-native-base-components-part-1.md
+!lab_solutions/08_solution-props-events-binding-base-components-part-2.md
+!lab_solutions/09_solution-state-with-usestate-controlled-components-intro.md
+!lab_solutions/10_solution-useeffect-async-side-effects-and-cleanup.md
+!lab_solutions/11_solution-forms-in-mobile-controlled-forms-and-patterns.md

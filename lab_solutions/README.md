@@ -39,15 +39,13 @@ Ogni file `.md` contiene:
 | [09](09_solution-state-with-usestate-controlled-components-intro.md)                                               | State con useState                           |
 | [10](10_solution-useeffect-async-side-effects-and-cleanup.md)                                                      | useEffect, side effects, cleanup             |
 | [11](11_solution-forms-in-mobile-controlled-forms-and-patterns.md)                                                 | Form controllati                             |
-| —                                                                                                                  | Verifica intermedia                          |
-| [13](13_solution-react-navigation-setup-and-core-concepts.md)                                                      | React Navigation setup                       |
-| [14](14_solution-route-params-and-dynamic-navigation.md)                                                           | Route params, navigazione dinamica           |
-| [15](15_solution-advanced-navigation-and-deep-linking.md)                                                          | Navigazione avanzata, deep linking           |
-| [16](16_solution-rest-calls-with-fetch-axios-async-handling.md)                                                    | REST con fetch/axios                         |
-| [17](17_solution-asynchronous-workflows-in-mobile-loading-error-states.md)                                         | Workflow asincroni, loading/error            |
-| [18](18_solution-local-persistence-with-asyncstorage.md)                                                           | Persistenza locale, AsyncStorage             |
-| [19](19_solution-global-state-context-redux-zustand-tradeoffs-and-patterns.md)                                     | Stato globale, Context/Zustand               |
-| [20](20_solution-ui-styling-stylesheet-flexbox-responsive-mindset.md)                                              | Styling, StyleSheet, Flexbox                 |
-| [21](21_solution-themes-ui-kit-accessibility-scaling-basic-animations.md)                                          | Temi, UI kit, accessibilità, animazioni      |
-| [22](22_solution-native-features-camera-location-sensors-permissions-and-security.md)                              | Feature native, permessi, sicurezza          |
-| [23](23_solution-notifications-background-tasks-final-exam-individual-mini-project-evaluation.md)                  | Notifiche, background tasks, progetto finale |
+| -                                                                                                                  | Verifica intermedia                          |
+| [13](13_solution-react-navigation-setup-and-route-params.md)                                                       | React Navigation setup e route params        |
+| [14](14_solution-advanced-navigation-and-deep-linking.md)                                                          | Navigazione avanzata, deep linking           |
+| [15](15_solution-rest-calls-and-async-ui-workflows.md)                                                             | REST, fetch e workflow asincroni             |
+| [16](16_solution-local-persistence-with-asyncstorage.md)                                                           | Persistenza locale, AsyncStorage             |
+| [17](17_solution-global-state-context-redux-zustand-tradeoffs-and-patterns.md)                                     | Stato globale, Context/Zustand               |
+| [18](18_solution-ui-styling-stylesheet-flexbox-responsive-mindset.md)                                              | Styling, StyleSheet, Flexbox                 |
+| [19](19_solution-themes-ui-kit-accessibility-scaling-basic-animations.md)                                          | Temi, UI kit, accessibilità, animazioni      |
+| [20](20_solution-native-features-camera-location-sensors-permissions-and-security.md)                              | Feature native, permessi, sicurezza          |
+| [21](21_solution-notifications-background-tasks-final-exam-individual-mini-project-evaluation.md)                  | Notifiche, background tasks, progetto finale |
