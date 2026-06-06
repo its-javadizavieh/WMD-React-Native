@@ -8,14 +8,10 @@ This folder contains the course educational materials. **Labs** are the main ent
 
 The course is organized as **21 numbered sessions** (L00–L11 + L13–L21). Lesson **12** is reserved for the **midterm exam** (no dedicated lab). Lessons **13–21** are a consolidated second half (navigation through final project evaluation).
 
-| Area | Path | Description |
-|------|------|-------------|
-| Labs | [`labs/`](labs/) | Hands-on exercises (Italian) |
-| Lab solutions | [`lab_solutions/`](lab_solutions/) | Reference solutions — see [lab_solutions/README.md](lab_solutions/README.md) |
-| Slide decks | [`slides_deck/it/`](slides_deck/it/), [`slides_deck/en/`](slides_deck/en/) | Marp source (IT + EN) |
-| PDFs | [`materials/it/`](materials/it/), [`materials/en/`](materials/en/) | Generated slide PDFs with cover |
-| Video scripts | [`registrazione_video/`](registrazione_video/) | Italian narration scripts for recording (L10–L11, L13–L21) |
-| Cheatsheet | [`labs/00_cheatsheet_react-native-programming_en.md`](labs/00_cheatsheet_react-native-programming_en.md) | Quick reference (English) |
+| Area          | Path                                                                                                     | Description                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Labs          | [`labs/`](labs/)                                                                                         | Hands-on exercises (Italian)                                                 |
+| Lab solutions | [`lab_solutions/`](lab_solutions/)                                                                       | Reference solutions — see [lab_solutions/README.md](lab_solutions/README.md) |
 
 ### Regenerating PDFs
 
@@ -33,45 +29,45 @@ python3 materials/generate_pdf_with_cover.py slides_deck/it/lecture_13_react-nav
 
 ## Labs index
 
-| Lab | Topic |
-|-----|-------|
+| Lab                                                                                                            | Topic                                                             |
+| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | [01](labs/01_introduction-rn-vs-react-js-pros-cons-architecture-overview-setup-overview-expo-cli-emulators.md) | Introduction, RN vs React JS, setup overview (Expo/CLI/emulators) |
-| [02](labs/02_bridge-architecture-and-native-rendering-concepts-limitations.md) | Bridge/architecture, native rendering, limitations |
-| [03](labs/03_environment-setup-hands-on-expo-workflow-cli-workflow-android-emulators-device-testing.md) | Environment setup, Expo workflow, device testing |
-| [04](labs/04_mobile-problem-solving-and-app-oriented-design.md) | Mobile problem solving, app-oriented design |
-| [05](labs/05_modular-architecture-in-react-native-modules-components-screens.md) | Modular architecture: modules, components, screens |
-| [06](labs/06_core-vs-third-party-libraries-dependencies-and-versioning.md) | Core vs third-party libs, dependencies, versioning |
-| [07](labs/07_react-native-base-components-part-1.md) | React Native base components (part 1) |
-| [08](labs/08_props-events-binding-base-components-part-2.md) | Props/events/binding, base components (part 2) |
-| [09](labs/09_state-with-usestate-controlled-components-intro.md) | State with `useState`, controlled components |
-| [10](labs/10_useeffect-async-side-effects-and-cleanup.md) | `useEffect`, async side effects, cleanup |
-| [11](labs/11_forms-in-mobile-controlled-forms-and-patterns.md) | Forms in mobile: controlled forms & patterns |
-| — | **Midterm exam** (lesson 12) |
-| [13](labs/13_react-navigation-setup-and-route-params.md) | React Navigation: setup + route params |
-| [14](labs/14_advanced-navigation-and-deep-linking.md) | Advanced navigation & deep linking |
-| [15](labs/15_rest-calls-and-async-ui-workflows.md) | REST calls, `fetch`, async UI workflows |
-| [16](labs/16_local-persistence-with-asyncstorage.md) | Local persistence with AsyncStorage |
-| [17](labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md) | Global state: Context / Redux / Zustand |
-| [18](labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md) | UI styling: StyleSheet, Flexbox, responsive mindset |
-| [19](labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md) | Themes/UI kit, accessibility, scaling, animations |
-| [20](labs/20_native-features-camera-location-sensors-permissions-and-security.md) | Native features: permissions, camera/location/sensors |
-| [21](labs/21_notifications-background-tasks-final-exam-individual-mini-project-evaluation.md) | Notifications, background tasks, final project evaluation |
+| [02](labs/02_bridge-architecture-and-native-rendering-concepts-limitations.md)                                 | Bridge/architecture, native rendering, limitations                |
+| [03](labs/03_environment-setup-hands-on-expo-workflow-cli-workflow-android-emulators-device-testing.md)        | Environment setup, Expo workflow, device testing                  |
+| [04](labs/04_mobile-problem-solving-and-app-oriented-design.md)                                                | Mobile problem solving, app-oriented design                       |
+| [05](labs/05_modular-architecture-in-react-native-modules-components-screens.md)                               | Modular architecture: modules, components, screens                |
+| [06](labs/06_core-vs-third-party-libraries-dependencies-and-versioning.md)                                     | Core vs third-party libs, dependencies, versioning                |
+| [07](labs/07_react-native-base-components-part-1.md)                                                           | React Native base components (part 1)                             |
+| [08](labs/08_props-events-binding-base-components-part-2.md)                                                   | Props/events/binding, base components (part 2)                    |
+| [09](labs/09_state-with-usestate-controlled-components-intro.md)                                               | State with `useState`, controlled components                      |
+| [10](labs/10_useeffect-async-side-effects-and-cleanup.md)                                                      | `useEffect`, async side effects, cleanup                          |
+| [11](labs/11_forms-in-mobile-controlled-forms-and-patterns.md)                                                 | Forms in mobile: controlled forms & patterns                      |
+| —                                                                                                              | **Midterm exam** (lesson 12)                                      |
+| [13](labs/13_react-navigation-setup-and-route-params.md)                                                       | React Navigation: setup + route params                            |
+| [14](labs/14_advanced-navigation-and-deep-linking.md)                                                          | Advanced navigation & deep linking                                |
+| [15](labs/15_rest-calls-and-async-ui-workflows.md)                                                             | REST calls, `fetch`, async UI workflows                           |
+| [16](labs/16_local-persistence-with-asyncstorage.md)                                                           | Local persistence with AsyncStorage                               |
+| [17](labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md)                                     | Global state: Context / Redux / Zustand                           |
+| [18](labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md)                                              | UI styling: StyleSheet, Flexbox, responsive mindset               |
+| [19](labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md)                                          | Themes/UI kit, accessibility, scaling, animations                 |
+| [20](labs/20_native-features-camera-location-sensors-permissions-and-security.md)                              | Native features: permissions, camera/location/sensors             |
+| [21](labs/21_notifications-background-tasks-final-exam-individual-mini-project-evaluation.md)                  | Notifications, background tasks, final project evaluation         |
 
 Lab screenshot assets live in [`labs/imgs/`](labs/imgs/). Names follow the lab number (e.g. `lab_14_home.png` for Lab 14).
 
 ## Slides ↔ labs mapping (lessons 13–21)
 
-| Lesson | Slides (IT) | Lab |
-|--------|-------------|-----|
-| 13 | React Navigation setup + route params | [13](labs/13_react-navigation-setup-and-route-params.md) |
-| 14 | Advanced navigation & deep linking | [14](labs/14_advanced-navigation-and-deep-linking.md) |
-| 15 | REST + async UI workflows | [15](labs/15_rest-calls-and-async-ui-workflows.md) |
-| 16 | AsyncStorage | [16](labs/16_local-persistence-with-asyncstorage.md) |
-| 17 | Global state | [17](labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md) |
-| 18 | StyleSheet / Flexbox / responsive | [18](labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md) |
-| 19 | Themes / accessibility / animations | [19](labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md) |
-| 20 | Native features & permissions | [20](labs/20_native-features-camera-location-sensors-permissions-and-security.md) |
-| 21 | Notifications + final exam | [21](labs/21_notifications-background-tasks-final-exam-individual-mini-project-evaluation.md) |
+| Lesson | Slides (IT)                           | Lab                                                                                           |
+| ------ | ------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 13     | React Navigation setup + route params | [13](labs/13_react-navigation-setup-and-route-params.md)                                      |
+| 14     | Advanced navigation & deep linking    | [14](labs/14_advanced-navigation-and-deep-linking.md)                                         |
+| 15     | REST + async UI workflows             | [15](labs/15_rest-calls-and-async-ui-workflows.md)                                            |
+| 16     | AsyncStorage                          | [16](labs/16_local-persistence-with-asyncstorage.md)                                          |
+| 17     | Global state                          | [17](labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md)                    |
+| 18     | StyleSheet / Flexbox / responsive     | [18](labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md)                             |
+| 19     | Themes / accessibility / animations   | [19](labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md)                         |
+| 20     | Native features & permissions         | [20](labs/20_native-features-camera-location-sensors-permissions-and-security.md)             |
+| 21     | Notifications + final exam            | [21](labs/21_notifications-background-tasks-final-exam-individual-mini-project-evaluation.md) |
 
 ## Author
 
