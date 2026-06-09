@@ -47,17 +47,17 @@ npx expo install @react-navigation/native @react-navigation/native-stack react-n
 
 ## Screenshot attesi
 
-**Home screen - NavigationContainer con Stack.Navigator**
-
-![Lab 13 - Home screen](imgs/lab_13_home.png)
-
 **Lista items - FlatList con navigazione a dettaglio**
 
 ![Lab 13 - Lista items](imgs/lab_13_list.png)
 
 **Dettaglio item - parametro id passato via route params**
 
-![Lab 13 - Dettaglio item](imgs/lab_13_details.png)
+![Lab 13 - Dettaglio item](imgs/lab_13_details_1.png)
+
+![Lab 13 - Dettaglio item](imgs/lab_13_details_2.png)
+
+![Lab 13 - Dettaglio item](imgs/lab_13_details_3.png)
 
 ## Consegna minima
 
