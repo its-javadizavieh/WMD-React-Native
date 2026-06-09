@@ -6,7 +6,7 @@ Questa cartella contiene la **soluzione di riferimento** per ogni lezione del co
 
 1. **Prima prova da solo** - completa il lab seguendo le istruzioni nella cartella `labs/`.
 2. **Confronta il tuo codice** - apri la soluzione corrispondente e confronta approccio, struttura e stile.
-3. **Copia nel progetto** - ogni soluzione è un file `App.tsx` completo e funzionante. Puoi copiarlo direttamente nel tuo progetto Expo per testarlo.
+3. **Copia nel progetto** - ogni soluzione è un file `App.tsx` completo e funzionante (più file dove serve). Puoi copiarlo in `MyFirstApp/` oppure usare lo script `MyFirstApp/livecode/use-lab.sh N` per la cartella `L0N/` già pronta.
 
 > **Attenzione:** copiare le soluzioni senza capirle non ti aiuterà all'esame. Usa le soluzioni per imparare, non per saltare il lavoro.
 
@@ -48,4 +48,4 @@ Ogni file `.md` contiene:
 | [18](18_solution-ui-styling-stylesheet-flexbox-responsive-mindset.md)                                              | Styling, StyleSheet, Flexbox                 |
 | [19](19_solution-themes-ui-kit-accessibility-scaling-basic-animations.md)                                          | Temi, UI kit, accessibilità, animazioni      |
 | [20](20_solution-native-features-camera-location-sensors-permissions-and-security.md)                              | Feature native, permessi, sicurezza          |
-| [21](21_solution-notifications-background-tasks-final-exam-individual-mini-project-evaluation.md)                  | Notifiche, background tasks, progetto finale |
+| [21](21_solution-notifications-background-tasks.md)                                                                  | Notifiche e task in background                |

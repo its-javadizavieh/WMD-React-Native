@@ -6,7 +6,7 @@
 
 This repository contains **labs** and **reference solutions** for the course. Start from the lab for your current lesson: each file includes a goal, scenario, numbered steps, expected output, and a checklist.
 
-The course has **21 numbered sessions** (lessons 1–11 and 13–21). Lesson **12** is the **midterm exam** (no lab). Lessons **13–21** cover navigation through the final individual mini-project.
+The course has **22 numbered sessions** (lessons 1–11 and 13–22). Lesson **12** is the **midterm exam** (no lab). Lessons **13–22** cover navigation through native features; lesson **22** introduces the **individual project** (no lab — delivery by **July 9**).
 
 | What      | Where                                                                                                        |
 | --------- | ------------------------------------------------------------------------------------------------------------ |
@@ -39,7 +39,8 @@ Try the lab first, then compare your work with the solution. Copying solutions w
 | [18](labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md)                                              | UI styling: StyleSheet, Flexbox, responsive mindset               |
 | [19](labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md)                                          | Themes/UI kit, accessibility, scaling, animations                 |
 | [20](labs/20_native-features-camera-location-sensors-permissions-and-security.md)                              | Native features: permissions, camera/location/sensors             |
-| [21](labs/21_notifications-background-tasks-final-exam-individual-mini-project-evaluation.md)                  | Notifications, background tasks, final project evaluation         |
+| [21](labs/21_notifications-background-tasks.md)                                                                  | Notifications and background tasks                                |
+| —                                                                                                              | **Lesson 22** — individual project brief (no lab; submit by July 9) |
 
 ## Author
 

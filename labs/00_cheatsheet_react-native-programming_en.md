@@ -1,72 +1,60 @@
----
-marp: true
-theme: course-templates
-paginate: true
-size: 16:9
----
+# React Native Programming - Cheat Sheet
 
-<!-- _class: cover -->
+**Instructor:** Seyedhossein Javadizavieh  
+**Course:** React Native (WMD)
 
-| DOCENTE | Seyedhossein Javadizavieh |
-| UNITA' FORMATIVA | React Native |
-| ARGOMENTO | React Native Programming - Cheat Sheet |
+## Table of Contents
 
----
-
-## Index
-
-| #   | Topic                                                                                                   |
-| --- | ------------------------------------------------------------------------------------------------------- |
-| 1   | [Project setup (Expo)](#1--project-setup-expo)                                                          |
-| 2   | [Core component imports](#2--core-component-imports)                                                    |
-| 3   | [View - the universal container](#3--view---the-universal-container)                                    |
-| 4   | [Text - rendering text content](#4--text---rendering-text-content)                                      |
-| 5   | [Image - local and remote](#5--image---local-and-remote)                                                |
-| 6   | [Pressable - handling taps](#6--pressable---handling-taps)                                              |
-| 7   | [ScrollView vs FlatList](#7--scrollview-vs-flatlist)                                                    |
-| 8   | [TextInput - controlled input](#8--textinput---controlled-input)                                        |
-| 9   | [useState - reactive state](#9--usestate---reactive-state)                                              |
-| 10  | [useEffect - side effects and cleanup](#10--useeffect---side-effects-and-cleanup)                       |
-| 11a | [StyleSheet](#11a--stylesheet)                                                                          |
-| 11b | [Flexbox quick reference](#11b--flexbox-quick-reference)                                                |
-| 12  | [Conditional rendering patterns](#12--conditional-rendering-patterns)                                   |
-| 13  | [Forms - validation pattern](#13--forms---validation-pattern)                                           |
-| 14  | [fetch - REST API calls](#14--fetch---rest-api-calls)                                                   |
-| 15  | [Async data pattern (load → show → error)](#15--async-data-pattern-load--show--error)                   |
-| 16  | [React Navigation - setup](#16--react-navigation---setup)                                               |
-| 17  | [Navigation - navigate, params, goBack](#17--navigation---navigate-params-goback)                       |
-| 18  | [Tab and Drawer navigators](#18--tab-and-drawer-navigators)                                             |
-| 19  | [AsyncStorage - local persistence](#19--asyncstorage---local-persistence)                               |
-| 20  | [Context - sharing state globally](#20--context---sharing-state-globally)                               |
-| 21  | [Zustand - lightweight global store](#21--zustand---lightweight-global-store)                           |
-| 22  | [Custom hooks - reusable logic](#22--custom-hooks---reusable-logic)                                     |
-| 23  | [Responsive StyleSheet and Flexbox](#23--responsive-stylesheet-and-flexbox)                             |
-| 24  | [Permissions (expo)](#24--permissions-expo)                                                             |
-| 25  | [Notifications (expo)](#25--notifications-expo)                                                         |
-| 26  | [Deep linking](#26--deep-linking)                                                                       |
-| 27  | [Animated - basic animations](#27--animated---basic-animations)                                         |
-| 28  | [Platform-specific code](#28--platform-specific-code)                                                   |
-| 29  | [Common project structure](#29--common-project-structure)                                               |
-| 30  | [Debugging checklist](#30--debugging-checklist)                                                         |
-| 31  | [ADB guide (Ubuntu / macOS / Windows)](#31--adb-guide-ubuntu--macos--windows)                           |
-| 32  | [Connect Android device (Expo Go + USB + emulator)](#32--connect-android-device-expo-go--usb--emulator) |
-| 33  | [Connect iPhone (Expo Go + simulator)](#33--connect-iphone-expo-go--simulator)                          |
-| 34  | [Developer menu and debug tools](#34--developer-menu-and-debug-tools)                                   |
-| 35  | [Device connection troubleshooting](#35--device-connection-troubleshooting)                             |
-
----
+| #   | Topic                                             |
+| --- | ------------------------------------------------- |
+| 1   | Project setup (Expo)                              |
+| 2   | Core component imports                            |
+| 3   | View - the universal container                    |
+| 4   | Text - rendering text content                     |
+| 5   | Image - local and remote                          |
+| 6   | Pressable - handling taps                         |
+| 7   | ScrollView vs FlatList                            |
+| 8   | TextInput - controlled input                      |
+| 9   | useState - reactive state                         |
+| 10  | useEffect - side effects and cleanup              |
+| 11a | StyleSheet                                        |
+| 11b | Flexbox quick reference                           |
+| 12  | Conditional rendering patterns                    |
+| 13  | Forms - validation pattern                        |
+| 14  | fetch - REST API calls                            |
+| 15  | Async data pattern (load → show → error)          |
+| 16  | React Navigation - setup                          |
+| 17  | Navigation - navigate, params, goBack             |
+| 18  | Tab and Drawer navigators                         |
+| 19  | AsyncStorage - local persistence                  |
+| 20  | Context - sharing state globally                  |
+| 21  | Zustand - lightweight global store                |
+| 22  | Custom hooks - reusable logic                     |
+| 23  | Responsive StyleSheet and Flexbox                 |
+| 24  | Permissions (expo)                                |
+| 25  | Notifications (expo)                              |
+| 26  | Deep linking                                      |
+| 27  | Animated - basic animations                       |
+| 28  | Platform-specific code                            |
+| 29  | Common project structure                          |
+| 30  | Debugging checklist                               |
+| 31  | ADB guide (Ubuntu / macOS / Windows)              |
+| 32  | Connect Android device (Expo Go + USB + emulator) |
+| 33  | Connect iPhone (Expo Go + simulator)              |
+| 34  | Developer menu and debug tools                    |
+| 35  | Device connection troubleshooting                 |
 
 ## 1 · Project setup (Expo)
 
-```tsx
-// Create a new project
+```bash
+# Create a new project
 npx create-expo-app MyApp --template blank-typescript
 cd MyApp
 
-// Start the dev server
+# Start the dev server
 npx expo start
 
-// Run on a specific platform
+# Run on a specific platform
 npx expo start --android
 npx expo start --ios
 ```
@@ -74,8 +62,6 @@ npx expo start --ios
 - **Fast Refresh** - save a file and changes appear instantly
 - Press `r` in terminal to **reload**, `m` to open **dev menu**
 - Use `npx expo install <pkg>` to install **compatible** versions
-
----
 
 ## 2 · Core component imports
 
@@ -97,8 +83,6 @@ import {
 } from "react-native";
 ```
 
----
-
 ## 3 · View - the universal container
 
 ```tsx
@@ -113,8 +97,6 @@ import {
 - Defaults to `flexDirection: 'column'`
 - Use `gap` for spacing between children (RN 0.71+)
 - **Cannot** display raw text - always wrap in `<Text>`
-
----
 
 ## 4 · Text - rendering text content
 
@@ -135,8 +117,6 @@ import {
 </Text>
 ```
 
----
-
 ## 5 · Image - local and remote
 
 ```tsx
@@ -155,8 +135,6 @@ import {
 ```
 
 **resizeMode** values: `cover` | `contain` | `stretch` | `center`
-
----
 
 ## 6 · Pressable - handling taps
 
@@ -178,8 +156,6 @@ import {
 
 - Prefer **Pressable** over `TouchableOpacity` (newer API)
 - `style` accepts a **function** for pressed state feedback
-
----
 
 ## 7 · ScrollView vs FlatList
 
@@ -210,8 +186,6 @@ interface Item {
 | Large list, uniform rows  | **FlatList**    |
 | Grouped sections          | **SectionList** |
 
----
-
 ## 8 · TextInput - controlled input
 
 ```tsx
@@ -237,8 +211,6 @@ const [email, setEmail] = React.useState("");
 
 Common **keyboardType** values: `default` | `email-address` | `numeric` | `phone-pad`
 
----
-
 ## 9 · useState - reactive state
 
 ```tsx
@@ -261,8 +233,6 @@ setItems((prev) => prev.filter((i) => i.id !== id));
 
 - State is **immutable** - always create a new reference
 - Use **callback form** when new value depends on previous
-
----
 
 ## 10 · useEffect - side effects and cleanup
 
@@ -289,8 +259,6 @@ React.useEffect(() => {
 | `[]`             | Once on **mount**           |
 | `[a, b]`         | When **a** or **b** changes |
 | _(omitted)_      | Every render (avoid)        |
-
----
 
 ## 11a · StyleSheet
 
@@ -319,8 +287,6 @@ const styles = StyleSheet.create({
 - `StyleSheet.create` validates and **optimises** style objects
 - Combine styles: `style={[styles.card, { marginTop: 8 }]}`
 
----
-
 ## 11b · Flexbox quick reference
 
 | Property           | Values                                                  |
@@ -334,8 +300,6 @@ const styles = StyleSheet.create({
 | **flex**           | `1` - fill available space                              |
 | **alignSelf**      | override parent `alignItems` for one child              |
 | **position**       | `relative` (default), `absolute`                        |
-
----
 
 ## 12 · Conditional rendering patterns
 
@@ -365,8 +329,6 @@ return <DataView data={data} />;
   items.map((item: Item) => <Text key={item.id}>{item.name}</Text>);
 }
 ```
-
----
 
 ## 13 · Forms - validation pattern
 
@@ -399,8 +361,6 @@ const showError = touched && !emailOk;
 </Pressable>;
 ```
 
----
-
 ## 14 · fetch - REST API calls
 
 ```tsx
@@ -420,8 +380,6 @@ await fetch(`https://api.example.com/items/${id}`, {
   method: "DELETE",
 });
 ```
-
----
 
 ## 15 · Async data pattern (load → show → error)
 
@@ -456,26 +414,23 @@ if (error) return <Text>Error: {error}</Text>;
 return <FlatList<Item> data={data} /* ... */ />;
 ```
 
----
-
 ## 16 · React Navigation - setup
 
-```tsx
-// Install
+```bash
 npx expo install @react-navigation/native
 npx expo install @react-navigation/native-stack
 npx expo install react-native-screens react-native-safe-area-context
+```
 
+```tsx
 // App.tsx
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 type RootStackParamList = {
   Home: undefined;
   Detail: { id: number };
 };
-
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -490,8 +445,6 @@ export default function App() {
   );
 }
 ```
-
----
 
 ## 17 · Navigation - navigate, params, goBack
 
@@ -530,8 +483,6 @@ function DetailScreen({
 }
 ```
 
----
-
 ## 18 · Tab and Drawer navigators
 
 ```tsx
@@ -555,8 +506,6 @@ const Drawer = createDrawerNavigator();
 ```
 
 - **Nest** navigators: Tab inside Stack, Drawer wrapping Stack
-
----
 
 ## 19 · AsyncStorage - local persistence
 
@@ -582,8 +531,6 @@ await AsyncStorage.removeItem("token");
 // Clear everything
 await AsyncStorage.clear();
 ```
-
----
 
 ## 20 · Context - sharing state globally
 
@@ -620,8 +567,6 @@ function ProfileScreen() {
 - Context is for **low-frequency** updates (auth, theme, locale)
 - For **high-frequency** state, prefer **Zustand** or **Redux**
 
----
-
 ## 21 · Zustand - lightweight global store
 
 ```tsx
@@ -655,8 +600,6 @@ function CartBadge() {
 }
 ```
 
----
-
 ## 22 · Custom hooks - reusable logic
 
 ```tsx
@@ -688,8 +631,6 @@ function useFetch<T = unknown>(url: string) {
 }
 ```
 
----
-
 ## 23 · Responsive StyleSheet and Flexbox
 
 ```tsx
@@ -716,8 +657,6 @@ function MyComponent() {
 <View style={{ width: "80%", alignSelf: "center" }} />;
 ```
 
----
-
 ## 24 · Permissions (expo)
 
 ```tsx
@@ -741,8 +680,6 @@ if (status === "granted") {
   if (!result.canceled) console.log(result.assets[0].uri);
 }
 ```
-
----
 
 ## 25 · Notifications (expo)
 
@@ -769,8 +706,6 @@ React.useEffect(() => {
   return () => sub.remove();
 }, []);
 ```
-
----
 
 ## 26 · Deep linking
 
@@ -801,8 +736,6 @@ const linking = {
 // Test: npx uri-scheme open myapp://detail/42 --android
 ```
 
----
-
 ## 27 · Animated - basic animations
 
 ```tsx
@@ -827,8 +760,6 @@ React.useEffect(() => {
 
 Animatable with **native driver**: `opacity`, `transform` (translate, scale, rotate)
 
----
-
 ## 28 · Platform-specific code
 
 ```tsx
@@ -851,8 +782,6 @@ const shadowStyle = Platform.select({
 // File-based: MyComponent.ios.tsx / MyComponent.android.tsx
 // RN picks the right file automatically
 ```
-
----
 
 ## 29 · Common project structure
 
@@ -880,8 +809,6 @@ my-app/
 └── app.json
 ```
 
----
-
 ## 30 · Debugging checklist
 
 | Problem                        | Fix                                            |
@@ -897,15 +824,11 @@ my-app/
 | **Slow list**                  | Switch from `ScrollView` to `FlatList`         |
 | **State not updating**         | Return a **new** object/array, not mutated one |
 
----
-
 ## 31 · ADB guide (Ubuntu / macOS / Windows)
 
 ADB (Android Debug Bridge) lets you communicate with an Android device or emulator from your computer.
 
----
-
-### Install ADB
+## 31 · Install ADB
 
 **Ubuntu / Debian**
 
@@ -940,18 +863,14 @@ adb --version
 
 > **Tip (all OS):** If you installed Android Studio, `adb` is already inside `<SDK>/platform-tools/`. Just add that folder to your PATH.
 
----
-
-### Enable USB debugging on the phone
+## 31 · Enable USB debugging on the phone
 
 1. Go to **Settings → About phone**
 2. Tap **Build number** 7 times → "You are now a developer"
 3. Go to **Settings → Developer options**
 4. Enable **USB debugging**
 
----
-
-### Connect and verify
+## 31 · Connect and verify
 
 ```bash
 # Plug the phone via USB, then:
@@ -964,9 +883,7 @@ adb devices
 | `<serial>  unauthorized` | Accept the prompt on the phone                 |
 | _(empty list)_           | Cable/driver issue - see troubleshooting below |
 
----
-
-### Common ADB commands
+## 31 · Common ADB commands
 
 ```bash
 # List connected devices
@@ -992,9 +909,7 @@ adb logcat *:E          # errors only
 adb logcat ReactNative:V *:S   # React Native logs
 ```
 
----
-
-### Wireless debugging (no cable)
+## 31 · Wireless debugging (no cable)
 
 ```bash
 # 1. Connect phone via USB first
@@ -1016,9 +931,7 @@ adb usb
 
 > **Android 11+**: you can also use **Wireless debugging** in Developer options (pair with code, no USB needed).
 
----
-
-### Troubleshooting
+## 31 · Troubleshooting
 
 | Problem                    | Fix                                                            |
 | -------------------------- | -------------------------------------------------------------- |
@@ -1029,24 +942,20 @@ adb usb
 | **Not detected (macOS)**   | Try a different USB cable (some cables are charge-only)        |
 | `adb: command not found`   | Add `platform-tools` to PATH (see install section)             |
 
----
-
-## 32 · Connect Android device (Expo Go + USB + emulator)
-
-### Prerequisites
+## 32 · Connect Android device - Prerequisites
 
 - Node.js installed
 - Expo project created (`npx create-expo-app my-app --template blank-typescript`)
 - Phone and computer on the **same Wi-Fi network**
 
-### Install Expo Go
+## 32 · Install Expo Go
 
 | Platform    | Store             | Search for |
 | ----------- | ----------------- | ---------- |
 | **Android** | Google Play Store | "Expo Go"  |
 | **iPhone**  | Apple App Store   | "Expo Go"  |
 
-### Option A: QR code (Wi-Fi, no cable)
+## 32 · Option A: QR code (Wi-Fi, no cable)
 
 ```bash
 cd my-app
@@ -1071,7 +980,7 @@ If prompted, install ngrok:
 npx expo install @expo/ngrok@^4.1.0
 ```
 
-### Option B: USB cable
+## 32 · Option B: USB cable
 
 1. **Enable Developer Options**: Settings → About phone → tap **Build number** 7 times
 2. **Enable USB debugging**: Settings → Developer options → toggle **USB debugging**
@@ -1092,18 +1001,14 @@ npx expo start
 
 > See **§31** above for full ADB install + troubleshooting.
 
-### Option C: Android emulator (no physical phone)
+## 32 · Option C: Android emulator (no physical phone)
 
 1. Install **Android Studio** → open **Virtual Device Manager**
 2. Create a device (e.g. Pixel 7, API 34)
 3. Start the emulator
 4. In the Expo terminal, press **`a`** to open the app in the emulator
 
----
-
-## 33 · Connect iPhone (Expo Go + simulator)
-
-### QR code (Wi-Fi, no cable)
+## 33 · QR code (Wi-Fi, no cable)
 
 1. Open the **Camera** app on iPhone (Expo Go not needed to scan)
 2. Point at the QR code in the terminal
@@ -1116,7 +1021,7 @@ If QR doesn't work:
 npx expo start --tunnel
 ```
 
-### iPhone limitations
+## 33 · iPhone limitations
 
 | Aspect            | Detail                                                                                                   |
 | ----------------- | -------------------------------------------------------------------------------------------------------- |
@@ -1124,17 +1029,13 @@ npx expo start --tunnel
 | **iOS Simulator** | Available **only on macOS** (requires Xcode)                                                             |
 | **USB cable**     | Not needed for Expo Go - Wi-Fi is enough                                                                 |
 
-### iOS Simulator (macOS only)
+## 33 · iOS Simulator (macOS only)
 
 1. Install **Xcode** from the App Store
 2. Open Xcode at least once and accept the licenses
 3. In the Expo terminal, press **`i`** to open the app in the iOS Simulator
 
----
-
-## 34 · Developer menu and debug tools
-
-### Open the Developer Menu
+## 34 · Open the Developer Menu
 
 | Target               | How to open                                     |
 | -------------------- | ----------------------------------------------- |
@@ -1149,11 +1050,11 @@ From the Developer Menu you can:
 - **Open JS Debugger** - opens the debugger in your browser
 - **Show Performance Monitor** - shows FPS and memory usage
 
-### Console logs
+## 34 · Console logs
 
 `console.log()` output appears in the **terminal where you ran `npx expo start`**. This is the fastest way to check values and flows.
 
-### React DevTools (advanced)
+## 34 · React DevTools (advanced)
 
 ```bash
 # Install globally
@@ -1164,8 +1065,6 @@ react-devtools
 ```
 
 Then open the Developer Menu on your phone - React DevTools connects automatically.
-
----
 
 ## 35 · Device connection troubleshooting
 
@@ -1179,7 +1078,7 @@ Then open the Developer Menu on your phone - React DevTools connects automatical
 | "Expo Go is not compatible"  | Update Expo Go from the store and run `npx expo install --fix` |
 | iPhone doesn't open the link | Install/update Expo Go from the App Store                      |
 
-### Quick commands
+## 35 · Quick commands
 
 ```bash
 # Start (default: LAN)

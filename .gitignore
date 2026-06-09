@@ -8,6 +8,7 @@
 !labs/**
 
 # Never publish these lab files
+/labs/13_react-navigation-setup-and-route-params.md
 /labs/14_advanced-navigation-and-deep-linking.md
 /labs/15_rest-calls-and-async-ui-workflows.md
 /labs/16_local-persistence-with-asyncstorage.md
@@ -15,7 +16,7 @@
 /labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md
 /labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md
 /labs/20_native-features-camera-location-sensors-permissions-and-security.md
-/labs/21_notifications-background-tasks-final-exam-individual-mini-project-evaluation.md
+/labs/21_notifications-background-tasks.md
 
 # Never publish exams (questions/solutions)
 verifiche/
