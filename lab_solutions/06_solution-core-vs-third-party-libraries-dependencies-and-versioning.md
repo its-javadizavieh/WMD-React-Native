@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 
 ## Screenshot
 
-**Stato loading — caricamento todos**
+**Stato loading - caricamento todos**
 
 ![Lab 06 – Stato loading](../labs/imgs/lab_06_main_1.png)
 
@@ -101,6 +101,6 @@ const styles = StyleSheet.create({
 
 ![Lab 06 – Todos caricati](../labs/imgs/lab_06_main_2.png)
 
-**Stato errore — pulsante Retry**
+**Stato errore - pulsante Retry**
 
 ![Lab 06 – Stato errore](../labs/imgs/lab_06_error.png)
