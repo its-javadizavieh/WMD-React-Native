@@ -1,17 +1,18 @@
 # WMD - React Native
 
-**WMD React Native** — Course labs for learning React Native / Expo through hands-on exercises.
+**WMD React Native** - Course labs for learning React Native / Expo through hands-on exercises.
 
 ## About this repository
 
 This repository contains **labs** and **reference solutions** for the course. Start from the lab for your current lesson: each file includes a goal, scenario, numbered steps, expected output, and a checklist.
 
-The course has **22 numbered sessions** (lessons 1–11 and 13–22). Lesson **12** is the **midterm exam** (no lab). Lessons **13–22** cover navigation through native features; lesson **22** introduces the **individual project** (no lab — delivery by **July 9**).
+The course has **22 numbered sessions** (lessons 1–11 and 13–22). Lesson **12** is the **midterm exam** (no lab). Lessons **13–21** are hands-on labs. Lesson **22** is the **individual final project** - follow the [**project tutorial**](labs/22_final-project-tutorial-italian-meals-app.md) (checkpoint **9 July 2026** on GitHub; **consegna finale** at end of **fourth semester**).
 
 | What      | Where                                                                                                        |
 | --------- | ------------------------------------------------------------------------------------------------------------ |
-| Labs      | [`labs/`](labs/) — exercises (Italian)                                                                       |
-| Solutions | [`lab_solutions/`](lab_solutions/) — reference code after you try the lab ([index](lab_solutions/README.md)) |
+| Labs      | [`labs/`](labs/) - exercises (Italian)                                                                       |
+| Solutions | [`lab_solutions/`](lab_solutions/) - reference code after you try the lab ([index](lab_solutions/README.md)) |
+| **Final project tutorial** | [`labs/22_final-project-tutorial-italian-meals-app.md`](labs/22_final-project-tutorial-italian-meals-app.md) - Italian Meals App (lec 1–19) |
 
 Try the lab first, then compare your work with the solution. Copying solutions without understanding them will not help at the exam.
 
@@ -30,7 +31,7 @@ Try the lab first, then compare your work with the solution. Copying solutions w
 | [09](labs/09_state-with-usestate-controlled-components-intro.md)                                               | State with `useState`, controlled components                      |
 | [10](labs/10_useeffect-async-side-effects-and-cleanup.md)                                                      | `useEffect`, async side effects, cleanup                          |
 | [11](labs/11_forms-in-mobile-controlled-forms-and-patterns.md)                                                 | Forms in mobile: controlled forms & patterns                      |
-| —                                                                                                              | **Midterm exam** (lesson 12)                                      |
+| -                                                                                                              | **Midterm exam** (lesson 12)                                      |
 | [13](labs/13_react-navigation-setup-and-route-params.md)                                                       | React Navigation: setup + route params                            |
 | [14](labs/14_advanced-navigation-and-deep-linking.md)                                                          | Advanced navigation & deep linking                                |
 | [15](labs/15_rest-calls-and-async-ui-workflows.md)                                                             | REST calls, `fetch`, async UI workflows                           |
@@ -40,7 +41,7 @@ Try the lab first, then compare your work with the solution. Copying solutions w
 | [19](labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md)                                          | Themes/UI kit, accessibility, scaling, animations                 |
 | [20](labs/20_native-features-camera-location-sensors-permissions-and-security.md)                              | Native features: permissions, camera/location/sensors             |
 | [21](labs/21_notifications-background-tasks.md)                                                                  | Notifications and background tasks                                |
-| —                                                                                                              | **Lesson 22** — individual project brief (no lab; submit by July 9) |
+| [**22**](labs/22_final-project-tutorial-italian-meals-app.md)                                                    | **Final project tutorial** - Italian Meals App (lec 1–19; checkpoint 9 Jul) |
 
 ## Author
 
