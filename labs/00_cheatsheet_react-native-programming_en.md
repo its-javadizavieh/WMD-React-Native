@@ -709,32 +709,211 @@ React.useEffect(() => {
 
 ## 26 · Deep linking
 
-```tsx
-// app.json / app.config.js
-{
-  "expo": {
-    "scheme": "myapp"
-  }
-}
+Works on **Windows, Linux, and Mac**. Lab 14 uses Expo Go + `exp://` URLs.
 
-// Navigation linking config
+### How it works (2 layers)
+
+```
+myapp://details/a1   or   exp://HOST:8081/--/details/a1
+              │
+              ▼
+┌──────────────────────────────────────────┐
+│ Layer 1 - Native (app.json)              │
+│ "scheme": "myapp" → which APP opens?     │
+└──────────────────────────────────────────┘
+              │
+              ▼
+┌──────────────────────────────────────────┐
+│ Layer 2 - Routing (App.tsx prefixes)     │
+│ Linking.createURL("/") + "myapp://"        │
+│ → which SCREEN? (Details, Home…)          │
+└──────────────────────────────────────────┘
+```
+
+| Setting                  | File       | Job                                   |
+| ------------------------ | ---------- | ------------------------------------- |
+| `"scheme": "myapp"`      | `app.json` | Registers `myapp://` (dev build only) |
+| `Linking.createURL("/")` | `App.tsx`  | Parses `exp://...` (Expo Go)          |
+| `"myapp://"`             | `App.tsx`  | Parses `myapp://...` (dev build)      |
+| `Details: "details/:id"` | `App.tsx`  | `details/a1` → Details screen         |
+
+### Code (Lab 14 pattern)
+
+```tsx
+// app.json
+{ "expo": { "scheme": "myapp", "name": "MyFirstApp", "slug": "MyFirstApp" } }
+
+// App.tsx
+import * as Linking from "expo-linking";
+
 const linking = {
-  prefixes: ['myapp://', 'https://myapp.com'],
+  prefixes: [Linking.createURL("/"), "myapp://"],
   config: {
     screens: {
-      Home: '',
-      Detail: 'detail/:id',
-      Profile: 'profile',
+      Home: "home",
+      Details: "details/:id",
     },
   },
 };
 
 <NavigationContainer linking={linking}>
-  {/* ... */}
+  {/* Stack.Navigator … */}
 </NavigationContainer>
-
-// Test: npx uri-scheme open myapp://detail/42 --android
 ```
+
+Install: `npx expo install expo-linking`
+
+### Build the `exp://` URL
+
+**Step 1** - start Expo and read the port:
+
+```bash
+cd my-app
+npx expo start
+# Metro prints: › Metro waiting on exp://192.168.1.6:8081
+```
+
+Port is usually **8081** (or 8082 if busy - use whatever Expo shows).
+
+**Step 2** - pick **HOST** for your device:
+
+| Device                            | HOST        | Example deep link                      |
+| --------------------------------- | ----------- | -------------------------------------- |
+| **Android emulator** (any OS)     | `10.0.2.2`  | `exp://10.0.2.2:8081/--/details/a1`    |
+| **Physical Android** (same Wi‑Fi) | Your PC IP  | `exp://192.168.1.6:8081/--/details/a1` |
+| **iOS Simulator** (Mac only)      | `127.0.0.1` | `exp://127.0.0.1:8081/--/details/a1`   |
+| **Physical iPhone** (same Wi‑Fi)  | Your PC IP  | `exp://192.168.1.6:8081/--/details/a1` |
+
+> `10.0.2.2` is **not** printed by Expo - fixed Android-emulator address for “your PC”. Never use `127.0.0.1` on Android emulator.
+
+**Step 3** - find PC IP: Windows `ipconfig`, Linux/Mac `ip addr` or `ifconfig`. Path is always **`details/a1`** - not `dettagli/a1`.
+
+### `prefixes` - keep both or remove one?
+
+| Prefix                   | Example URL                         | Needs     |
+| ------------------------ | ----------------------------------- | --------- |
+| `Linking.createURL("/")` | `exp://10.0.2.2:8081/--/details/a1` | Expo Go   |
+| `"myapp://"`             | `myapp://details/a1`                | Dev build |
+
+Remove `Linking.createURL("/")` only if **all** are true: dev build installed (`npx expo run:android`), you use **only** `myapp://`, and you never test with Expo Go. **While learning, keep both.**
+
+### Two terminals (Metro blocks the shell)
+
+| Terminal | Role                                                                 |
+| -------- | -------------------------------------------------------------------- |
+| **1**    | Emulator + `adb devices` + `npx uri-scheme open "exp://…" --android` |
+| **2**    | `npx expo start` → press `a` → Home visible - **leave Metro open**   |
+
+### Test commands (Expo Go)
+
+```bash
+# Android emulator (Windows / Linux / Mac)
+npx uri-scheme open "exp://10.0.2.2:8081/--/details/a1" --android
+
+# iOS Simulator (Mac only)
+npx uri-scheme open "exp://127.0.0.1:8081/--/details/a1" --ios
+
+# Physical device - replace with your PC IP from Metro / ipconfig
+npx uri-scheme open "exp://192.168.1.6:8081/--/details/a1" --android
+```
+
+Alternative (Android, `adb`):
+
+```bash
+adb shell am start -a android.intent.action.VIEW -d "exp://10.0.2.2:8081/--/details/a1" host.exp.exponent
+```
+
+**Expected:** Details screen with `id: a1`. Terminal shows `› Android: Opening URI "exp://..."` and `pkg=host.exp.exponent`.
+
+> **`npx uri-scheme open` has no `--web` flag.** It only supports `--android` and `--ios`. `exp://` URLs are for mobile / Expo Go, not the browser.
+
+### Test on web (browser)
+
+```bash
+npx expo start --web
+```
+
+Open the URL **directly in the browser** (no `uri-scheme`):
+
+```
+http://localhost:8081/details/a1
+```
+
+Use whatever port Expo shows (8081, 8082, etc.). Expected: Details with `id: a1` — same `details/:id` route as mobile.
+
+On Windows:
+
+```cmd
+start http://localhost:8081/details/a1
+```
+
+> Web uses `http://` and **no** `/--/` prefix. The `/--/` segment is only for Expo Go (`exp://`) links.
+
+### URL comparison (all platforms)
+
+| Platform            | How to open           | URL example                            |
+| ------------------- | --------------------- | -------------------------------------- |
+| Android emulator    | `uri-scheme` / `adb`  | `exp://10.0.2.2:8081/--/details/a1`    |
+| iOS Simulator (Mac) | `uri-scheme --ios`    | `exp://127.0.0.1:8081/--/details/a1`   |
+| **Web**             | Browser address bar   | `http://localhost:8081/details/a1`     |
+| Physical device     | `uri-scheme` + PC IP  | `exp://192.168.1.6:8081/--/details/a1` |
+
+### Dev build + `myapp://` (not Expo Go)
+
+```bash
+npx expo run:android   # or run:ios on Mac
+npx expo start
+npx uri-scheme open "myapp://details/a1" --android
+```
+
+### Common errors
+
+#### `myapp://` → unable to resolve Intent
+
+![myapp:// fails in Expo Go](imgs/myapp-unable-to-resolve-intent.png)
+
+```bash
+npx uri-scheme open "myapp://dettagli/a1" --android
+# Error: Activity not started, unable to resolve Intent { … dat=myapp://dettagli/… }
+```
+
+**Why:** Expo Go ignores `myapp://`. Wrong path (`dettagli` vs `details`).
+
+**Fix:** `exp://10.0.2.2:8081/--/details/a1` with Expo Go, or dev build + `myapp://details/a1`.
+
+#### Blue screen “Something went wrong”
+
+![Expo Go error screen](imgs/expo-go-something-went-wrong.png)
+
+| Cause                | Fix                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------- |
+| Metro not running    | `npx expo start`                                                                          |
+| App not opened first | Press `a` (Android) or `i` (iOS), see Home screen                                         |
+| Wrong host           | Emulator → `10.0.2.2`. iOS Simulator → `127.0.0.1`. Never `127.0.0.1` on Android emulator |
+| Port blocked         | Free 8081 (`netstat` / `lsof`) or `npx expo start --port 8082`                            |
+| Windows Firewall     | Allow Node.js on private networks                                                         |
+
+### Platform notes
+
+| OS      | Device           | Notes                                                                   |
+| ------- | ---------------- | ----------------------------------------------------------------------- |
+| Any     | Android emulator | HOST = `10.0.2.2`, flag `--android`                                     |
+| Any     | Physical Android | PC IP from `ipconfig`, same Wi‑Fi                                       |
+| Mac     | iOS Simulator    | HOST = `127.0.0.1`, flag `--ios`                                        |
+| Any     | Physical iPhone  | PC IP; on Windows paste URL in Expo Go / Safari (`--ios` needs Mac sim) |
+| **Any** | **Web browser**  | `npx expo start --web` → `http://localhost:PORT/details/a1` (no `uri-scheme`) |
+| Windows | iOS Simulator    | **Not available** - use physical iPhone or Mac                          |
+
+### Terminal output cheat sheet
+
+| Output                                          | Meaning                                         |
+| ----------------------------------------------- | ----------------------------------------------- |
+| `› Android: Opening URI "exp://..."` (no error) | Link sent OK                                    |
+| `Starting: Intent { … pkg=host.exp.exponent }`  | Expo Go got the link                            |
+| `unable to resolve Intent` + `myapp://`         | Use `exp://` or dev build                       |
+| `adb: no devices/emulators found`               | Start emulator / check USB                      |
+| Blue “Something went wrong”                     | Metro down, wrong host, or app not opened first |
+| `Port 8081 is being used`                       | Free port or use `--port 8082`                  |
 
 ## 27 · Animated - basic animations
 
