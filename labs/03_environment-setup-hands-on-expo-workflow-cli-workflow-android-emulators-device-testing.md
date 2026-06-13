@@ -68,7 +68,10 @@ export default function App() {
 ```bash
 npx create-expo-app my-app --template blank-typescript
 cd my-app
+# Terminale 1: emulatore avviato → adb devices
+# Terminale 2: Metro
 npx expo start
+npx expo start --android
 npx expo start --tunnel
 npx expo start -c
 adb devices
