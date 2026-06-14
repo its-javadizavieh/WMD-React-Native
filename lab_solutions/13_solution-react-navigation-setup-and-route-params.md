@@ -11,9 +11,15 @@
 
 ## Screenshot
 
+**Lista items - FlatList con navigazione a dettaglio**
+
 ![Lab 13 - Lista items](../labs/imgs/lab_13_list.png)
 
-![Lab 13 - Dettaglio item](../labs/imgs/lab_13_details.png)
+**Dettaglio item - parametro id passato via route params**
+
+![Lab 13 - Dettaglio item](../labs/imgs/lab_13_details_1.png)
+![Lab 13 - Dettaglio item](../labs/imgs/lab_13_details_2.png)
+![Lab 13 - Dettaglio item](../labs/imgs/lab_13_details_3.png)
 
 ## Codice
 
