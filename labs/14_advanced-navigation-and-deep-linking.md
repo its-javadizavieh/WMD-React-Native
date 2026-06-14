@@ -84,9 +84,7 @@ Riprendi l'app del Lab 13 (lista items → dettaglio con `id` validato) e aggiun
 **Dettaglio item - parametro id passato via route params**
 
 ![Lab 13 - Dettaglio item](imgs/lab_13_details_1.png)
-
 ![Lab 13 - Dettaglio item](imgs/lab_13_details_2.png)
-
 ![Lab 13 - Dettaglio item](imgs/lab_13_details_3.png)
 
 ## Consegna minima
