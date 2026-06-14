@@ -17,7 +17,7 @@ Riusa componenti e pattern già visti nei laboratori - **non ripartire da zero**
 | **Checkpoint**      | **9 luglio 2026**                               | Repository sul tuo **GitHub** + file **`PROGRESS.md`** con **screenshot** di ogni schermata richiesta |
 | **Consegna finale** | **Fine del quarto semestre** (data da definire) | Link repo su **FAD** + **README** completo                                                            |
 
-Sviluppo **take-home** (a casa), con commit consigliati **ogni settimana**.
+Sviluppo **in aula** (durante le lezioni) e **a casa**, con commit consigliati **ogni settimana**.
 
 ---
 
@@ -53,6 +53,35 @@ Ogni schermata deve avere uno **screenshot** in `PROGRESS.md`.
 | 7   | **Impostazioni**     | Logout (torna al login); avatar + nome utente; eventuale tema                                                                                                                    |
 | 8   | **Stato errore**     | Screenshot con errore rete/API + pulsante **Retry**                                                                                                                              |
 | 9   | **Accessibilità**    | Almeno 2 accorgimenti visibili (es. `accessibilityLabel` su pulsanti/card)                                                                                                       |
+| 10  | **Deep link**        | Screenshot: dettaglio piatto aperto via URL (`meal/:idMeal`, lab 14); terminale con comando `exp://` riuscito                                                                    |
+
+---
+
+## Google Doc - screenshot lab 13–22 (obbligatorio)
+
+**Documento condiviso (compilate qui i vostri screenshot):**  
+https://docs.google.com/document/d/1RXdJJVh4GlMYAngYksM9MLcUvdgkYoO3lizdgMCK36Y/edit?tab=t.0#heading=h.wu29v8o1b6lm
+
+Come alla **verifica intermedia** (screenshot lab **01–11**), nel **progetto individuale** inserite nel Google Doc **uno screenshot per lab 13–22**: la funzione della **Italian Meals App** che realizza quel laboratorio / quella lezione.
+
+1. Aprite il **Google Doc** condiviso (link sopra)
+2. Per ogni **lab 13–22**, inserite titolo, **screenshot** e 1–2 righe di spiegazione
+3. Inserite lo **stesso link** in `PROGRESS.md` e su **FAD**
+
+| Lab    | Cosa mostrare nello screenshot                                   |
+| ------ | ---------------------------------------------------------------- |
+| **13** | Navigazione + parametri route (`idMeal` → dettaglio)             |
+| **14** | Deep link `meal/:idMeal` (anche terminale `exp://` se possibile) |
+| **15** | API TheMealDB + loading / error / success / Retry                |
+| **16** | Preferiti in **AsyncStorage** (`app:v1:favs`)                    |
+| **17** | Stato globale (Context o Zustand)                                |
+| **18** | **StyleSheet** / Flexbox responsive                              |
+| **19** | Accessibilità e/o tema                                           |
+| **20** | Feature nativa (opzionale) o «non implementato»                  |
+| **21** | Notifica locale (opzionale) o «non implementato»                 |
+| **22** | Panoramica app finale consegnata                                 |
+
+> Non c’è **lab 12** (verifica intermedia).
 
 ---
 
@@ -245,11 +274,20 @@ docs/screenshots/ immagini per PROGRESS.md
 - Carica dettaglio in `useEffect` quando cambia `idMeal` (param route)
 - Cleanup se serve (cancel flag / abort)
 
-### Lab 13–14 - Navigazione
+### Lab 13–14 - Navigazione e deep linking (**obbligatorio**)
 
 - **Auth flow:** stack Login → (dopo login) stack principale
 - **App stack:** Lista → Dettaglio (`params: { idMeal }`) → Impostazioni
-- Tipizzare i param con TypeScript se possibile
+- **Deep linking (lab 14):** config `linking` con `Linking.createURL("/")` + mappa es. `MealDetail: "meal/:idMeal"`
+- Deve essere possibile aprire il **dettaglio di un piatto** da URL esterno (Expo Go), es.:
+
+```bash
+# Metro avviato + app su Home/Lista - terminale separato
+npx uri-scheme open "exp://10.0.2.2:8081/--/meal/52772" --android
+```
+
+- Validare `idMeal` da URL: se manca o non valido → messaggio chiaro (non crash)
+- Riferimento: [Lab 14](https://github.com/its-javadizavieh/WMD-React-Native/blob/main/labs/14_advanced-navigation-and-deep-linking.md) e Cheat Sheet §26
 
 ### Lab 15–16 - REST e stati UI
 
@@ -306,6 +344,13 @@ Crea questo file nella **root** del repository e aggiornalo fino al 9 luglio.
 | Preferiti      |         | ![Preferiti](./docs/screenshots/06-favorites.png)   |
 | Impostazioni   |         | ![Impostazioni](./docs/screenshots/07-settings.png) |
 | Errore + Retry |         | ![Errore](./docs/screenshots/08-error.png)          |
+| Deep link      |         | ![Deep link](./docs/screenshots/09-deeplink.png)    |
+
+## Google Doc (lab 13–22)
+
+**Link:** https://docs.google.com/document/d/1RXdJJVh4GlMYAngYksM9MLcUvdgkYoO3lizdgMCK36Y/edit?tab=t.0#heading=h.wu29v8o1b6lm
+
+Uno screenshot per lab **13–22** (come avete fatto per i lab **01–11** alla verifica intermedia).
 
 ## Note
 
@@ -327,14 +372,23 @@ Salva le immagini in `docs/screenshots/` (o cartella equivalente) e referenziale
 
 ## README (consegna finale)
 
-Per la **consegna finale** (fine del quarto semestre), il `README.md` deve includere:
+Il file **`README.md`** va nella **root** del repository GitHub ed è **obbligatorio** per la consegna finale.
+
+Deve includere almeno:
 
 - Nome progetto e autore
-- **Come avviare:** `npm install`, `npx expo start`
+- **Come installare e avviare il progetto** (passo passo):
+  1. `git clone <url-repo>`
+  2. `cd <nome-cartella>`
+  3. `npm install`
+  4. `npx expo start` (poi `a` per Android / QR per Expo Go)
+- Prerequisiti (Node.js LTS, Expo Go su device/emulatore)
 - Endpoint API usati (link documentazione TheMealDB)
 - Utenti mock per test login (tabella sopra)
+- **Deep linking:** path configurato (es. `meal/:idMeal`) + comando di test `exp://...`
+- Link al **Google Doc** (screenshot lab **13–22**)
 - Scelta stato globale e motivazione
-- Edge case gestiti (rete, login fallito, lista vuota, preferiti)
+- Edge case gestiti (rete, login fallito, lista vuota, preferiti, deep link invalido)
 - Eventuali feature opzionali 20–21
 
 ---
@@ -350,10 +404,12 @@ Per la **consegna finale** (fine del quarto semestre), il `README.md` deve inclu
 - [ ] **Ricerca** sulla lista
 - [ ] **Preferiti** in AsyncStorage (`app:v1:favs`)
 - [ ] Navigazione Lista → Dettaglio → Impostazioni + **logout**
+- [ ] **Deep linking** (lab 14): URL `exp://` apre dettaglio con `idMeal` valido
 - [ ] **Retry** su errore API
 - [ ] Stato globale (Context/Zustand) per sessione o preferiti
 - [ ] Almeno **2** accorgimenti accessibilità
 - [ ] File **`PROGRESS.md`** con **tutti gli screenshot** richiesti
+- [ ] **Google Doc** con screenshot lab **13–22** + link in `PROGRESS.md`
 
 ---
 
@@ -361,7 +417,7 @@ Per la **consegna finale** (fine del quarto semestre), il `README.md` deve inclu
 
 - [ ] Tutto quanto sopra, rifinito e documentato
 - [ ] Link repository caricato su **FAD**
-- [ ] **README** completo
+- [ ] **`README.md`** in root con **installazione e avvio** (`npm install`, `npx expo start`)
 - [ ] (Opzionale) notifiche o feature native lezioni 20–21
 
 ---
@@ -371,6 +427,7 @@ Per la **consegna finale** (fine del quarto semestre), il `README.md` deve inclu
 | Risorsa                    | URL                                                                                                                                     |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | Tutorial progetto          | [GitHub - tutorial](https://github.com/its-javadizavieh/WMD-React-Native/blob/main/labs/22_final-project-tutorial-italian-meals-app.md) |
+| **Google Doc (lab 13–22)** | https://docs.google.com/document/d/1RXdJJVh4GlMYAngYksM9MLcUvdgkYoO3lizdgMCK36Y/edit?tab=t.0#heading=h.wu29v8o1b6lm                     |
 | Regolamento esame (30 pt)  | [FAD - Verifica finale](https://fad.its-ictpiemonte.it/course/view.php?id=2481#section-24)                                              |
 | Soluzioni lab (GitHub)     | [GitHub - lab_solutions](https://github.com/its-javadizavieh/WMD-React-Native/tree/main/lab_solutions)                                  |
 | TheMealDB - documentazione | https://www.themealdb.com/documentation                                                                                                 |
