@@ -84,6 +84,10 @@ npx expo install @react-navigation/native @react-navigation/native-stack react-n
 - Stoppa Metro bundler (CTRL+C).
 - Chiudi emulator e libera risorse.
 
+## Prossimo passo
+
+Nel **Lab 14** riprendi questa stessa app e aggiungi solo il `linking` config in `App.tsx` per aprire Details direttamente da URL (`details/:id`).
+
 ## Search terms
 
 - react navigation expo setup
