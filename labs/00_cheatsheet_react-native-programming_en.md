@@ -839,7 +839,7 @@ Open the URL **directly in the browser** (no `uri-scheme`):
 http://localhost:8081/details/a1
 ```
 
-Use whatever port Expo shows (8081, 8082, etc.). Expected: Details with `id: a1` — same `details/:id` route as mobile.
+Use whatever port Expo shows (8081, 8082, etc.). Expected: Details with `id: a1` - same `details/:id` route as mobile.
 
 On Windows:
 
