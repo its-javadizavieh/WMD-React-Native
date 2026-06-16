@@ -61,7 +61,7 @@ Riprendi l'app del Lab 13 (lista items → dettaglio con `id` validato) e aggiun
 
 1. Come estendere un'app con stack navigation già funzionante con un `linking` config (`prefixes` + `config.screens`).
 2. Come testare deep link con `npx uri-scheme open` e URL **`exp://`** su Expo Go (opzionale: test web nel browser).
-3. Come i parametri da URL finiscono in `route.params` — stessa validazione del Lab 13.
+3. Come i parametri da URL finiscono in `route.params` - stessa validazione del Lab 13.
 4. Perché i parametri da URL sono "unreliable input".
 
 ## Passi
