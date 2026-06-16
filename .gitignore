@@ -8,7 +8,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/15_rest-calls-and-async-ui-workflows.md
 /labs/16_local-persistence-with-asyncstorage.md
 /labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md
 /labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md
