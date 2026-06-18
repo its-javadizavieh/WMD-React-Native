@@ -223,9 +223,9 @@ export async function fetchMealById(id: string) {
 }
 ```
 
-### Retry (lab 15–16)
+### Retry (lab 15)
 
-In caso di errore di rete, riprova al massimo **2 volte** prima di mostrare lo stato `error` con pulsante **Riprova**.
+In caso di errore di rete, mostra lo stato `error` con pulsante **Riprova** nella UI (`MealsListScreen` / `MealDetailScreen`).
 
 ---
 
