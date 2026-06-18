@@ -49,13 +49,13 @@ npx expo install @react-native-async-storage/async-storage
 
 ## Screenshot attesi
 
-**Preferito attivo - cuore vuoto**
+**Lista piatti - nessun preferito (Preferiti salvati: 0, cuori vuoti ♡)**
 
-![Lab 16 - Preferiti](../labs/imgs/lab_16_main.png)
+![Lab 16 - Preferiti vuoti](../labs/imgs/lab_16_favorites_empty.png)
 
-**Preferiti persistiti - riavvio app, cuore pieno e ancora attivo**
+**Lista piatti - preferiti persistiti dopo riavvio (Preferiti salvati: 3, cuori pieni ♥)**
 
-![Lab 16 - Persistenza](../labs/imgs/lab_16_main_cuore_pieno.png)
+![Lab 16 - Preferiti persistiti](../labs/imgs/lab_16_favorites_persisted.png)
 
 ## Consegna minima
 
