@@ -35,3 +35,4 @@ verifiche/
 !lab_solutions/14_solution-advanced-navigation-and-deep-linking.md
 !lab_solutions/15_solution-rest-calls-and-async-ui-workflows.md
 !lab_solutions/16_solution-local-persistence-with-asyncstorage.md
+!labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md
