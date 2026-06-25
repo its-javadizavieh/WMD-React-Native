@@ -8,7 +8,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md
 /labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md
 /labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md
 /labs/20_native-features-camera-location-sensors-permissions-and-security.md
@@ -35,4 +34,3 @@ verifiche/
 !lab_solutions/14_solution-advanced-navigation-and-deep-linking.md
 !lab_solutions/15_solution-rest-calls-and-async-ui-workflows.md
 !lab_solutions/16_solution-local-persistence-with-asyncstorage.md
-!labs/17_global-state-context-redux-zustand-tradeoffs-and-patterns.md
