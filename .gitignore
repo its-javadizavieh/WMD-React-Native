@@ -8,7 +8,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/18_ui-styling-stylesheet-flexbox-responsive-mindset.md
 /labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md
 /labs/20_native-features-camera-location-sensors-permissions-and-security.md
 /labs/21_notifications-background-tasks.md
