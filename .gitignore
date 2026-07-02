@@ -8,7 +8,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/19_themes-ui-kit-accessibility-scaling-basic-animations.md
 /labs/20_native-features-camera-location-sensors-permissions-and-security.md
 /labs/21_notifications-background-tasks.md
 
@@ -33,3 +32,5 @@ verifiche/
 !lab_solutions/14_solution-advanced-navigation-and-deep-linking.md
 !lab_solutions/15_solution-rest-calls-and-async-ui-workflows.md
 !lab_solutions/16_solution-local-persistence-with-asyncstorage.md
+!lab_solutions/17_solution-global-state-context-redux-zustand-tradeoffs-and-patterns.md
+!lab_solutions/18_solution-ui-styling-stylesheet-flexbox-responsive-mindset.md
