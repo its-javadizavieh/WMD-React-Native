@@ -34,3 +34,6 @@ verifiche/
 !lab_solutions/16_solution-local-persistence-with-asyncstorage.md
 !lab_solutions/17_solution-global-state-context-redux-zustand-tradeoffs-and-patterns.md
 !lab_solutions/18_solution-ui-styling-stylesheet-flexbox-responsive-mindset.md
+
+!lab_solutions/20_native-features-camera-location-sensors-permissions-and-security.md
+!lab_solutions/21_notifications-background-tasks.md
