@@ -6,7 +6,7 @@ Questa cartella contiene la **soluzione di riferimento** per ogni lezione del co
 
 1. **Prima prova da solo** - completa il lab seguendo le istruzioni nella cartella `labs/`.
 2. **Confronta il tuo codice** - apri la soluzione corrispondente e confronta approccio, struttura e stile.
-3. **Copia nel progetto** - ogni soluzione è un file `App.tsx` completo e funzionante (più file dove serve). Puoi copiarlo in `MyFirstApp/` oppure usare lo script `MyFirstApp/livecode/use-lab.sh N` per la cartella `L0N/` già pronta.
+3. **Copia nel progetto** - ogni soluzione è un file `App.tsx` completo e funzionante (più file dove serve). Puoi copiarlo in `MyFirstApp/` nella cartella `L0N/` già pronta.
 
 > **Attenzione:** copiare le soluzioni senza capirle non ti aiuterà all'esame. Usa le soluzioni per imparare, non per saltare il lavoro.
 
@@ -21,7 +21,6 @@ Ogni file `.md` contiene:
 
 - **`SafeAreaProvider` + `SafeAreaView`** - da `react-native-safe-area-context`, evita che il contenuto finisca sotto la status bar.
 - **`Pressable` con stili visibili** - bordi, bordi arrotondati e sfondo grigio per rendere i pulsanti riconoscibili.
-- **Nessun `interface`** - i tipi delle props si scrivono inline: `{ name }: { name: string }`.
 - **Un solo file** - la maggior parte dei lab usa un singolo `App.tsx` per semplicità.
 
 ## Indice
