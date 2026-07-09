@@ -57,15 +57,15 @@ Ogni schermata deve avere uno **screenshot** in `PROGRESS.md`.
 
 ---
 
-## Google Doc - screenshot lab 13–22 (obbligatorio)
+## Google Doc - screenshot lab 13–19 (obbligatorio)
 
 **Documento condiviso (compilate qui i vostri screenshot):**  
 https://docs.google.com/document/d/1RXdJJVh4GlMYAngYksM9MLcUvdgkYoO3lizdgMCK36Y/edit?tab=t.0#heading=h.wu29v8o1b6lm
 
-Come alla **verifica intermedia** (screenshot lab **01–11**), nel **progetto individuale** inserite nel Google Doc **uno screenshot per lab 13–22**: la funzione della **Italian Meals App** che realizza quel laboratorio / quella lezione.
+Come alla **verifica intermedia** (screenshot lab **01–11**), nel **progetto individuale** inserite nel Google Doc **uno screenshot per lab 13–19**: la funzione della **Italian Meals App** che realizza quel laboratorio / quella lezione.
 
 1. Aprite il **Google Doc** condiviso (link sopra)
-2. Per ogni **lab 13–22**, inserite titolo, **screenshot** e 1–2 righe di spiegazione
+2. Per ogni **lab 13–19**, inserite titolo, **screenshot** e 1–2 righe di spiegazione
 3. Inserite lo **stesso link** in `PROGRESS.md` e su **FAD**
 
 | Lab    | Cosa mostrare nello screenshot                                   |
@@ -346,11 +346,11 @@ Crea questo file nella **root** del repository e aggiornalo fino al 9 luglio.
 | Errore + Retry |         | ![Errore](./docs/screenshots/08-error.png)          |
 | Deep link      |         | ![Deep link](./docs/screenshots/09-deeplink.png)    |
 
-## Google Doc (lab 13–22)
+## Google Doc (lab 13–19)
 
 **Link:** https://docs.google.com/document/d/1RXdJJVh4GlMYAngYksM9MLcUvdgkYoO3lizdgMCK36Y/edit?tab=t.0#heading=h.wu29v8o1b6lm
 
-Uno screenshot per lab **13–22** (come avete fatto per i lab **01–11** alla verifica intermedia).
+Uno screenshot per lab **13–19** (come avete fatto per i lab **01–11** alla verifica intermedia).
 
 ## Note
 
@@ -386,7 +386,7 @@ Deve includere almeno:
 - Endpoint API usati (link documentazione TheMealDB)
 - Utenti mock per test login (tabella sopra)
 - **Deep linking:** path configurato (es. `meal/:idMeal`) + comando di test `exp://...`
-- Link al **Google Doc** (screenshot lab **13–22**)
+- Link al **Google Doc** (screenshot lab **13–19**)
 - Scelta stato globale e motivazione
 - Edge case gestiti (rete, login fallito, lista vuota, preferiti, deep link invalido)
 - Eventuali feature opzionali 20–21
@@ -409,7 +409,7 @@ Deve includere almeno:
 - [ ] Stato globale (Context/Zustand) per sessione o preferiti
 - [ ] Almeno **2** accorgimenti accessibilità
 - [ ] File **`PROGRESS.md`** con **tutti gli screenshot** richiesti
-- [ ] **Google Doc** con screenshot lab **13–22** + link in `PROGRESS.md`
+- [ ] **Google Doc** con screenshot lab **13–19** + link in `PROGRESS.md`
 
 ---
 
@@ -427,7 +427,7 @@ Deve includere almeno:
 | Risorsa                    | URL                                                                                                                                     |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | Tutorial progetto          | [GitHub - tutorial](https://github.com/its-javadizavieh/WMD-React-Native/blob/main/labs/22_final-project-tutorial-italian-meals-app.md) |
-| **Google Doc (lab 13–22)** | https://docs.google.com/document/d/1RXdJJVh4GlMYAngYksM9MLcUvdgkYoO3lizdgMCK36Y/edit?tab=t.0#heading=h.wu29v8o1b6lm                     |
+| **Google Doc (lab 13–19)** | https://docs.google.com/document/d/1RXdJJVh4GlMYAngYksM9MLcUvdgkYoO3lizdgMCK36Y/edit?tab=t.0#heading=h.wu29v8o1b6lm                     |
 | Regolamento esame (30 pt)  | [FAD - Verifica finale](https://fad.its-ictpiemonte.it/course/view.php?id=2481#section-24)                                              |
 | Soluzioni lab (GitHub)     | [GitHub - lab_solutions](https://github.com/its-javadizavieh/WMD-React-Native/tree/main/lab_solutions)                                  |
 | TheMealDB - documentazione | https://www.themealdb.com/documentation                                                                                                 |
