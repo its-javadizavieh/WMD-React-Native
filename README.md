@@ -6,7 +6,7 @@
 
 This repository contains **labs** and **reference solutions** for the course. Start from the lab for your current lesson: each file includes a goal, scenario, numbered steps, expected output, and a checklist.
 
-The course has **22 numbered sessions** (lessons 1–11 and 13–22). Lesson **12** is the **midterm exam** (no lab). Lessons **13–21** are hands-on labs. Lesson **22** is the **individual final project** - follow the [**project tutorial**](labs/22_final-project-tutorial-italian-meals-app.md) (checkpoint **9 July 2026** on GitHub; **consegna finale** at end of **fourth semester**).
+The course has **22 numbered sessions** (lessons 1–11 and 13–19). Lesson **12** is the **midterm exam** (no lab). Lessons **13–21** are hands-on labs. Lesson **22** is the **individual final project** - follow the [**project tutorial**](labs/22_final-project-tutorial-italian-meals-app.md) (checkpoint **9 July 2026** on GitHub; **consegna finale** at end of **fourth semester**).
 
 | What      | Where                                                                                                        |
 | --------- | ------------------------------------------------------------------------------------------------------------ |
