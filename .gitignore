@@ -7,9 +7,6 @@
 !labs/
 !labs/**
 
-# Never publish these lab files
-/labs/21_notifications-background-tasks.md
-
 # Never publish exams (questions/solutions)
 verifiche/
 **/verifiche/
